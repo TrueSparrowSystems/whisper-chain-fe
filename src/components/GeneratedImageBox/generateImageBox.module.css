@@ -23,19 +23,25 @@
 }
 
 .ModalContainer {
-  font-family: 'Satoshi Variable';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 160%;
-  text-align: center;
-  font-feature-settings: 'salt' on;
-  color: #000000;
+  font-family: 'Satoshi';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    font-feature-settings: 'pnum' on, 'onum' on;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .MessageText{
-  font-family: 'Satoshi';
+font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
   font-feature-settings: 'pnum' on, 'onum' on;
+  color: #000000;
 }
 .ModalContainer{
   font-family: 'Satoshi Variable';
