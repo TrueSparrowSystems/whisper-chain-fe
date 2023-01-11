@@ -23,6 +23,7 @@ function SignAuthentication({
   onSignInComplete,
   setOpenDispatcherModal,
   setOpenClaimHandleModal,
+  onSignFailed,
 }) {
   const { address } = useAccount();
   const typedDataRef = React.useRef({});
@@ -135,7 +136,8 @@ function SignAuthentication({
         authenticate(signature);
         isModalOpen.current = false;
       } catch (error) {
-        onSignInComplete?.();
+        // onSignInComplete?.();
+        onSignFailed();
         if (error) {
           notify("Transaction signing was rejected. You are not signed in.");
         }

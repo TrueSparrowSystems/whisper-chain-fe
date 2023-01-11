@@ -9,6 +9,7 @@ const CustomConnectButton = ({
   onSignInComplete,
   setOpenDispatcherModal,
   setOpenClaimHandleModal,
+  onSignFailed,
 }) => {
   return (
     <ConnectButton.Custom>
@@ -72,6 +73,7 @@ const CustomConnectButton = ({
                   onSignInComplete={onSignInComplete}
                   setOpenDispatcherModal={setOpenDispatcherModal}
                   setOpenClaimHandleModal={setOpenClaimHandleModal}
+                  onSignFailed={onSignFailed}
                 />
               );
             })()}

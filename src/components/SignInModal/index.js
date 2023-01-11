@@ -101,7 +101,6 @@ const SignInModal = ({
   const [typedData, setTypedData] = useState(typedDataRef.current);
 
   const enableDispatcherTxnId = React.useRef();
-
   const enableDispatcher = async () => {
     refreshAuthentication();
     const res = await setDispatcher(window.localStorage.getItem("profileId"));
@@ -131,6 +130,7 @@ const SignInModal = ({
             onSignInComplete={onSignInComplete}
             setOpenDispatcherModal={setOpenDispatcherModal}
             setOpenClaimHandleModal={setOpenClaimHandleModal}
+            onSignFailed={onRequestClose}
           />
           <div
             className={`flex justify-start flex-col gap-[12px] not-italic text-[12px] font-medium ${styles.LensInfo}`}
