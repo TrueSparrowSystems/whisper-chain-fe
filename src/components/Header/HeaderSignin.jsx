@@ -98,6 +98,7 @@ const HeaderSignin = ({ handleOpen }) => {
                     <div className="flex flex-row items-center py-[15px] pl-[20px] w-full color-red" onClick={
                       () => {
                         callLogoutApi();
+                        onSignin(false);
                         Router.reload();
                         handleModalClose();
                         resetLocalStorage();

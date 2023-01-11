@@ -212,6 +212,10 @@ const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
                 notify("You’re on the Lens Testnet");
               }}
               pollIndexing={true}
+              onError={() => {
+                notify("Transaction signing was rejected.");
+                setOpenDispatcherModal(false);
+              }}
             />
           ) : null}
         </Modal>
