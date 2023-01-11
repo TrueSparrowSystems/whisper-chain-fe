@@ -13,10 +13,12 @@ import { useAccount } from "wagmi";
 import toast, { Toaster } from "react-hot-toast";
 import ToastIcon from "../../assets/ToastIcon";
 import LensIcon from "../../assets/LensIcon";
+import ImageLoader from "../WhisperImage/ImageLoader";
 
 const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
   const [openDispatcherModal, setOpenDispatcherModal] = React.useState(false);
   const [openClaimHandleModal, setOpenClaimHandleModal] = React.useState(false);
+  const [isEnableLoader, setIsEnableLoader] = React.useState(false);
   // const signInModalCloseHandler = React.useCallback(() => {
   //   setOpenSignInModal(false);
   //   setOpenDispatcherModal(true);
@@ -105,6 +107,7 @@ const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
 
     typedDataRef.current = dispatcherTypedData;
     setTypedData(typedDataRef.current);
+    setIsEnableLoader(true);
   };
 
   return (
@@ -170,7 +173,7 @@ const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
                   enableDispatcher();
                 }}
               >
-                Enable Dispatcher
+              {isEnableLoader ? <span className="flex gap-[8px]"> <ImageLoader  height={24} width={24} /> Enabling Dispatcher</span> : "Enable Dispatcher" }
               </div>
             </div>
             <div
@@ -196,6 +199,7 @@ const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
                 const profile = profileRes.data.profiles.items[0];
                 window.localStorage.setItem("profile", JSON.stringify(profile));
                 setOpenDispatcherModal(false);
+                setIsEnableLoader(false);
                 notify("You’re on the Lens Testnet");
               }}
               pollIndexing={true}
