@@ -25,6 +25,7 @@ import { useRouter } from "next/router";
 import { getChainWhispers } from "../utils/Utils";
 import ImageLoader from "./WhisperImage/ImageLoader";
 import WhiteEyeIcon from "../assets/WhiteEyeIcon";
+import toast from "react-hot-toast";
 
 export const PostImage = ({ imageDetails, chainId }) => {
   const [hovered, setHovered] = React.useState(false);
@@ -43,6 +44,24 @@ export const PostImage = ({ imageDetails, chainId }) => {
   // const chainId = routerPath.chainId;
   const [collectLoaderStarted, setCollectLoaderStarted] = React.useState(false);
 
+  const notify = (notifyText) =>
+    toast.custom((t) => (
+      <div
+        className={`${
+          t.visible ? "animate-enter" : "animate-leave"
+        } max-w-md bg-white shadow-lg rounded-[16px] pointer-events-auto flex justify-center items-center ring-1 ring-black ring-opacity-5`}
+      >
+        <div className="flex-1 p-4">
+          <div className="flex items-center">
+            <p className="ml-[10px] text-[14px] text-[#000000] opacity-80">
+              {notifyText}
+            </p>
+          </div>
+        </div>
+      </div>
+    ));
+
+  // console.log("imageDetails", imageDetails);
   const onCollectPress = async () => {
     if (
       window.localStorage.getItem(Constants.LOCAL_STORAGE_REFRESH_TOKEN_KEY)
@@ -109,8 +128,6 @@ export const PostImage = ({ imageDetails, chainId }) => {
       }, 5000);
     }
   }, [imageDetails.status]);
-
-  // console.log("imageDetails", imageDetails);
 
   return (
     <div className="flex flex-col items-center relative overflow-hidden">
@@ -192,6 +209,7 @@ export const PostImage = ({ imageDetails, chainId }) => {
                   src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/polygonIcon.png`}
                   width={26}
                   height={26}
+                  alt="Matic symbol"
                 />
                 1 WMATIC
               </div>
@@ -308,8 +326,21 @@ export const PostImage = ({ imageDetails, chainId }) => {
           setIsOpen(false);
         }}
         isOpen={isOpen}
-        onSignInComplete={() => {
-          onCollectPress();
+        onSignInComplete={async () => {
+          const res = await getPublicationCollectData([
+            imageDetails?.publicationId,
+          ]);
+          imageDetails.hasCollectedByMe =
+            res[imageDetails?.publicationId]?.hasCollectedByMe;
+          imageDetails.totalAmountOfCollects =
+            res[imageDetails?.publicationId]?.stats?.totalAmountOfCollects;
+          if (imageDetails?.hasCollectedByMe === false) {
+            onCollectPress();
+          } else {
+            setIsOpen(false);
+            setOnClickCollect(false);
+            notify("You have already collected this post.");
+          }
         }}
       />
       {Object.keys(typedData)?.length > 0 ? (
@@ -328,6 +359,9 @@ export const PostImage = ({ imageDetails, chainId }) => {
           }}
           pollIndexing={true}
           setCollectLoaderStarted={setCollectLoaderStarted}
+          onError={() => {
+            notify("Transaction signing was rejected");
+          }}
         />
       ) : null}
     </div>

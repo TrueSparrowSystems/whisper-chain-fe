@@ -14,11 +14,13 @@ import toast, { Toaster } from "react-hot-toast";
 import ToastIcon from "../../assets/ToastIcon";
 import LensIcon from "../../assets/LensIcon";
 import ImageLoader from "../WhisperImage/ImageLoader";
+import { useSignin } from "../../context/SigninContext";
 
 const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
   const [openDispatcherModal, setOpenDispatcherModal] = React.useState(false);
   const [openClaimHandleModal, setOpenClaimHandleModal] = React.useState(false);
   const [isEnableLoader, setIsEnableLoader] = React.useState(false);
+  const { isSigned, onSignin } = useSignin();
   // const signInModalCloseHandler = React.useCallback(() => {
   //   setOpenSignInModal(false);
   //   setOpenDispatcherModal(true);
@@ -173,7 +175,14 @@ const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
                   enableDispatcher();
                 }}
               >
-              {isEnableLoader ? <span className="flex gap-[8px]"> <ImageLoader  height={24} width={24} /> Enabling Dispatcher</span> : "Enable Dispatcher" }
+                {isEnableLoader ? (
+                  <span className="flex gap-[8px]">
+                    {" "}
+                    <ImageLoader height={24} width={24} /> Enabling Dispatcher
+                  </span>
+                ) : (
+                  "Enable Dispatcher"
+                )}
               </div>
             </div>
             <div
@@ -250,6 +259,7 @@ const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
               const profileRes = await getProfile(address);
               const profile = profileRes.data.profiles.items[0];
               window.localStorage.setItem("profile", JSON.stringify(profile));
+              onSignin(true);
               setOpenDispatcherModal(false);
             }}
           />

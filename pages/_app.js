@@ -16,6 +16,7 @@ import { arbitrum, optimism, polygon, polygonMumbai } from "wagmi/chains";
 
 import { AuthProvider } from "../src/context/AuthContext";
 import { BottomTabProvider } from "../src/context/BottomTabContext";
+import { SigninProvider } from "../src/context/SigninContext";
 import { PubProvider } from "../src/context/PublicationContext";
 import { publicProvider } from "wagmi/providers/public";
 
@@ -57,7 +58,9 @@ function MyApp({ Component, pageProps, ...rest }) {
           <AuthProvider>
             <BottomTabProvider>
               <PubProvider>
-                <Component {...pageProps} />
+                <SigninProvider>
+                  <Component {...pageProps} />
+                </SigninProvider>
               </PubProvider>
             </BottomTabProvider>
           </AuthProvider>

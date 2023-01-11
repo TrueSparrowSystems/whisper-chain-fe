@@ -9,12 +9,13 @@ function SignTypedData({
   onSuccess,
   pollIndexing = false,
   setCollectLoaderStarted,
+  onError,
 }) {
   delete typedData.domain.__typename;
   delete typedData.types.__typename;
   delete typedData.value.__typename;
 
-  const { data, signTypedData } = useSignTypedData({
+  const { data, signTypedData, error } = useSignTypedData({
     domain: typedData.domain,
     types: typedData.types,
     value: typedData.value,
@@ -32,6 +33,12 @@ function SignTypedData({
     }
   }, [data]);
 
+  useEffect(() => {
+    if (error) {
+      onError?.();
+    }
+  }, [error]);
+
   let timeout = 0;
 
   const hasTxIndexed = async (res) => {
@@ -44,10 +51,10 @@ function SignTypedData({
     const res = await broadcastData(id, data);
 
     if (pollIndexing) {
-      if(setCollectLoaderStarted){
+      if (setCollectLoaderStarted) {
         setCollectLoaderStarted(true);
       }
-      
+
       timeout = setInterval(() => {
         const isIndexed = hasTxIndexed(res);
         if (!!isIndexed) {
