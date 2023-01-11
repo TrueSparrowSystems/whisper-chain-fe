@@ -23,6 +23,7 @@ function SignAuthentication({
   onSignInComplete,
   setOpenDispatcherModal,
   setOpenClaimHandleModal,
+  onSignFailed,
 }) {
   const { address } = useAccount();
   const typedDataRef = React.useRef({});
@@ -33,7 +34,7 @@ function SignAuthentication({
   const isModalOpen = React.useRef(false);
   const { isSigned, onSignin } = useSignin();
 
-  const notify = (notifyText) =>
+  const notify = (notifyText) => {
     toast.custom((t) => (
       <div
         className={`${
@@ -52,6 +53,7 @@ function SignAuthentication({
         </div>
       </div>
     ));
+  };
 
   const [signParam, setSignParam] = React.useState({
     wallet_address: address,
@@ -107,7 +109,7 @@ function SignAuthentication({
             window.localStorage.getItem("profile")
           )?.dispatcher?.address;
         }
-        setOpenDispatcherModal(true);
+        setOpenDispatcherModal(!isEnableDispatcher);
         if (isEnableDispatcher !== undefined) {
           notify("You’re on the Lens Testnet");
         }
@@ -134,9 +136,11 @@ function SignAuthentication({
         authenticate(signature);
         isModalOpen.current = false;
       } catch (error) {
-        onSignInComplete?.();
-        if (error)
+        // onSignInComplete?.();
+        onSignFailed();
+        if (error) {
           notify("Transaction signing was rejected. You are not signed in.");
+        }
       }
     } else {
       alert("Connect Wallet to sign In");

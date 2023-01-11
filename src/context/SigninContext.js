@@ -13,12 +13,12 @@ export function useSignin() {
     onSignin,
   };
 }
-let profile;
-if (typeof window !== "undefined") {
-  profile = window?.localStorage?.getItem("profileId") ? true : false;
-}
 
 export const SigninProvider = ({ children }) => {
+  let profile;
+  if (typeof window !== "undefined") {
+    profile = window?.localStorage?.getItem("profileId") ? true : false;
+  }
   const [isSigned, setIsSigned] = useState(profile);
 
   function onSignin(isSignedin) {

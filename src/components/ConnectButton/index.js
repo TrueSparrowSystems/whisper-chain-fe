@@ -5,7 +5,12 @@ import { resetLocalStorage } from "../../utils/Utils";
 import SignAuthentication from "./SignAuthentication";
 import LensIcon from "../../assets/LensIcon";
 
-const CustomConnectButton = ({ onSignInComplete, setOpenDispatcherModal, setOpenClaimHandleModal }) => {
+const CustomConnectButton = ({
+  onSignInComplete,
+  setOpenDispatcherModal,
+  setOpenClaimHandleModal,
+  onSignFailed,
+}) => {
   return (
     <ConnectButton.Custom>
       {({
@@ -68,6 +73,7 @@ const CustomConnectButton = ({ onSignInComplete, setOpenDispatcherModal, setOpen
                   onSignInComplete={onSignInComplete}
                   setOpenDispatcherModal={setOpenDispatcherModal}
                   setOpenClaimHandleModal={setOpenClaimHandleModal}
+                  onSignFailed={onSignFailed}
                 />
               );
             })()}
