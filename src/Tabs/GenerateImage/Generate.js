@@ -136,14 +136,14 @@ function Generate({ chainId }) {
   };
 
   const generateImageContainerRef = React.useRef(null);
-  const [btnPosition, setBtnPosition] = React.useState("absolute top-[80px]");
+  const [btnPosition, setBtnPosition] = React.useState("absolute");
 
   const onScroll = () => {
     console.log(generateImageContainerRef.current?.scrollTop);
     if (generateImageContainerRef.current?.scrollTop > 0) {
       setBtnPosition("absolute");
     } else {
-      setBtnPosition("relative top-[80px]");
+      setBtnPosition("static");
     }
   };
 
@@ -151,7 +151,7 @@ function Generate({ chainId }) {
     const { innerHeight: height } = window;
 
     if (height <= 900) {
-      setBtnPosition("relative  top-[80px]");
+      setBtnPosition("static");
     }
   }, []);
 
