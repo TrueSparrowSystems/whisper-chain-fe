@@ -10,13 +10,18 @@ import {
   refreshAuthentication,
 } from "../../utils/lensFunction";
 import { useAccount } from "wagmi";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import ToastIcon from "../../assets/ToastIcon";
 import LensIcon from "../../assets/LensIcon";
 import ImageLoader from "../WhisperImage/ImageLoader";
 import { useSignin } from "../../context/SigninContext";
 
-const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
+const SignInModal = ({
+  onRequestClose,
+  isOpen,
+  onSignInComplete,
+  setSignRejected,
+}) => {
   const [openDispatcherModal, setOpenDispatcherModal] = React.useState(false);
   const [openClaimHandleModal, setOpenClaimHandleModal] = React.useState(false);
   const [isEnableLoader, setIsEnableLoader] = React.useState(false);
@@ -220,9 +225,6 @@ const SignInModal = ({ onRequestClose, isOpen, onSignInComplete }) => {
           ) : null}
         </Modal>
       )}
-      <div>
-        <Toaster position="top-center" reverseOrder={false} />
-      </div>
 
       <Modal
         onRequestClose={handleClaimModalClose}

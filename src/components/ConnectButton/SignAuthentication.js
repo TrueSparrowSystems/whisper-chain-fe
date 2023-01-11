@@ -33,7 +33,7 @@ function SignAuthentication({
   const isModalOpen = React.useRef(false);
   const { isSigned, onSignin } = useSignin();
 
-  const notify = (notifyText) =>
+  const notify = (notifyText) => {
     toast.custom((t) => (
       <div
         className={`${
@@ -52,6 +52,7 @@ function SignAuthentication({
         </div>
       </div>
     ));
+  };
 
   const [signParam, setSignParam] = React.useState({
     wallet_address: address,
@@ -135,8 +136,9 @@ function SignAuthentication({
         isModalOpen.current = false;
       } catch (error) {
         onSignInComplete?.();
-        if (error)
+        if (error) {
           notify("Transaction signing was rejected. You are not signed in.");
+        }
       }
     } else {
       alert("Connect Wallet to sign In");
