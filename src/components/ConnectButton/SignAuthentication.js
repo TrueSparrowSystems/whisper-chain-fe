@@ -17,6 +17,7 @@ import toast from "react-hot-toast";
 import ToastIcon from "../../assets/ToastIcon";
 import Loader from "../Loader";
 import ImageLoader from "../WhisperImage/ImageLoader";
+import { useSignin } from "../../context/SigninContext";
 
 function SignAuthentication({
   onSignInComplete,
@@ -30,6 +31,7 @@ function SignAuthentication({
   const { signMessageAsync } = useSignMessage();
   const dispatcher = React.useRef(null);
   const isModalOpen = React.useRef(false);
+  const { isSigned, onSignin } = useSignin();
 
   const notify = (notifyText) =>
     toast.custom((t) => (
@@ -88,6 +90,7 @@ function SignAuthentication({
       } else {
         window.localStorage.setItem("profileId", profile.id);
         window.localStorage.setItem("profile", JSON.stringify(profile));
+        onSignin(true);
         signParam.platform_profile_image_url = getProfileImage();
         signParam.platform_user_id = profile.id;
         signParam.platform_display_name = profile.name ? profile.name : "";

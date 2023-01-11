@@ -7,10 +7,12 @@ import Modal from "react-modal";
 import SignOutLogo from "../../assets/SignOutLogo";
 import Router from "next/router";
 import LensPurpleIcon from "../../assets/LensPurpleIcon";
+import { useSignin } from "../../context/SigninContext";
 
 const HeaderSignin = ({ handleOpen }) => {
 
   const [open, setOpen] = React.useState(false);
+  const { isSigned, onSignin} = useSignin();
   const handleModalClose = () => {
     setOpen(false);
   };
@@ -79,7 +81,7 @@ const HeaderSignin = ({ handleOpen }) => {
                 );
               }
 
-              return window?.localStorage.getItem("profileId") ? (
+              return isSigned ? (
                 <div className="flex justify-center items-center gap-[8px] z-[111] cursor-pointer">
                   <div className={` box-border flex justify-center items-center  py-[4px] px-[16px] w-auto h-[36px] bg-[#FFFFFF] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HeaderSignInbtn}`} onClick={handleModalOpen}>
                     {JSON.parse(window.localStorage.getItem("profile"))?.handle}
@@ -96,6 +98,7 @@ const HeaderSignin = ({ handleOpen }) => {
                     <div className="flex flex-row items-center py-[15px] pl-[20px] w-full color-red" onClick={
                       () => {
                         callLogoutApi();
+                        onSignin(false);
                         Router.reload();
                         handleModalClose();
                         resetLocalStorage();
