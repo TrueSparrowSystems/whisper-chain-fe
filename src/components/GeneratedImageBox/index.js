@@ -8,6 +8,7 @@ import CollectLogo from "../../assets/addWhisperLogos/CollectLogo";
 import WalletLogo from "../../assets/addWhisperLogos/WalletLogo";
 import SignInModal from "../SignInModal";
 import { getChainWhispers } from "../../utils/Utils";
+import ImageLoader from "../WhisperImage/ImageLoader";
 
 export default function GeneratedImageBox({
   imgSrcUrl,
@@ -130,9 +131,11 @@ export default function GeneratedImageBox({
 
       <Modal onRequestClose={handleClose} isOpen={open} style={customStyles}>
         <div
-          className={`flex flex-col justify-start items-start bg-[#FFFFFF] rounded-[16px] backdrop-blur-3xl gap-[16px] p-[12px] ${styles.ModalContainer}`}
+          className={`flex flex-col justify-start items-start bg-[#FFFFFF] rounded-[16px] backdrop-blur-3xl gap-[16px] p-[12px]`}
         >
-          <div className="text-[20px]">Adding a whisper to the chain</div>
+          <div className={`text-[20px] ${styles.ModalContainer}`}>
+            Adding a whisper to the chain
+          </div>
           <div className="flex flex-col gap-[24px] py-[10px] text-start not-italic text-[16px] leading-[140%] -tracking-[0.02em] text-[#000000] font-medium">
             <div className="flex flex-col gap-[11px]">
               <MessageLogo />
@@ -168,9 +171,13 @@ export default function GeneratedImageBox({
                 addToChainClicked
                   ? "opacity-50 cursor-not-allowed	pointer-events-none"
                   : ""
-              }`}
+              } cursor-pointer`}
             >
-              <div className={styles.addToChainBtnText}>+ Add to chain</div>
+              {addToChainClicked ? (
+                <ImageLoader height={24} width={24} />
+              ) : (
+                <div className={styles.addToChainBtnText}>+ Add to chain</div>
+              )}
             </div>
           </div>
         </div>

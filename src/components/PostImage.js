@@ -242,12 +242,12 @@ export const PostImage = ({ imageDetails, chainId }) => {
               className={`flex flex-col justify-center items-center absolute top-[85%] left-[50%] text-center gap-[8px] w-[432px] -translate-x-[50%]`}
             >
               <div
-                className={`flex items-center p-[10px] w-full h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] ${styles.viewOnLensBtn}`}
+                className={`flex items-center p-[10px] w-full relative bottom-[25px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] ${styles.viewOnLensBtn}`}
               >
                 <ImageLoader height={24} width={24} />
               </div>
               <div
-                className={`flex items-center p-[10px] w-full h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] ${styles.viewOnLensBtn}`}
+                className={`flex items-center p-[10px] w-full relative bottom-[25px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] ${styles.viewOnLensBtn}`}
               >
                 <ImageLoader height={24} width={24} />
               </div>
@@ -260,14 +260,14 @@ export const PostImage = ({ imageDetails, chainId }) => {
               >
                 {imageDetails?.hasCollectedByMe ? (
                   <button
-                    className={`flex items-center p-[10px] w-[432px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] cursor-auto ${styles.collectedBtn}`}
+                    className={`flex items-center relative bottom-[10px] p-[10px] w-[432px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] cursor-auto ${styles.collectedBtn}`}
                   >
                     Collected
                   </button>
                 ) : (
                   <button
                     onClick={() => setOnClickCollect(true)}
-                    className={`flex items-center p-[10px] w-[432px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] cursor-pointer ${
+                    className={`flex items-center relative bottom-[10px] p-[10px] w-[432px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] cursor-pointer ${
                       styles.viewOnLensBtn
                     }
                   ${
@@ -291,7 +291,7 @@ export const PostImage = ({ imageDetails, chainId }) => {
                   onClick={() => {
                     window.open(imageDetails.lensterPostUrl, "_blank");
                   }}
-                  className={`flex items-center p-[10px] justify-center `}
+                  className={`flex items-center relative bottom-[10px] p-[10px] justify-center `}
                 >
                   <WhiteEyeIcon />{" "}
                   <span className="ml-[10px] text-white opacity-[0.6]">
