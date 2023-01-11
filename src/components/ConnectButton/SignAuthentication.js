@@ -109,7 +109,7 @@ function SignAuthentication({
             window.localStorage.getItem("profile")
           )?.dispatcher?.address;
         }
-        setOpenDispatcherModal(true);
+        setOpenDispatcherModal(!isEnableDispatcher);
         if (isEnableDispatcher !== undefined) {
           notify("You’re on the Lens Testnet");
         }
