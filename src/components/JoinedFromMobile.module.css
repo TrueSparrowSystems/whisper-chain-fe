@@ -1,113 +1,15 @@
-.mainContainer {
-    box-sizing: border-box;
-        position: absolute;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, #FFFFFF 100%);
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
-        backdrop-filter: blur(12px);
-        border-radius: 16px;
-        width: fit-content;
-            max-width: 512px;
-            height: fit-content;
-            max-height: 512px;
+.mobileCardWrapper {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, #FFFFFF 100%);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(12px);
+    width: 512px;
+    border-radius: 16px;
 }
 
-.imageContainer{
-    position: relative;
-        height: 288px;
-        left: 0px;
-        right: 0px;
-        top: 0px;
-        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.75) 23.9%, rgba(255, 255, 255, 0.5) 50.08%, rgba(255, 255, 255, 0.24) 80.05%, rgba(255, 255, 255, 0) 100%);
-        border-radius: 18.2857px;
-}
-
-.functionbtns{
-    box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 7px 24px;
-        gap: 8px;
-        position: absolute;
-        width: 144px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.6);
-        box-shadow: 0px 8px 32px rgba(111, 26, 255, 0.32);
-        backdrop-filter: blur(16px);
-        border-radius: 100px;
-    font-family: 'Satoshi Variable';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 160%;
-        font-feature-settings: 'salt' on;
-        color: #000000;
-}
-
-.WCbtn{
-    box-sizing: border-box;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: calc(50% - 100px/2 - 14px);
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 0px 8px 32px rgba(111, 26, 255, 0.32);
-    backdrop-filter: blur(24px);
-    border-radius: 32px;
-}
-
-.heading{
-    font-family: 'Satoshi Variable';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 140%;
-        display: flex;
-        align-items: flex-end;
-        text-align: center;
-        font-feature-settings: 'salt' on;
-        color: #000000;
-}
-
-.subHeading1{
-    font-family: 'Satoshi Variable';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 160%;
-        display: flex;
-        align-items: flex-end;
-        text-align: center;
-        font-feature-settings: 'salt' on;
-        color: rgba(0, 0, 0, 0.8);
-}
-.subHeading2 {
-    font-family: 'Satoshi Variable';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 160%;
-    display: flex;
-    align-items: flex-end;
-    text-align: center;
-    font-feature-settings: 'salt' on;
-    color: rgba(0, 0, 0, 0.8);
-}
-
-.bottomContainer {
-    padding: 0 32px;
-    gap: 8px;
-    position: absolute;
-    bottom: 26px;
-    z-index: 100;
-}
-
-.infoTab {
-    width: -webkit-fill-available;
-    font-family: 'Satoshi Variable';
-    line-height: 160%;
-    font-feature-settings: 'salt' on;
-    color: rgba(0, 0, 0, 0.6);
+.mobileCardImage {
+    background-image: url('../../public/wcr.gif');
+    height: 280px;
+    background-repeat: no-repeat;
+    background-size: 512px;
 }
