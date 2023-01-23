@@ -23,7 +23,7 @@
 }
 
 .ModalContainer {
-  font-family: 'Satoshi';
+  /* font-family: 'Satoshi'; */
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -34,7 +34,7 @@
 }
 
 .MessageText{
-font-family: 'Satoshi';
+/* font-family: 'Satoshi'; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
