@@ -6,13 +6,17 @@ import styles from "./ImageStack.module.css";
 import { useRouter } from "next/router";
 import BlackEyeIcon from "../assets/BlackEyeIcon";
 // import FollowButton from "./FollowButton";
+import { convertIntoIpfsUrl } from "../utils/Utils.js"
 
 const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
   const [hovered, setHovered] = React.useState(false);
   const { setPublication } = usePublicationContext();
   const imageDetails = imageDetailsArray[0];
   const router = useRouter();
+  console.log("image details",imageDetails);
+  console.log("image detail array",imageDetailsArray);
 
+  
   return (
     <div className="flex flex-col items-center relative">
       {imageDetails?.imageUrl && (
