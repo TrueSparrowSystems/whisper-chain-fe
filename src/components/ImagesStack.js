@@ -6,13 +6,17 @@ import styles from "./ImageStack.module.css";
 import { useRouter } from "next/router";
 import BlackEyeIcon from "../assets/BlackEyeIcon";
 // import FollowButton from "./FollowButton";
+import { convertIntoIpfsUrl } from "../utils/Utils.js"
 
 const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
   const [hovered, setHovered] = React.useState(false);
   const { setPublication } = usePublicationContext();
   const imageDetails = imageDetailsArray[0];
   const router = useRouter();
+  console.log("image details",imageDetails);
+  console.log("image detail array",imageDetailsArray);
 
+  
   return (
     <div className="flex flex-col items-center relative">
       {imageDetails?.imageUrl && (
@@ -90,7 +94,7 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             src={
               imageDetailsArray[1]?.imageUrl
                 ? imageDetailsArray[1].imageUrl
-                : "https://i.picsum.photos/id/193/512/512.jpg?hmac=ay70CF2_XM0GJBcUQzMN6UNHDn0-kgSIu8KcENreNgM"
+                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image15.png"
             }
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
@@ -107,7 +111,7 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             src={
               imageDetailsArray[2]?.imageUrl
                 ? imageDetailsArray[2].imageUrl
-                : "https://i.picsum.photos/id/524/512/512.jpg?hmac=2VlA0x6Y7osphrvDzR52TVkYjcc493rqcizd8HEXphY"
+                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image16.png"
             }
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,

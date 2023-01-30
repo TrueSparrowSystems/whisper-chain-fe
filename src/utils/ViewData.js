@@ -80,7 +80,7 @@ export const getChainData = async (paginationParams) => {
       // console.log("data?.images", data?.images);
       const profileImage = data?.images[user?.platform_profile_image_id];
       const whisperData = {
-        imageUrl: image.url,
+        imageUrl: convertIntoIpfsUrl(image.url),
         profileHandle: user?.platform_username,
         name: user?.platform_display_name,
         createdAt: moment(whisper?.uts).format("h:mm a"),
@@ -91,6 +91,7 @@ export const getChainData = async (paginationParams) => {
         lensterPostUrl: `https://testnet.lenster.xyz/posts/${whisper.platform_chain_id}`,
         profileId: user?.platform_user_id,
       };
+      console.log("------image --", whisperData.imageUrl);
       commentArray.push(whisperData);
     });
     if (resentWhisperIds.length < 3) {
@@ -101,13 +102,15 @@ export const getChainData = async (paginationParams) => {
         pubId: chain?.platform_chain_id,
         chainId: chain?.id,
         createdAt: chain?.start_ts,
-        imageUrl: image?.url,
+        imageUrl: convertIntoIpfsUrl(image.url),
         profileHandle: user?.platform_username,
         name: user?.platform_display_name,
         profileImageUrl: profileImage
           ? convertIntoIpfsUrl(profileImage?.url)
           : "https://cdn.stamp.fyi/avatar/eth:1234?s=250",
       };
+      console.log("------image --", postData.imageUrl);
+      console.log("------image url --", image.url);
       commentArray.push(postData);
     }
 
@@ -206,7 +209,7 @@ export const getChainWhispersData = async (chainId, paginationParams) => {
         pubId: chain?.platform_chain_id,
         chainId: chain?.id,
         createdAt: chain?.start_ts,
-        imageUrl: image?.url,
+        imageUrl: convertIntoIpfsUrl(image.url),
         profileHandle: user?.platform_username,
         name: user?.platform_display_name,
       };
@@ -216,7 +219,7 @@ export const getChainWhispersData = async (chainId, paginationParams) => {
     const user = data?.users[whisper?.user_id];
     const profileImage = data?.images[user?.platform_profile_image_id];
     const whisperData = {
-      imageUrl: image.url,
+      imageUrl: convertIntoIpfsUrl(image.url),
       profileHandle: user?.platform_username,
       name: user?.platform_display_name,
       createdAt: moment(whisper?.uts).format("h:mm a"),
@@ -235,6 +238,7 @@ export const getChainWhispersData = async (chainId, paginationParams) => {
         Collectresponse[whisper.platform_chain_id]?.stats
           ?.totalAmountOfCollects,
     };
+    console.log("-----image urlll",whisperData.imageUrl)
     commentArray.push(whisperData);
   });
   if (whisperIds?.length == 0 || whisperIds?.length < paginationParams.limit) {
@@ -246,7 +250,7 @@ export const getChainWhispersData = async (chainId, paginationParams) => {
       pubId: chain?.platform_chain_id,
       chainId: chain?.id,
       createdAt: chain?.start_ts,
-      imageUrl: image?.url,
+      imageUrl: convertIntoIpfsUrl(image.url),
       profileHandle: user?.platform_username,
       name: user?.platform_display_name,
       profileImageUrl: profileImage
