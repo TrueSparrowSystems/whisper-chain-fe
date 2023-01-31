@@ -88,7 +88,7 @@ const Home = () => {
     <SpinningLoader height="80vh" width="100%" />
   ) : (
     <div className={`w-full ${styles.homeWrapper}`}>
-      <div className="flex h-[780px] relative w-fit gap-[40px] m-auto tablet:h-[650px] tablet:gap-0">
+      <div className="flex h-[780px] relative top-[-40px] w-fit gap-[40px] m-auto tablet:h-[650px] tablet:gap-0">
         <div className="flex w-full	flex-col items-center justify-center">
           <div className="w-[512px] h-fit mt-[calc(100vh-512px)] tablet:mt-[calc(100vh-404px)]">
             <div className="absolute top-[10%] left-[0%]">

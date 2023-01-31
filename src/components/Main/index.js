@@ -8,7 +8,6 @@ export default function Main() {
 
   return (
     <div className={styles.pageWrapper} id="home-section">
-
       <div className={styles.pageWrap}>
       <Header />
       <div className={styles.componentWrapper}>
