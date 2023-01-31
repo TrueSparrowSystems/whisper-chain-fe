@@ -130,7 +130,7 @@ export const PostImage = ({ imageDetails, chainId }) => {
 
   return (
     <div className="flex flex-col items-center relative overflow-hidden">
-      {/* <Image
+      <Image
         src={imageDetails.imageUrl}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -138,12 +138,12 @@ export const PostImage = ({ imageDetails, chainId }) => {
         width={512}
         height={512}
         className="relative flex z-[3] rounded-[48px]"
-      /> */}
-      <img src={imageDetails.imageUrl}
+      />
+      {/* <img src={imageDetails.imageUrl}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         alt="Chain Image"
-        className="relative flex z-[3] rounded-[48px] w-[512px] h-[512px]" />
+        className="relative flex z-[3] rounded-[48px] w-[512px] h-[512px]" /> */}
       {hovered && (
         <div
           onMouseEnter={() => setHovered(true)}
