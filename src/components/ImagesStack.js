@@ -13,10 +13,10 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
   const { setPublication } = usePublicationContext();
   const imageDetails = imageDetailsArray[0];
   const router = useRouter();
-  console.log("image details",imageDetails);
-  console.log("image detail array",imageDetailsArray);
+  console.log("image details", imageDetails);
+  console.log("image detail array", imageDetailsArray);
 
-  
+
   return (
     <div className="flex flex-col items-center relative">
       {imageDetails?.imageUrl && (
@@ -25,7 +25,7 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          <Image
+          {/* <Image
             src={imageDetails.imageUrl}
             alt="Stack Image"
             fill
@@ -34,7 +34,15 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-          />
+          /> */}
+          <img src={imageDetails.imageUrl}
+            alt="Stack Image"
+            fill
+            priority
+            className="relative flex z-[3] rounded-[48px]"
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw" />
         </div>
       )}
       {hovered && (
@@ -87,7 +95,7 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
       )}
       <div className="absolute bottom-[-26px] z-[2]">
         <div className="tablet:w-[350px] tablet:h-[400px] w-[452px] h-[512px] relative">
-          <Image
+          {/* <Image
             alt="Stack Image 2"
             className="rounded-[48px]"
             fill
@@ -99,12 +107,23 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-          />
+          /> */}
+          <img alt="Stack Image 2"
+            className="rounded-[48px]"
+            fill
+            src={
+              imageDetailsArray[1]?.imageUrl
+                ? imageDetailsArray[1].imageUrl
+                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image15.png"
+            }
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw" />
         </div>
       </div>
       <div className="absolute bottom-[-44px] z-[1]">
         <div className="tablet:w-[300px] tablet:h-[400px] w-[404px] h-[512px] relative">
-          <Image
+          {/* <Image
             alt="Stack Image 3"
             className="rounded-[48px]"
             fill
@@ -116,7 +135,18 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-          />
+          /> */}
+          <img alt="Stack Image 3"
+            className="rounded-[48px]"
+            fill
+            src={
+              imageDetailsArray[2]?.imageUrl
+                ? imageDetailsArray[2].imageUrl
+                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image16.png"
+            }
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw" />
         </div>
       </div>
     </div>

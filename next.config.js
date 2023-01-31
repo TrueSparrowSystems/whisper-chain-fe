@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const securityHeaders = require('./headers.js');
 
 module.exports = {
   images: {
@@ -40,8 +41,21 @@ module.exports = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     path: process.env.W_CDN_IMAGE_RESIZER_URL,
   },
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: '/:path*',
+        headers: securityHeaders
+      }
+    ];
+  },
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
+  },
+  env: {
+    /* WARNING!!! THESE ARE ACCESSABLE IN FRONTEND CODE! BE-AWARE */
+    W_DOMAIN : process.env.W_DOMAIN,
   },
 };

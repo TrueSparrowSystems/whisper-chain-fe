@@ -86,14 +86,18 @@ const HeaderSignin = ({ handleOpen }) => {
                   <div className={` box-border flex justify-center items-center  py-[4px] px-[16px] w-auto h-[36px] bg-[#FFFFFF] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HeaderSignInbtn}`} onClick={handleModalOpen}>
                     {JSON.parse(window.localStorage.getItem("profile"))?.handle}
                   </div>
-                  <Image
+                  {/* <Image
                     src={getProfileImage() ?? "https://cdn.stamp.fyi/avatar/eth:0x3a72452af2ddc056330bbcb43898134c9adb51cf?s=250"}
                     alt="profile"
                     className="rounded-[18px]"
                     width={36}
                     height={36}
                     onClick={handleModalOpen}
-                  />
+                  /> */}
+                  <img src={getProfileImage() ?? "https://cdn.stamp.fyi/avatar/eth:0x3a72452af2ddc056330bbcb43898134c9adb51cf?s=250"}
+                    alt="profile"
+                    className="rounded-[18px] w-[36px] h-[36px]"
+                    onClick={handleModalOpen} />
                   <Modal onRequestClose={handleModalClose} isOpen={open} style={customStyles} ariaHideApp={false}>
                     <div className="flex flex-row items-center py-[15px] pl-[20px] w-full color-red" onClick={
                       () => {
