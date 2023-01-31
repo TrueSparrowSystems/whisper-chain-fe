@@ -26,7 +26,7 @@ import { usePublicationContext } from "../context/PublicationContext";
 // install Swiper modules
 SwiperCore.use([Manipulation]);
 
-const PAGE_LIMIT = 2;
+const PAGE_LIMIT = 10;
 
 const Home = () => {
   const [publicationData, setPublicationData] = React.useState([]);
