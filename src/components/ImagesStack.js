@@ -114,7 +114,7 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             src={
               imageDetailsArray[1]?.imageUrl
                 ? imageDetailsArray[1].imageUrl
-                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image15.png"
+                : "https://static.staging.whisperchain.xyz/stability/image15.png"
             }
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
@@ -142,7 +142,7 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             src={
               imageDetailsArray[2]?.imageUrl
                 ? imageDetailsArray[2].imageUrl
-                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image16.png"
+                : "https://static.staging.whisperchain.xyz/stability/image16.png"
             }
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
