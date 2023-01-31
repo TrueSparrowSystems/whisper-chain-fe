@@ -47,9 +47,8 @@ export const PostImage = ({ imageDetails, chainId }) => {
   const notify = (notifyText) =>
     toast.custom((t) => (
       <div
-        className={`${
-          t.visible ? "animate-enter" : "animate-leave"
-        } max-w-md bg-white shadow-lg rounded-[16px] pointer-events-auto flex justify-center items-center ring-1 ring-black ring-opacity-5`}
+        className={`${t.visible ? "animate-enter" : "animate-leave"
+          } max-w-md bg-white shadow-lg rounded-[16px] pointer-events-auto flex justify-center items-center ring-1 ring-black ring-opacity-5`}
       >
         <div className="flex-1 p-4">
           <div className="flex items-center">
@@ -131,7 +130,7 @@ export const PostImage = ({ imageDetails, chainId }) => {
 
   return (
     <div className="flex flex-col items-center relative overflow-hidden">
-      <Image
+      {/* <Image
         src={imageDetails.imageUrl}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -139,7 +138,12 @@ export const PostImage = ({ imageDetails, chainId }) => {
         width={512}
         height={512}
         className="relative flex z-[3] rounded-[48px]"
-      />
+      /> */}
+      <img src={imageDetails.imageUrl}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        alt="Chain Image"
+        className="relative flex z-[3] rounded-[48px] w-[512px] h-[512px]" />
       {hovered && (
         <div
           onMouseEnter={() => setHovered(true)}
@@ -285,14 +289,12 @@ export const PostImage = ({ imageDetails, chainId }) => {
                 ) : (
                   <button
                     onClick={() => setOnClickCollect(true)}
-                    className={`flex items-center relative bottom-[10px] p-[10px] w-[432px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] cursor-pointer ${
-                      styles.viewOnLensBtn
-                    }
-                  ${
-                    collectLoaderStarted
-                      ? "cursor-auto pointer-events-none"
-                      : null
-                  }
+                    className={`flex items-center relative bottom-[10px] p-[10px] w-[432px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] cursor-pointer ${styles.viewOnLensBtn
+                      }
+                  ${collectLoaderStarted
+                        ? "cursor-auto pointer-events-none"
+                        : null
+                      }
                   `}
                   >
                     {collectLoaderStarted ? (
