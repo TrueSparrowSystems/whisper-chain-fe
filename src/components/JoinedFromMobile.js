@@ -21,14 +21,14 @@ export default function JoinedFromMobile() {
 
   return (
     <>
-      <div className="flex pt-[40px]">
+      <div className="flex justify-center pt-[40px]">
         <Logo />
       </div>
-      <div className="m-[20px]">
+      <div className={`m-[20px] ${styles.mobileCardSection}`}>
         <div className={`${styles.mobileCardWrapper}`}>
           <div className={`${styles.mobileCardImage}`}>
           </div>
-          <div className={`text-center pt-[30px] ${styles.mobileCardInfo}`}>
+          <div className={`text-center pt-[30px] px-[10px] ${styles.mobileCardInfo}`}>
             <h1 className="font-bold text-[20px] text-[#000000]">Welcome to Whisper chain</h1>
             <p className="text-[16px] leading-[160%] p-[10px]">A new fun take on age old game some of you might know as Chinese whisper or Telephone. But with a twist of A.I.</p>
             <p className="font-bold pt-[20px]">This experience is best viewed on bigger screen sizes.</p>
