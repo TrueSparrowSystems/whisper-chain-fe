@@ -28,7 +28,7 @@ export default function JoinedFromMobile() {
         <div className={`${styles.mobileCardWrapper}`}>
           {/* <div className={`${styles.mobileCardImage}`}>
           </div> */}
-          <video width="750" height="500" autoplay="autoplay" loop>
+          <video autoplay="autoplay" loop>
             <source src="https://static.staging.whisperchain.xyz/whisperHomePage/mobile-background.mp4" type="video/mp4" />
           </video>
           <div className={`text-center pt-[30px] px-[10px] ${styles.mobileCardInfo}`}>

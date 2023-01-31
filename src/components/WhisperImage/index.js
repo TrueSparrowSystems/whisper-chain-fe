@@ -56,34 +56,34 @@ export default function WhisperImage({
               </div>
             </div>
           ) : (
-            // <Image
-            //   src={imgSrcUrl}
-            //   priority={priority}
-            //   className={`${classes} object-contain`}
-            //   alt={alt}
-            //   fill
-            //   sizes="(max-width: 768px) 100vw,
-            //           (max-width: 1200px) 50vw,
-            //           33vw"
-            //   onLoadingComplete={onLoadingCompleteHandler}
-            //   onError={() => {
-            //     setImgLoadingError(true);
-            //     setErrorOccured(true);
-            //   }}
-            // />
-            <img src={imgSrcUrl}
+            <Image
+              src={imgSrcUrl}
               priority={priority}
               className={`${classes} object-contain`}
               alt={alt}
               fill
               sizes="(max-width: 768px) 100vw,
-                    (max-width: 1200px) 50vw,
-                    33vw"
-              onloadingComplete={onLoadingCompleteHandler}
+                      (max-width: 1200px) 50vw,
+                      33vw"
+              onLoadingComplete={onLoadingCompleteHandler}
               onError={() => {
                 setImgLoadingError(true);
                 setErrorOccured(true);
-              }} />
+              }}
+            />
+            // <img src={imgSrcUrl}
+            //   priority={priority}
+            //   className={`${classes} object-contain`}
+            //   alt={alt}
+            //   fill
+            //   sizes="(max-width: 768px) 100vw,
+            //         (max-width: 1200px) 50vw,
+            //         33vw"
+            //   onloadingComplete={onLoadingCompleteHandler}
+            //   onError={() => {
+            //     setImgLoadingError(true);
+            //     setErrorOccured(true);
+            //   }} />
           )}
         </>
       )}
