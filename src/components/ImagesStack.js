@@ -13,8 +13,8 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
   const { setPublication } = usePublicationContext();
   const imageDetails = imageDetailsArray[0];
   const router = useRouter();
-  console.log("image details", imageDetails);
-  console.log("image detail array", imageDetailsArray);
+  // console.log("image details", imageDetails);
+  // console.log("image detail array", imageDetailsArray);
 
 
   return (

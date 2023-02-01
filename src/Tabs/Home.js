@@ -103,17 +103,17 @@ const Home = () => {
               </div>
             </div>
             <Swiper
-              freeMode
-              followFinger
-              spaceBetween={1}
-              slidesPerView="auto"
+              // freeMode
+              // followFinger
               direction={"vertical"}
+              slidesPerView={1}
+              spaceBetween={30}
               mousewheel={{
                 eventsTarget: "#home-section",
                 releaseOnEdges: true,
-                sensitivity: 0.5,
+                sensitivity: 0.7,
                 thresholdDelta: 10,
-                thresholdTime: 700,
+                thresholdTime: 800,
               }}
               effect={"creative"}
               creativeEffect={{
