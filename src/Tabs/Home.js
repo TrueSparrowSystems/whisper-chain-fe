@@ -53,11 +53,11 @@ const Home = () => {
   };
 
   React.useEffect(() => {
-   if(isFirstLoad){
-    fetchData(paginationParams.current)
-   } else{
-    fetchNextData(paginationParams.current)
-   }
+    if (isFirstLoad) {
+      fetchData(paginationParams.current)
+    } else {
+      fetchNextData(paginationParams.current)
+    }
   }, []);
 
   const fetchNextData = async (paginationParams) => {
@@ -113,7 +113,7 @@ const Home = () => {
                 releaseOnEdges: true,
                 sensitivity: 0.5,
                 thresholdDelta: 10,
-                thresholdTime: 1000,
+                thresholdTime: 700,
               }}
               effect={"creative"}
               creativeEffect={{
