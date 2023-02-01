@@ -71,3 +71,9 @@ background: rgba(255, 255, 255, 0.2);
   font-feature-settings: 'salt' on;
   color: rgba(0, 0, 0, 0.6);
 }
+
+@media only screen and (max-width: 1024px) {
+  .container{
+    display: none;
+  }
+}

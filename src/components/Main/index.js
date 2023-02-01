@@ -8,16 +8,16 @@ export default function Main() {
 
   return (
     <div className={styles.pageWrapper} id="home-section">
-      <div className={styles.pageWrap}>
       <Header />
       <div className={styles.componentWrapper}>
-        <Home />
-      </div>
-      <BottomTabSelector />
-      </div>
-      <div className={styles.mobileView}>
+         <div className={styles.pageWrap}>
+          <Home />
+         </div>
+        <div className={styles.mobileView}>
         <JoinedFromMobile />
       </div>
+      </div>
+      <BottomTabSelector />
     </div>
   );
 }
