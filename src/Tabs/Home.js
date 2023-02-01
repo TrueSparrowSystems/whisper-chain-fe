@@ -102,76 +102,46 @@ const Home = () => {
                   : null}
               </div>
             </div>
-            {/* <Swiper
-                // freeMode
-                // followFinger
-                direction={"vertical"}
-                slidesPerView={1}
-                spaceBetween={30}
-                mousewheel={{
-                  eventsTarget: "#home-section",
-                  releaseOnEdges: true,
-                  sensitivity: 0.5,
-                  thresholdDelta: 10,
-                  thresholdTime: 650,
-                }}
-                effect={"creative"}
-                creativeEffect={{
-                  prev: {
-                    translate: [0, "-100%", 0],
-                  },
-                  next: {
-                    translate: [0, "100%", 0],
-                  },
-                }}
-                modules={[Mousewheel, EffectCreative]}
-                onSlideChange={(swiper) =>
-                  setCurrentSlideIndex(swiper.activeIndex)
-                }
-                onReachEnd={onReachEndHandler}
-              >
-                {publicationData &&
-                  publicationData.map((pub, index) => (
-                    <SwiperSlide key={pub?.pubId + index}>
-                      <div className="absolute top-0">
-                        <div className="slide w-full flex justify-start relative">
-                          {pub?.comments[0] ? (
-                            <ImagesStack imageDetails={pub?.comments} pub={pub} />
-                          ) : null}
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  ))}
-              </Swiper> */}
             <Swiper
+              // freeMode
+              // followFinger
               direction={"vertical"}
               slidesPerView={1}
               spaceBetween={30}
               mousewheel={{
+                eventsTarget: "#home-section",
                 releaseOnEdges: true,
                 sensitivity: 0.5,
                 thresholdDelta: 10,
                 thresholdTime: 650,
               }}
-              modules={[Mousewheel]}
-              className="mySwiper"
+              effect={"creative"}
+              creativeEffect={{
+                prev: {
+                  translate: [0, "-100%", 0],
+                },
+                next: {
+                  translate: [0, "100%", 0],
+                },
+              }}
+              modules={[Mousewheel, EffectCreative]}
               onSlideChange={(swiper) =>
                 setCurrentSlideIndex(swiper.activeIndex)
               }
               onReachEnd={onReachEndHandler}
             >
               {publicationData &&
-                  publicationData.map((pub, index) => (
-                    <SwiperSlide key={pub?.pubId + index}>
-                      <div className="absolute top-0">
-                        <div className="slide w-full flex justify-start relative">
-                          {pub?.comments[0] ? (
-                            <ImagesStack imageDetails={pub?.comments} pub={pub} />
-                          ) : null}
-                        </div>
+                publicationData.map((pub, index) => (
+                  <SwiperSlide key={pub?.pubId + index}>
+                    <div className="absolute top-0">
+                      <div className="slide w-full flex justify-start relative">
+                        {pub?.comments[0] ? (
+                          <ImagesStack imageDetails={pub?.comments} pub={pub} index={index} />
+                        ) : null}
                       </div>
-                    </SwiperSlide>
-                  ))}
+                    </div>
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </div>
         </div>

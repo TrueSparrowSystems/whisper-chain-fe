@@ -8,25 +8,25 @@ import BlackEyeIcon from "../assets/BlackEyeIcon";
 // import FollowButton from "./FollowButton";
 import { convertIntoIpfsUrl } from "../utils/Utils.js"
 
-const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
+const ImagesStack = ({ imageDetails, pub, index }) => {
   const [hovered, setHovered] = React.useState(false);
   const { setPublication } = usePublicationContext();
-  const imageDetails = imageDetailsArray[0];
+  const firstImageDetails = imageDetails[0];
   const router = useRouter();
-  // console.log("image details", imageDetails);
-  // console.log("image detail array", imageDetailsArray);
-
+  // console.log("image details", firstImageDetails);
+  // console.log("image detail array", imageDetails);
 
   return (
     <div className="flex flex-col items-center relative">
-      {imageDetails?.imageUrl && (
+      {firstImageDetails?.imageUrl && (
         <div
           className="tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] relative"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
           <Image
-            src={imageDetails.imageUrl}
+            // src={firstImageDetails.imageUrl}
+            src={`https://dummyimage.com/512x512&text=swiper-card%20${index}`}
             alt="Stack Image"
             fill
             priority
@@ -35,14 +35,6 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
               (max-width: 1200px) 50vw,
               33vw"
           />
-          {/* <img src={imageDetails.imageUrl}
-            alt="Stack Image"
-            fill
-            priority
-            className="relative flex z-[3] rounded-[48px]"
-            sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" /> */}
         </div>
       )}
       {hovered && (
@@ -55,27 +47,27 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             className={`flex relative p-[40px] rounded-tr-[48px] rounded-tl-[48px]  backdrop-blur-[2px] ${styles.backdrop} `}
           >
             <div className={`flex w-[360px]`}>
-              <ProfileLogo profileImageUrl={imageDetails?.profileImageUrl} />
+              <ProfileLogo profileImageUrl={firstImageDetails?.profileImageUrl} />
               <div className="ml-[5px] flex flex-col justify-center items-start gap-[4px]">
                 <div
                   className={`not-italic leading-[100%] text-[#FFFFFF] font-bold text-[14px] ${styles.name}`}
                 >
-                  {imageDetails?.name || "Lewis"}
+                  {firstImageDetails?.name || "Lewis"}
                 </div>
                 <div
                   className={`not-italic font-normal text-[14px] leading-[100%] text-[#FFFFFF] ${styles.Handle}`}
                 >
-                  {"@" + imageDetails?.profileHandle || "Lewis.xyz"}
+                  {"@" + firstImageDetails?.profileHandle || "Lewis.xyz"}
                 </div>
               </div>
             </div>
             {/* <div
               className={`not-italic text-[16px] leading-[100%] text-[#FFFFFF] font-medium ${styles.createdAt}`}
             >
-              {imageDetails?.createdAt || "2:32 pm"}
+              {firstImageDetails?.createdAt || "2:32 pm"}
             </div> */}
 
-            {/* <FollowButton data={imageDetails} /> */}
+            {/* <FollowButton data={firstImageDetails} /> */}
           </div>
           <div
             className={`flex justify-center items-center absolute top-[85%] left-[50%] text-center gap-[8px] tablet:w-[340px] w-[432px] h-[40px] rounded-[4px] backdrop-blur-[60px] cursor-pointer ${styles.bottomBox}`}
@@ -99,26 +91,16 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             alt="Stack Image 2"
             className="rounded-[48px]"
             fill
-            src={
-              imageDetailsArray[1]?.imageUrl
-                ? imageDetailsArray[1].imageUrl
-                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image15.png"
-            }
+            // src={
+            //   imageDetails[1]?.imageUrl
+            //     ? imageDetails[1].imageUrl
+            //     : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image15.png"
+            // }
+            src={`https://dummyimage.com/512x512&text=swiper-card%20${index}`}
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
           />
-          {/* <img alt="Stack Image 2"
-            className="rounded-[48px]"
-            fill
-            src={
-              imageDetailsArray[1]?.imageUrl
-                ? imageDetailsArray[1].imageUrl
-                : "https://static.staging.whisperchain.xyz/stability/image15.png"
-            }
-            sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" /> */}
         </div>
       </div>
       <div className="absolute bottom-[-44px] z-[1]">
@@ -127,26 +109,16 @@ const ImagesStack = ({ imageDetails: imageDetailsArray, pub }) => {
             alt="Stack Image 3"
             className="rounded-[48px]"
             fill
-            src={
-              imageDetailsArray[2]?.imageUrl
-                ? imageDetailsArray[2].imageUrl
-                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image16.png"
-            }
+            // src={
+            //   imageDetails[2]?.imageUrl
+            //     ? imageDetails[2].imageUrl
+            //     : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image16.png"
+            // }
+            src={`https://dummyimage.com/512x512&text=swiper-card%20${index}`}
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
           />
-          {/* <img alt="Stack Image 3"
-            className="rounded-[48px]"
-            fill
-            src={
-              imageDetailsArray[2]?.imageUrl
-                ? imageDetailsArray[2].imageUrl
-                : "https://static.staging.whisperchain.xyz/stability/image16.png"
-            }
-            sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" /> */}
         </div>
       </div>
     </div>
