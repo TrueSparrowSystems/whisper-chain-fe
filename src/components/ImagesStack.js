@@ -25,8 +25,7 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
           onMouseLeave={() => setHovered(false)}
         >
           <Image
-            // src={firstImageDetails.imageUrl}
-            src={`https://dummyimage.com/512x512&text=swiper-card%20${index}`}
+            src={firstImageDetails.imageUrl}
             alt="Stack Image"
             fill
             priority
@@ -91,12 +90,11 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
             alt="Stack Image 2"
             className="rounded-[48px]"
             fill
-            // src={
-            //   imageDetails[1]?.imageUrl
-            //     ? imageDetails[1].imageUrl
-            //     : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image15.png"
-            // }
-            src={`https://dummyimage.com/512x512&text=swiper-card%20${index}`}
+            src={
+              imageDetails[1]?.imageUrl
+                ? imageDetails[1].imageUrl
+                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image15.png"
+            }
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
@@ -109,12 +107,11 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
             alt="Stack Image 3"
             className="rounded-[48px]"
             fill
-            // src={
-            //   imageDetails[2]?.imageUrl
-            //     ? imageDetails[2].imageUrl
-            //     : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image16.png"
-            // }
-            src={`https://dummyimage.com/512x512&text=swiper-card%20${index}`}
+            src={
+              imageDetails[2]?.imageUrl
+                ? imageDetails[2].imageUrl
+                : "https://whisperchain-staging-static-files.s3.us-east-2.amazonaws.com/stability/image16.png"
+            }
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
