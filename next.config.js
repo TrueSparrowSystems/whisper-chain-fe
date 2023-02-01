@@ -4,6 +4,7 @@ const securityHeaders = require('./headers')
 
 module.exports = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
