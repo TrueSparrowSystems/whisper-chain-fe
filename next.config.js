@@ -4,7 +4,7 @@ const securityHeaders = require('./headers')
 
 module.exports = {
   images: {
-    unoptimized: true,
+    unoptimized: false,
     remotePatterns: [
       {
         protocol: "https",
@@ -58,6 +58,6 @@ module.exports = {
   },
   env: {
     /* WARNING!!! THESE ARE ACCESSABLE IN FRONTEND CODE! BE-AWARE */
-    W_DOMAIN : process.env.W_DOMAIN,
+    W_DOMAIN: process.env.W_DOMAIN,
   },
 };
