@@ -3,6 +3,7 @@ import Logo from "../../assets/Logo";
 import HeaderSignin from "./HeaderSignin";
 import SignInModal from "../SignInModal";
 import { resetLocalStorage } from "../../utils/Utils";
+import styles from "./Header.module.css";
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
@@ -30,10 +31,8 @@ const Header = () => {
 
   return (
     <div
-      className={
-        "px-[50px] flex-row flex justify-between items-center w-full z-[10000] relative pt-[40px]"
-      }
-      id="Header"
+      className= {`px-[50px] flex-row flex justify-between items-center w-full z-[10000] relative pt-[40px] ${styles.headerWrapper} `}
+        id="Header"
     >
       <Logo />
       <div className="flex ml-auto gap-[16px]">
