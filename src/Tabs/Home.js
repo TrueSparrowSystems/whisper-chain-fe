@@ -136,7 +136,7 @@ const Home = () => {
                     <div className="absolute top-0">
                       <div className="slide w-full flex justify-start relative">
                         {pub?.comments[0] ? (
-                          <ImagesStack imageDetails={pub?.comments} pub={pub} />
+                          <ImagesStack imageDetails={pub?.comments} pub={pub} index={index} />
                         ) : null}
                       </div>
                     </div>
