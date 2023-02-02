@@ -52,14 +52,14 @@ module.exports = {
       }
     ];
   },
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'https://api.staging.whisperchain.xyz/api/:path*' // Proxy to Backend
-      }
-    ]
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/api/:path*',
+  //       destination: 'https://api.staging.whisperchain.xyz/api/:path*' // Proxy to Backend
+  //     }
+  //   ]
+  // },
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
