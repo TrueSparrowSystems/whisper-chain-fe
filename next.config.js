@@ -56,7 +56,7 @@ module.exports = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://api.staging.whisperhain.xyz/api/:path*' // Proxy to Backend
+        destination: 'https://api.staging.whisperchain.xyz/api/:path*' // Proxy to Backend
       }
     ]
   },
