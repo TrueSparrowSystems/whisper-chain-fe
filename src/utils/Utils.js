@@ -149,7 +149,7 @@ const getReturnValues = (countDown) => {
 
 export const getProfileImage = () => {
   const profile = JSON.parse(window.localStorage.getItem("profile"));
-  return profile.picture
+  return profile?.picture
     ? convertIntoIpfsUrl(profile.picture?.original?.url)
     : `https://cdn.stamp.fyi/avatar/eth:${profile.ownedBy}?s=250`;
 };
