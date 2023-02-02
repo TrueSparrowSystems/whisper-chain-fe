@@ -52,6 +52,14 @@ module.exports = {
       }
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://api.staging.whisperhain.xyz/:path*' // Proxy to Backend
+      }
+    ]
+  },
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
