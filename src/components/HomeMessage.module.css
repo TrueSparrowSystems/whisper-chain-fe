@@ -19,10 +19,10 @@
 }
 
 .ImageDivText {
-    font-family: 'Satoshi Variable';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 140%;
     text-align: center;
 }

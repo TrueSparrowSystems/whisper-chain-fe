@@ -201,7 +201,7 @@
 
 .errorStateBox {
   box-shadow: 0px 8px 8px -8px rgba(0, 0, 0, 0.2), 0px 16px 24px rgba(0, 0, 0, 0.16);
-  font-family: 'Satoshi Variable';
+  font-family: 'Roboto', sans-serif;
   color: rgba(0, 0, 0, 0.8);
 
   position: absolute;
