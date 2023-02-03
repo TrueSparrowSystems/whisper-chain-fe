@@ -9,7 +9,7 @@
 }
 
 .HandlerName {
-    font-family: 'Satoshi Variable';
+    font-family: 'Roboto', sans-serif;
     font-feature-settings: 'salt' on;
 }
 
@@ -19,7 +19,7 @@
 
 .HeaderSignInbtn {
     box-shadow: 0px 8px 32px rgba(111, 26, 255, 0.32), inset 0px -4px 8px rgba(255, 255, 255, 0.6), inset 0px -8px 16px rgba(71, 0, 192, 0.2);
-    font-family: 'Satoshi Variable';
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-feature-settings: 'salt' on;
@@ -27,7 +27,7 @@
 
 
 .ModalContainer {
-    font-family: 'Satoshi Variable';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -57,14 +57,14 @@
 } */
 
 .LensInfo {
-    font-family: 'Satoshi Variable';
+    font-family: 'Roboto', sans-serif;
     line-height: 160%;
     font-feature-settings: 'salt' on;
     color: rgba(0, 0, 0, 0.8);
 }
 
 .LogOutText {
-    font-family: 'Satoshi Variable';
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 160%;
@@ -73,7 +73,7 @@
 }
 
 .ModalContainer {
-    font-family: 'Satoshi Variable';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -84,7 +84,7 @@
 }
 
 .LensInfo {
-    font-family: 'Satoshi Variable';
+    font-family: 'Roboto', sans-serif;
     line-height: 160%;
     font-feature-settings: 'salt' on;
     color: rgba(0, 0, 0, 0.8);

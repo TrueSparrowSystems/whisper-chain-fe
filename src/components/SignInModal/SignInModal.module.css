@@ -1,5 +1,5 @@
 .ModalContainer {
-  font-family: 'Satoshi Variable';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -10,14 +10,14 @@
 }
 
 .LensInfo {
-  font-family: 'Satoshi Variable';
+  font-family: 'Roboto', sans-serif;
   line-height: 160%;
   font-feature-settings: 'salt' on;
   color: rgba(0, 0, 0, 0.8);
 }
 
 .claimText{
-  font-family: 'Satoshi Variable';
+  font-family: 'Roboto', sans-serif;
 }
 
 .createInput {
