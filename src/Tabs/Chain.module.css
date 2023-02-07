@@ -19,7 +19,7 @@
 }
 
 .messageText {
-   font-family: 'Roboto', sans-serif;
+     font-family: 'Satoshi';
    font-feature-settings: 'salt' on;
    color: rgba(0, 0, 0, 0.8);
 }

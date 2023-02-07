@@ -44,7 +44,7 @@
   color: #000000;
 }
 .ModalContainer{
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Satoshi';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -54,7 +54,7 @@
   color: #000000;
 }
 .LensInfo{
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Satoshi';
   line-height: 160%;
   font-feature-settings: 'salt' on;
   color: rgba(0, 0, 0, 0.8);

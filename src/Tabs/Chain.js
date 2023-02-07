@@ -14,7 +14,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import ArrowLeft from "../assets/ArrowLeft";
 import { usePublicationContext } from "../context/PublicationContext";
 
-const PAGE_LIMIT = 10;
+const PAGE_LIMIT = 2;
 
 const Chain = () => {
   const [chainData, setChainData] = React.useState([]);
@@ -93,16 +93,17 @@ const Chain = () => {
       decreaseOpacity();
     }
     const { scrollTop, scrollHeight, clientHeight } = buttonRef.current;
-    // console.log("scrollTop", scrollTop);
-    // console.log("clientHeight", clientHeight);
-    // console.log("scrollTop + clientHeight", scrollTop + clientHeight);
-    // console.log("scrollHeight", scrollHeight);
-    // const halfscrollHeight = scrollHeight / 2;
+    console.log("scrollTop", scrollTop);
+    console.log("clientHeight", clientHeight);
+    console.log("scrollTop + clientHeight", scrollTop + clientHeight);
+    console.log("scrollHeight", scrollHeight);
+    const halfscrollHeight = scrollHeight / 2;
     // console.log("halfscrollHeight", halfscrollHeight);
 
     if (buttonRef.current) {
       if (scrollTop + clientHeight === scrollHeight) {
-        hasMore && fetchNextData();
+        console.log("------in scroll");
+        hasMore && fetchNextData();    
         return;
       }
     }
