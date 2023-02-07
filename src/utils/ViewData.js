@@ -83,6 +83,7 @@ export const getChainData = async (paginationParams) => {
         imageUrl: convertIntoIpfsUrl(image.url),
         profileHandle: user?.platform_username,
         name: user?.platform_display_name,
+        totalWhispers: chain.total_whispers,
         createdAt: moment(whisper?.uts).format("h:mm a"),
         profileImageUrl: profileImage
           ? convertIntoIpfsUrl(profileImage?.url)
@@ -91,6 +92,7 @@ export const getChainData = async (paginationParams) => {
         lensterPostUrl: `https://testnet.lenster.xyz/posts/${whisper.platform_chain_id}`,
         profileId: user?.platform_user_id,
       };
+      console.log("total whispers", chain.total_whispers)
       console.log("------image --", whisperData.imageUrl);
       commentArray.push(whisperData);
     });
@@ -104,6 +106,7 @@ export const getChainData = async (paginationParams) => {
         createdAt: chain?.start_ts,
         imageUrl: convertIntoIpfsUrl(image.url),
         profileHandle: user?.platform_username,
+        totalWhispers: chain?.total_whispers,
         name: user?.platform_display_name,
         profileImageUrl: profileImage
           ? convertIntoIpfsUrl(profileImage?.url)
@@ -124,6 +127,7 @@ export const getChainData = async (paginationParams) => {
       createdAt: chain.start_ts,
       timeDifference: b.diff(a, "minutes"),
       metadata: null,
+      totalWhispers: chain?.total_whispers,
     });
   });
   return dataObject;

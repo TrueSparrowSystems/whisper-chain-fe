@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import BlackEyeIcon from "../assets/BlackEyeIcon";
 // import FollowButton from "./FollowButton";
 import { convertIntoIpfsUrl } from "../utils/Utils.js"
+import ChainIcon from "../assets/ChainIcon";
 
 const ImagesStack = ({ imageDetails, pub, index }) => {
   const [hovered, setHovered] = React.useState(false);
@@ -15,7 +16,7 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
   const router = useRouter();
   // console.log("image details", firstImageDetails);
   // console.log("image detail array", imageDetails);
-
+  console.log(firstImageDetails);
   return (
     <div className="flex flex-col items-center relative">
       {firstImageDetails?.imageUrl && (
@@ -69,7 +70,7 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
             {/* <FollowButton data={firstImageDetails} /> */}
           </div>
           <div
-            className={`flex justify-center items-center absolute top-[85%] left-[50%] text-center gap-[8px] tablet:w-[340px] w-[432px] h-[40px] rounded-[4px] backdrop-blur-[60px] cursor-pointer ${styles.bottomBox}`}
+            className={`flex justify-center items-center absolute top-[82%] left-[50%] text-center gap-[8px] tablet:w-[340px] w-[432px] h-[40px] rounded-[4px] backdrop-blur-[60px] cursor-pointer ${styles.bottomBox}`}
             onClick={() => {
               setPublication(pub);
               router.push(`/chain/${pub?.chainId}`);
@@ -80,6 +81,12 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
             >
               <BlackEyeIcon />
               <div>View Chain </div>
+            </div>
+            <div className="flex items-center relative top-[35px] mt-[20px]">
+              <ChainIcon />
+              <p className="ml-[10px] text-[16px] text-[#ffffff]">
+                {firstImageDetails.totalWhispers} whispers
+              </p>
             </div>
           </div>
         </div>
