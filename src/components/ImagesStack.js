@@ -82,13 +82,13 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
               <BlackEyeIcon />
               <div>View Chain </div>
             </div>
-            <div className="flex items-center relative top-[35px] mt-[20px]">
+          </div>
+          <div className="flex items-center absolute top-[88%] left-[40%] mt-[20px]">
               <ChainIcon />
               <p className="ml-[10px] text-[16px] text-[#ffffff]">
                 {firstImageDetails.totalWhispers} whispers
               </p>
             </div>
-          </div>
         </div>
       )}
       <div className="absolute bottom-[-26px] z-[2]">
