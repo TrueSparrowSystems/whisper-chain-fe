@@ -319,7 +319,7 @@ function Generate({ chainId }) {
         </div>
         {/* Image Gallery */}
         <div className={styles.imageGalleryContainer}>
-          <div className={styles.galleryMainText}>Your generations</div>
+          <div className={styles.galleryMainText}>Your AI generations</div>
           {urls.map((url, index) => (
             <div className={styles.imageTryOutputBox} key={index}>
               <div className="flex items-center justify-center w-full gap-[12px]">

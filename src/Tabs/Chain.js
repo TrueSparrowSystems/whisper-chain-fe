@@ -102,7 +102,7 @@ const Chain = () => {
 
     if (buttonRef.current) {
       if (scrollTop + clientHeight === scrollHeight) {
-        console.log("------in scroll");
+        // console.log("------in scroll");
         hasMore && fetchNextData();    
         return;
       }
@@ -211,7 +211,7 @@ const Chain = () => {
             <a
               onClick={() => {
                 // console.log("clicked");
-                dContainer.scrollTo(0, 100000);
+                dContainer.scrollTo(0, dContainer.scrollHeight);
               }}
               id="gopToTop"
               className={`rounded-[20px] flex z-[10000] items-center justify-center ${style.bottomButton}`}
