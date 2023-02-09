@@ -111,9 +111,9 @@ const Home = () => {
               mousewheel={{
                 eventsTarget: "#home-section",
                 releaseOnEdges: true,
-                sensitivity: 0.8,
+                sensitivity: 1,
                 thresholdDelta: 10,
-                thresholdTime: 550,
+                thresholdTime: 600,
               }}
               effect={"creative"}
               creativeEffect={{

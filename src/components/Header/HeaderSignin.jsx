@@ -85,7 +85,7 @@ const HeaderSignin = ({ handleOpen }) => {
 
               return isSigned ? (
                 <div className="flex justify-center items-center gap-[8px] z-[111] cursor-pointer">
-                  <div className={` box-border flex justify-center items-center  py-[4px] px-[16px] w-auto h-[36px] bg-[#FFFFFF] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HeaderSignInbtn}`} onClick={handleModalOpen}>
+                  <div className={` box-border flex justify-center items-center  py-[4px] px-[16px] w-auto h-[36px] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HandleName}`} onClick={handleModalOpen}>
                     {JSON.parse(window.localStorage.getItem("profile"))?.handle}
                   </div>
                   <img

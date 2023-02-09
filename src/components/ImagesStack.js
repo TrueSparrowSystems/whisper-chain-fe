@@ -69,6 +69,7 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
 
             {/* <FollowButton data={firstImageDetails} /> */}
           </div>
+          <div>
           <div
             className={`flex justify-center items-center absolute top-[82%] left-[50%] text-center gap-[8px] tablet:w-[340px] w-[432px] h-[40px] rounded-[4px] backdrop-blur-[60px] cursor-pointer ${styles.bottomBox}`}
             onClick={() => {
@@ -90,6 +91,7 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
               </p>
             </div>
         </div>
+          </div>
       )}
       <div className="absolute bottom-[-26px] z-[2]">
         <div className="tablet:w-[350px] tablet:h-[400px] w-[452px] h-[512px] relative">

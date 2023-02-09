@@ -73,7 +73,7 @@ export default function BottomTabSelector() {
         className={`flex relative not-italic justify-end font-medium text-[16px] ${styles.infoTab}`}
       >
         <div className="hover:text-[#000000]">
-          <button onClick={handlePLGClick}>Made with 🧡 by PLG</button>
+          <button onClick={handlePLGClick}>Made with 🧡 by True Sparrow</button>
         </div>
       </div>
     </div>
