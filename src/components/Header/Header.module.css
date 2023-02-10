@@ -9,7 +9,7 @@
 }
 
 .HandlerName {
-      font-family: 'Satoshi';
+    font-family: 'Satoshi';
     font-feature-settings: 'salt' on;
 }
 
@@ -25,11 +25,22 @@
     font-size: 14px;
     line-height: 160%;
     font-feature-settings: 'salt' on;
+    color: #00501E;
+}
+.HeaderSignInbtn:hover{
+    color: #01501e!important;
+    background: linear-gradient(0deg,hsla(0,0%,100%,.2),hsla(0,0%,100%,.2)),radial-gradient(107.14% 107.14% at 50% 80.95%,#aafe2d 0,#9f0 100%); 
 }
 
+.HandleName {
+    background: rgba(255, 255, 255, 0.72);
+    background-blend-mode: screen, normal;
+    box-shadow: 0px 2px 4px rgba(111, 26, 255, 0.08);
+    backdrop-filter: blur(60px);
+}
 
 .ModalContainer {
-      font-family: 'Satoshi';
+    font-family: 'Satoshi';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -59,14 +70,14 @@
 } */
 
 .LensInfo {
-      font-family: 'Satoshi';
+    font-family: 'Satoshi';
     line-height: 160%;
     font-feature-settings: 'salt' on;
     color: rgba(0, 0, 0, 0.8);
 }
 
 .LogOutText {
-      font-family: 'Satoshi';
+    font-family: 'Satoshi';
     font-size: 14px;
     font-weight: 700;
     line-height: 160%;
@@ -75,7 +86,7 @@
 }
 
 .ModalContainer {
-      font-family: 'Satoshi';
+    font-family: 'Satoshi';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -86,7 +97,7 @@
 }
 
 .LensInfo {
-      font-family: 'Satoshi';
+    font-family: 'Satoshi';
     line-height: 160%;
     font-feature-settings: 'salt' on;
     color: rgba(0, 0, 0, 0.8);
@@ -122,9 +133,9 @@
     margin-top: 5px;
     font-size: 12px;
 }
+
 @media only screen and (max-width: 1024px) {
-    .headerWrapper{
-       visibility: hidden;
+    .headerWrapper {
+        visibility: hidden;
     }
-  }
-  
+}

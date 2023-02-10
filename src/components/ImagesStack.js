@@ -69,26 +69,28 @@ const ImagesStack = ({ imageDetails, pub, index }) => {
 
             {/* <FollowButton data={firstImageDetails} /> */}
           </div>
-          <div
-            className={`flex justify-center items-center absolute top-[82%] left-[50%] text-center gap-[8px] tablet:w-[340px] w-[432px] h-[40px] rounded-[4px] backdrop-blur-[60px] cursor-pointer ${styles.bottomBox}`}
-            onClick={() => {
-              setPublication(pub);
-              router.push(`/chain/${pub?.chainId}`);
-            }}
-          >
+          <div className={`flex flex-col justify-center items-center absolute top-[82%] left-[50%] text-center gap-[8px] w-full -translate-x-[50%] rounded-br-[48px] rounded-bl-[48px] ${styles.bottomBackdrop}`}>
             <div
-              className={`flex justify-center items-center absolute text-center text-[#000000] not-italic font-medium text-[16px] leading-[100%] gap-[8px] ${styles.bottomBoxText}`}
+              className={`flex justify-center items-center absolute top-[82%] left-[50%] text-center gap-[8px] tablet:w-[340px] w-[432px] h-[40px] rounded-[4px] backdrop-blur-[60px] cursor-pointer ${styles.bottomBox}`}
+              onClick={() => {
+                setPublication(pub);
+                router.push(`/chain/${pub?.chainId}`);
+              }}
             >
-              <BlackEyeIcon />
-              <div>View Chain </div>
+              <div
+                className={`flex justify-center items-center absolute text-center text-[#000000] not-italic font-medium text-[16px] leading-[100%] gap-[8px] ${styles.bottomBoxText}`}
+              >
+                <BlackEyeIcon />
+                <div>View Chain </div>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center absolute top-[88%] left-[40%] mt-[20px]">
+            <div className="flex items-center absolute top-[30px] left-[40%] mt-[20px]">
               <ChainIcon />
               <p className="ml-[10px] text-[16px] text-[#ffffff]">
                 {firstImageDetails.totalWhispers} whispers
               </p>
             </div>
+          </div>
         </div>
       )}
       <div className="absolute bottom-[-26px] z-[2]">
