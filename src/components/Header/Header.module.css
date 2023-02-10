@@ -25,6 +25,11 @@
     font-size: 14px;
     line-height: 160%;
     font-feature-settings: 'salt' on;
+    color: #00501E;
+}
+.HeaderSignInbtn:hover{
+    color: #01501e!important;
+    background: linear-gradient(0deg,hsla(0,0%,100%,.2),hsla(0,0%,100%,.2)),radial-gradient(107.14% 107.14% at 50% 80.95%,#aafe2d 0,#9f0 100%);
 }
 
 .HandleName {
