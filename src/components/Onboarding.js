@@ -17,13 +17,12 @@ const Onboarding = ({ publication, setOnBoarding }) => {
     });
 
     const [index, setIndex] = React.useState(0);
-
     const onBoardingDetailsArray = [
         {
             title:
                 "Welcome to Whisper chain",
             subTitle: "A new fun take on age old game some of you might know as Chinese whisper or Telephone. But with a twist of A.I.",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/mobile-background.mp4",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4",
             type: "video/mp4"
         },
         {
@@ -51,56 +50,60 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Join the fun",
             subTitle: "Recreate the last image added to the chain by using the A.I. generation tool on our platform. ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v3.mp4",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v5.mp4",
             type: "video/mp4"
         },
     ];
 
     return (
         <div>
-            { index === 0 &&
-                <video autoPlay muted loop className="rounded-t-[20px]">
-                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/mobile-background.mp4" type={onBoardingDetailsArray[index].type} />
-               </video>
+            {index === 0 &&
+                <video autoPlay muted loop className="rounded-t-[16px]" width={512}
+                height={280}>
+                    <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4" type={onBoardingDetailsArray[index].type} />
+                </video>
             }
-            { index === 1 &&
-                <video autoPlay muted loop className="rounded-t-[20px]">
-                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4" type={onBoardingDetailsArray[index].type} />
-               </video>
+            {index === 1 &&
+                <video autoPlay muted loop className="rounded-t-[16px]" width={512}
+                height={280}>
+                    <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4" type={onBoardingDetailsArray[index].type} />
+                </video>
             }
-            { index === 2 &&
-                <video autoPlay muted loop className="rounded-t-[20px]">
-                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v3.mp4" type={onBoardingDetailsArray[index].type} />
-               </video>
+            {index === 2 &&
+                <video autoPlay muted loop className="rounded-t-[16px]" width={512}
+                height={280}>
+                    <source src="https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4" type={onBoardingDetailsArray[index].type} />
+                </video>
             }
-            { index === 3 &&
-                <video autoPlay muted loop className="rounded-t-[20px]">
-                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v3.mp4" type={onBoardingDetailsArray[index].type} />
-               </video>
+            {index === 3 &&
+                <img
+                    alt="Stack Image 3"
+                    className="rounded-t-[16px]"
+                    fill
+                    src="https://static.staging.whisperchain.xyz/whisperHomePage/support-creators.png"
+                    width={512}
+                    height={280}
+                />
             }
-            { index == 4 &&
-                <video autoPlay muted loop className="rounded-t-[20px]">
-                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4" type={onBoardingDetailsArray[index].type} />
-               </video>
+            {index == 4 &&
+                <video autoPlay muted loop className="rounded-t-[16px]">
+                    <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v5.mp4" type={onBoardingDetailsArray[index].type} />
+                </video>
             }
-            <div className="p-[30px]">
-                <p className="text-[20px] font-bold text-[#000000]">{onBoardingDetailsArray[index].title}</p>
-                <p className="text-[16px] text-[#000000] opacity-80 pt-[5px]">{onBoardingDetailsArray[index].subTitle}</p>
+            <div>
+                <p className="text-[20px] font-bold text-[#000000] py-[5px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
+                <p className="text-[16px] text-[#000000] opacity-80 pt-[5px] px-[20px]">{onBoardingDetailsArray[index].subTitle}</p>
                 {index === 0 &&
-                    <div className="flex justify-center mt-[50px] tablet:mt-[20px] w-full">
+                    <div className="flex justify-center mt-[50px] tablet:mt-[10px] w-full">
                         <button
                             className={`${styles.nextButton}`}
                             onClick={() => {
                                 setIndex(index + 1);
-                                if (index === 4 ) {
-                                    window.localStorage.setItem("onBoardingKey", false);
-                                    setOnBoarding(false);
-                                }
                             }}>Next</button>
                     </div>
                 }
-                {index > 0 && index <= 3 ?     
-                    <div className="flex justify-between mt-[50px]">
+                {index > 0 && index <= 3 ?
+                    <div className="flex justify-between mt-[40px] px-[20px]">
                         <button
                             className={`${styles.backOnboard}`}
                             onClick={() => {
@@ -110,15 +113,11 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                             className={`${styles.nextButtonOnboard}`}
                             onClick={() => {
                                 setIndex(index + 1);
-                                if (index === 4) {
-                                    window.localStorage.setItem("onBoardingKey", false);
-                                    setOnBoarding(false);
-                                }
                             }}>Next</button>
-                    </div> : <div> </div>      
+                    </div> : <div> </div>
                 }
                 {index === 4 &&
-                    <div className="flex justify-center mt-[50px] tablet:mt-[20px] w-full">
+                    <div className="flex justify-center mt-[40px] px-[20px] tablet:mt-[20px] w-full">
                         <button
                             className={`${styles.nextButton}`}
                             onClick={() => {
@@ -130,7 +129,26 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                             }}>Get Started</button>
                     </div>
                 }
+                {index === 1 ?
+                    <div className="flex justify-center pt-[35px]">
+                        <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                        <span className={` mr-[5px] ${styles.bottomBorder}`}></span>
+                        <span className={`${styles.bottomBorder}`}></span>
+                    </div> : index >= 2 && index < 4 ?
+                        <div className="flex justify-center pt-[35px]">
+                            <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                            <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                            <span className={`${styles.bottomBorder}`}></span>
+                        </div> : index === 4 &&
+                        <div className="flex justify-center pt-[35px]">
+                            <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                            <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                            <span className={`${styles.bottomBorderBlue}`}></span>
+                        </div>
+                }
+
             </div>
+
         </div>
     );
 };
