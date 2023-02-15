@@ -284,7 +284,7 @@ export const PostImage = ({ imageDetails, chainId }) => {
                   <button
                     className={`flex items-center relative bottom-[10px] p-[10px] w-[432px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] cursor-auto ${styles.collectedBtn}`}
                   >
-                    Collected
+                    Collected 
                   </button>
                 ) : (
                   <button
