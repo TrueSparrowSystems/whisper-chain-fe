@@ -51,23 +51,57 @@ const Onboarding = ({ publication, setOnBoarding }) => {
 
     return (
         <div>
-            <video autoPlay muted loop className="rounded-t-[20px]">
-                <source src={onBoardingDetailsArray[index].src} type={onBoardingDetailsArray[index].type} />
-            </video>
+            { index === 0 &&
+                <video autoPlay muted loop className="rounded-t-[20px]">
+                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/mobile-background.mp4" type={onBoardingDetailsArray[index].type} />
+               </video>
+            }
+            { index === 1 &&
+                <video autoPlay muted loop className="rounded-t-[20px]">
+                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4" type={onBoardingDetailsArray[index].type} />
+               </video>
+            }
+            { index > 1 &&
+                <video autoPlay muted loop className="rounded-t-[20px]">
+                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v3.mp4" type={onBoardingDetailsArray[index].type} />
+               </video>
+            }
+
             <div className="p-[30px]">
                 <p className="text-[20px] font-bold text-[#000000]">{onBoardingDetailsArray[index].title}</p>
                 <p className="text-[16px] text-[#000000] opacity-80 pt-[5px]">{onBoardingDetailsArray[index].subTitle}</p>
-                <div className="flex justify-center mt-[50px] tablet:mt-[20px] w-full">
-                    <button 
-                   className= {`${styles.nextButton}`} 
-                     onClick={() => {
-                        setIndex(index + 1);
-                        if (index === 3) {
-                            window.localStorage.setItem("onBoardingKey", false);
-                            setOnBoarding(false);
-                        }
-                    }}>Next</button>
-                </div>
+                {index === 0 &&
+                    <div className="flex justify-center mt-[50px] tablet:mt-[20px] w-full">
+                        <button
+                            className={`${styles.nextButton}`}
+                            onClick={() => {
+                                setIndex(index + 1);
+                                if (index === 3) {
+                                    window.localStorage.setItem("onBoardingKey", false);
+                                    setOnBoarding(false);
+                                }
+                            }}>Next</button>
+                    </div>
+                }
+                {index > 0 &&
+                         
+                    <div className="flex justify-between mt-[50px]">
+                        <button
+                            className={`${styles.backOnboard}`}
+                            onClick={() => {
+                                setIndex(index - 1);
+                            }}>Back</button>
+                        <button
+                            className={`${styles.nextButtonOnboard}`}
+                            onClick={() => {
+                                setIndex(index + 1);
+                                if (index === 3) {
+                                    window.localStorage.setItem("onBoardingKey", false);
+                                    setOnBoarding(false);
+                                }
+                            }}>Next</button>
+                    </div>
+                }
             </div>
         </div>
     );
