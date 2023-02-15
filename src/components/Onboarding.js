@@ -58,31 +58,29 @@ const Onboarding = ({ publication, setOnBoarding }) => {
     return (
         <div>
             {index === 0 &&
-                <video autoPlay muted loop className="rounded-t-[16px]" width={512}
-                height={280}>
+                <video autoPlay muted loop className="rounded-t-[16px]"
+                    height={280}>
                     <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4" type={onBoardingDetailsArray[index].type} />
                 </video>
             }
             {index === 1 &&
-                <video autoPlay muted loop className="rounded-t-[16px]" width={512}
-                height={280}>
+                <video autoPlay muted loop className="rounded-t-[16px]"
+                    height={280}>
                     <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4" type={onBoardingDetailsArray[index].type} />
                 </video>
             }
             {index === 2 &&
-                <video autoPlay muted loop className="rounded-t-[16px]" width={512}
-                height={280}>
+                <video autoPlay muted loop className="rounded-t-[16px]"
+                    height={280}>
                     <source src="https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4" type={onBoardingDetailsArray[index].type} />
                 </video>
             }
             {index === 3 &&
                 <img
                     alt="Stack Image 3"
-                    className="rounded-t-[16px]"
+                    className="rounded-t-[16px] w-[512px] h-[280px] tablet:h-[240px]"
                     fill
                     src="https://static.staging.whisperchain.xyz/whisperHomePage/support-creators.png"
-                    width={512}
-                    height={280}
                 />
             }
             {index == 4 &&
@@ -91,10 +89,10 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                 </video>
             }
             <div>
-                <p className="text-[20px] font-bold text-[#000000] py-[5px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
-                <p className="text-[16px] text-[#000000] opacity-80 pt-[5px] px-[20px]">{onBoardingDetailsArray[index].subTitle}</p>
+                <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] py-[5px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
+                <p className="text-[16px] tablet:text-[14px] text-[#000000] opacity-80 pt-[5px] px-[20px]">{onBoardingDetailsArray[index].subTitle}</p>
                 {index === 0 &&
-                    <div className="flex justify-center mt-[50px] tablet:mt-[10px] w-full">
+                    <div className="flex justify-center mt-[50px] tablet:mt-[10px] tablet:px-[20px] w-full">
                         <button
                             className={`${styles.nextButton}`}
                             onClick={() => {
@@ -103,7 +101,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                     </div>
                 }
                 {index > 0 && index <= 3 ?
-                    <div className="flex justify-between mt-[40px] px-[20px]">
+                    <div className="flex justify-between tablet:mt-[10px] mt-[40px] px-[20px]">
                         <button
                             className={`${styles.backOnboard}`}
                             onClick={() => {
@@ -130,23 +128,22 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                     </div>
                 }
                 {index === 1 ?
-                    <div className="flex justify-center pt-[35px]">
+                    <div className="flex justify-center tablet:pt-[10px] pt-[35px]">
                         <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                         <span className={` mr-[5px] ${styles.bottomBorder}`}></span>
                         <span className={`${styles.bottomBorder}`}></span>
                     </div> : index >= 2 && index < 4 ?
-                        <div className="flex justify-center pt-[35px]">
+                        <div className="flex justify-center tablet:pt-[10px]  pt-[35px]">
                             <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                             <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
                             <span className={`${styles.bottomBorder}`}></span>
                         </div> : index === 4 &&
-                        <div className="flex justify-center pt-[35px]">
+                        <div className="flex justify-center tablet:pt-[10px]  pt-[35px]">
                             <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                             <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
                             <span className={`${styles.bottomBorderBlue}`}></span>
                         </div>
                 }
-
             </div>
 
         </div>
