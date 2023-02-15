@@ -80,7 +80,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             }
             { index == 4 &&
                 <video autoPlay muted loop className="rounded-t-[20px]">
-                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-4.mp4" type={onBoardingDetailsArray[index].type} />
+                <source src="https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4" type={onBoardingDetailsArray[index].type} />
                </video>
             }
             <div className="p-[30px]">
@@ -115,7 +115,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                                     setOnBoarding(false);
                                 }
                             }}>Next</button>
-                    </div>     : <div> </div>      
+                    </div> : <div> </div>      
                 }
                 {index === 4 &&
                     <div className="flex justify-center mt-[50px] tablet:mt-[20px] w-full">
