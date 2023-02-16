@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./HomeMessage.module.css";
+import BackIcon from "../assets/backIcon"
 
 
 const Onboarding = ({ publication, setOnBoarding }) => {
@@ -20,7 +21,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
     const onBoardingDetailsArray = [
         {
             title:
-                "Welcome to Whisper chain",
+                "Welcome to Whisper Chain",
             subTitle: "A new fun take on age old game some of you might know as Chinese whisper or Telephone. But with a twist of A.I.",
             src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4",
             type: "video/mp4"
@@ -57,6 +58,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
 
     return (
         <div>
+            <div className="h-[280px] w-[510px]">
             {index === 0 &&
                 <video autoPlay muted loop className="rounded-t-[16px]"
                     height={280}>
@@ -78,9 +80,9 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             {index === 3 &&
                 <img
                     alt="Stack Image 3"
-                    className="rounded-t-[16px] w-[512px] h-[280px] tablet:h-[240px]"
+                    className="rounded-t-[16px]"
                     fill
-                    src="https://static.staging.whisperchain.xyz/whisperHomePage/support-creators.png"
+                    src="https://static.staging.whisperchain.xyz/whisperHomePage/support-creator.png"
                 />
             }
             {index == 4 &&
@@ -88,62 +90,68 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                     <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v5.mp4" type={onBoardingDetailsArray[index].type} />
                 </video>
             }
-            <div>
-                <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] py-[5px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
+            </div>
+            <div className="">
+                <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
                 <p className="text-[16px] tablet:text-[14px] text-[#000000] opacity-80 pt-[5px] px-[20px]">{onBoardingDetailsArray[index].subTitle}</p>
-                {index === 0 &&
-                    <div className="flex justify-center mt-[50px] tablet:mt-[10px] tablet:px-[20px] w-full">
-                        <button
-                            className={`${styles.nextButton}`}
-                            onClick={() => {
-                                setIndex(index + 1);
-                            }}>Next</button>
-                    </div>
-                }
-                {index > 0 && index <= 3 ?
-                    <div className="flex justify-between tablet:mt-[10px] mt-[40px] px-[20px]">
-                        <button
-                            className={`${styles.backOnboard}`}
-                            onClick={() => {
-                                setIndex(index - 1);
-                            }}>Back</button>
-                        <button
-                            className={`${styles.nextButtonOnboard}`}
-                            onClick={() => {
-                                setIndex(index + 1);
-                            }}>Next</button>
-                    </div> : <div> </div>
-                }
-                {index === 4 &&
-                    <div className="flex justify-center mt-[40px] px-[20px] tablet:mt-[20px] w-full">
-                        <button
-                            className={`${styles.nextButton}`}
-                            onClick={() => {
-                                setIndex(index + 1);
-                                if (index === 4) {
-                                    window.localStorage.setItem("onBoardingKey", false);
-                                    setOnBoarding(false);
-                                }
-                            }}>Get Started</button>
-                    </div>
-                }
-                {index === 1 ?
-                    <div className="flex justify-center tablet:pt-[10px] pt-[35px]">
-                        <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
-                        <span className={` mr-[5px] ${styles.bottomBorder}`}></span>
-                        <span className={`${styles.bottomBorder}`}></span>
-                    </div> : index >= 2 && index < 4 ?
-                        <div className="flex justify-center tablet:pt-[10px]  pt-[35px]">
-                            <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
-                            <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
-                            <span className={`${styles.bottomBorder}`}></span>
-                        </div> : index === 4 &&
-                        <div className="flex justify-center tablet:pt-[10px]  pt-[35px]">
-                            <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
-                            <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
-                            <span className={`${styles.bottomBorderBlue}`}></span>
+                <div>
+                    {index === 0 &&
+                        <div className="flex justify-center mt-[72px] tablet:mt-[10px] tablet:px-[20px] w-full">
+                            <button
+                                className={`${styles.nextButton}`}
+                                onClick={() => {
+                                    setIndex(index + 1);
+                                }}>Next</button>
                         </div>
-                }
+                    }
+                    {index > 0 && index <= 3 ?
+                        <div className="flex justify-between tablet:mt-[10px] mt-[40px] px-[20px]">
+                            <button
+                                className={`flex items-center ${styles.backOnboard}`}
+                                onClick={() => {
+                                    setIndex(index - 1);
+                                }}>
+                                <BackIcon />
+                                <span className="ml-[5px] text-black opacity-40"> Back</span>
+                            </button>
+                            <button
+                                className={`${styles.nextButtonOnboard}`}
+                                onClick={() => {
+                                    setIndex(index + 1);
+                                }}>Next</button>
+                        </div> : <div> </div>
+                    }
+                    {index === 4 &&
+                        <div className="flex justify-center mt-[40px] px-[20px] tablet:mt-[20px] w-full">
+                            <button
+                                className={`${styles.nextButton}`}
+                                onClick={() => {
+                                    setIndex(index + 1);
+                                    if (index === 4) {
+                                        window.localStorage.setItem("onBoardingKey", false);
+                                        setOnBoarding(false);
+                                    }
+                                }}>Get Started</button>
+                        </div>
+                    }
+                    {index === 1 ?
+                        <div className="flex justify-center tablet:pt-[10px] pt-[35px]">
+                            <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                            <span className={` mr-[5px] ${styles.bottomBorder}`}></span>
+                            <span className={`${styles.bottomBorder}`}></span>
+                        </div> : index >= 2 && index < 4 ?
+                            <div className="flex justify-center tablet:pt-[10px]  pt-[35px]">
+                                <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                                <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                                <span className={`${styles.bottomBorder}`}></span>
+                            </div> : index === 4 &&
+                            <div className="flex justify-center tablet:pt-[10px]  pt-[35px]">
+                                <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                                <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                                <span className={`${styles.bottomBorderBlue}`}></span>
+                            </div>
+                    }
+                </div>
             </div>
 
         </div>
