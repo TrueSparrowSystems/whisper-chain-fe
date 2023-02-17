@@ -1,7 +1,6 @@
 import React from "react";
+import BackIcon from "../assets/BackIcon";
 import styles from "./HomeMessage.module.css";
-import BackIcon from "../assets/backIcon"
-
 
 const Onboarding = ({ publication, setOnBoarding }) => {
     //tablet view
@@ -59,7 +58,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
 
     return (
         <div>
-            <div className="h-[280px] w-[510px]">
+            <div className="tablet:h-full tablet:w-auto h-[280px] w-[510px]">
             {index === 0 &&
                 <video autoPlay muted loop className="rounded-t-[16px]"
                     height={280}>
@@ -92,13 +91,13 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                 </video>
             }
             </div>
-            <div className="">
-                <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
+            <div className="transition-property: transform transition-duration: 2s;">
+                <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] tablet:pt-[4px] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
                 <p className="text-[16px] tablet:text-[14px] text-[#000000] opacity-80 pt-[4px] px-[20px]">{onBoardingDetailsArray[index].subTitle}</p>
                 <p className={`px-[20px] pt-[4px] ${styles.learnMore}`}>{onBoardingDetailsArray[index].learn}</p>
                 <div>
                     {index === 0 &&
-                        <div className="flex justify-center mt-[72px] tablet:mt-[10px] tablet:px-[20px] w-full">
+                        <div className="flex justify-center mt-[72px] tablet:mt-[30px] tablet:px-[20px] w-full">
                             <button
                                 className={`${styles.nextButton}`}
                                 onClick={() => {
@@ -107,17 +106,17 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                         </div>
                     }
                     {index > 0 && index <= 3 ?
-                        <div className={ index == 1 ? "flex items-center justify-between tablet:mt-[10px] mt-[47px] px-[20px]" : "flex items-center justify-between tablet:mt-[10px] mt-[72px] px-[20px]"}>
+                        <div className={ index == 1 ? "flex items-center justify-between tablet:mt-[0px] mt-[47px] px-[20px]" : "flex items-center justify-between tablet:mt-[34px] mt-[72px] px-[20px]"}>
                             <button
                                 className={`flex items-center ${styles.backOnboard}`}
                                 onClick={() => {
                                     setIndex(index - 1);
                                 }}>
-                                <BackIcon />
+                               <BackIcon />
                                 <span className="ml-[15px] text-black opacity-40"> Back</span>
                             </button>
                             <button
-                                className={`${styles.nextButtonOnboard}`}
+                                className={`tablet:h-[32px] w-[180px] ${styles.nextButtonOnboard}`}
                                 onClick={() => {
                                     setIndex(index + 1);
                                 }}>Next</button>
