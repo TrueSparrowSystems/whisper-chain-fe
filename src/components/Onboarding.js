@@ -31,6 +31,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Built on Lens",
             subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a composable and decentralized social graph. ",
+            learn: "Learn more",
             type: "video/mp4"
         },
         {
@@ -93,7 +94,8 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             </div>
             <div className="">
                 <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
-                <p className="text-[16px] tablet:text-[14px] text-[#000000] opacity-80 pt-[5px] px-[20px]">{onBoardingDetailsArray[index].subTitle}</p>
+                <p className="text-[16px] tablet:text-[14px] text-[#000000] opacity-80 pt-[4px] px-[20px]">{onBoardingDetailsArray[index].subTitle}</p>
+                <p className={`px-[20px] pt-[4px] ${styles.learnMore}`}>{onBoardingDetailsArray[index].learn}</p>
                 <div>
                     {index === 0 &&
                         <div className="flex justify-center mt-[72px] tablet:mt-[10px] tablet:px-[20px] w-full">
@@ -105,14 +107,14 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                         </div>
                     }
                     {index > 0 && index <= 3 ?
-                        <div className="flex justify-between tablet:mt-[10px] mt-[40px] px-[20px]">
+                        <div className={ index == 1 ? "flex items-center justify-between tablet:mt-[10px] mt-[47px] px-[20px]" : "flex items-center justify-between tablet:mt-[10px] mt-[72px] px-[20px]"}>
                             <button
                                 className={`flex items-center ${styles.backOnboard}`}
                                 onClick={() => {
                                     setIndex(index - 1);
                                 }}>
                                 <BackIcon />
-                                <span className="ml-[5px] text-black opacity-40"> Back</span>
+                                <span className="ml-[15px] text-black opacity-40"> Back</span>
                             </button>
                             <button
                                 className={`${styles.nextButtonOnboard}`}
@@ -122,7 +124,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                         </div> : <div> </div>
                     }
                     {index === 4 &&
-                        <div className="flex justify-center mt-[40px] px-[20px] tablet:mt-[20px] w-full">
+                        <div className="flex justify-center mt-[72px] px-[20px] tablet:mt-[20px] w-full">
                             <button
                                 className={`${styles.nextButton}`}
                                 onClick={() => {
@@ -135,17 +137,17 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                         </div>
                     }
                     {index === 1 ?
-                        <div className="flex justify-center tablet:pt-[10px] pt-[35px]">
+                        <div className="flex justify-center tablet:pt-[10px] pt-[6px]">
                             <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                             <span className={` mr-[5px] ${styles.bottomBorder}`}></span>
                             <span className={`${styles.bottomBorder}`}></span>
                         </div> : index >= 2 && index < 4 ?
-                            <div className="flex justify-center tablet:pt-[10px]  pt-[35px]">
+                            <div className="flex justify-center tablet:pt-[10px]  pt-[6px]">
                                 <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                                 <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
                                 <span className={`${styles.bottomBorder}`}></span>
                             </div> : index === 4 &&
-                            <div className="flex justify-center tablet:pt-[10px]  pt-[35px]">
+                            <div className="flex justify-center tablet:pt-[10px]  pt-[6px]">
                                 <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                                 <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
                                 <span className={`${styles.bottomBorderBlue}`}></span>
