@@ -59,37 +59,37 @@ const Onboarding = ({ publication, setOnBoarding }) => {
     return (
         <div>
             <div className="tablet:h-full tablet:w-auto h-[280px] w-[510px]">
-            {index === 0 &&
-                <video autoPlay muted loop className="rounded-t-[16px]"
-                    height={280}>
-                    <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4" type={onBoardingDetailsArray[index].type} />
-                </video>
-            }
-            {index === 1 &&
-                <video autoPlay muted loop className="rounded-t-[16px]"
-                    height={280}>
-                    <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4" type={onBoardingDetailsArray[index].type} />
-                </video>
-            }
-            {index === 2 &&
-                <video autoPlay muted loop className="rounded-t-[16px]"
-                    height={280}>
-                    <source src="https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4" type={onBoardingDetailsArray[index].type} />
-                </video>
-            }
-            {index === 3 &&
-                <img
-                    alt="Stack Image 3"
-                    className="rounded-t-[16px]"
-                    fill
-                    src="https://static.staging.whisperchain.xyz/whisperHomePage/support-creator.png"
-                />
-            }
-            {index == 4 &&
-                <video autoPlay muted loop className="rounded-t-[16px]">
-                    <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v5.mp4" type={onBoardingDetailsArray[index].type} />
-                </video>
-            }
+                {index === 0 &&
+                    <video autoPlay muted loop className="rounded-t-[16px]"
+                        height={280}>
+                        <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4" type={onBoardingDetailsArray[index].type} />
+                    </video>
+                }
+                {index === 1 &&
+                    <video autoPlay muted loop className="rounded-t-[16px]"
+                        height={280}>
+                        <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4" type={onBoardingDetailsArray[index].type} />
+                    </video>
+                }
+                {index === 2 &&
+                    <video autoPlay muted loop className="rounded-t-[16px]"
+                        height={280}>
+                        <source src="https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4" type={onBoardingDetailsArray[index].type} />
+                    </video>
+                }
+                {index === 3 &&
+                    <img
+                        alt="Stack Image 3"
+                        className="rounded-t-[16px]"
+                        fill
+                        src="https://static.staging.whisperchain.xyz/whisperHomePage/support-creator.png"
+                    />
+                }
+                {index == 4 &&
+                    <video autoPlay muted loop className="rounded-t-[16px]">
+                        <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v5.mp4" type={onBoardingDetailsArray[index].type} />
+                    </video>
+                }
             </div>
             <div className="transition-property: transform transition-duration: 2s;">
                 <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] tablet:pt-[4px] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
@@ -106,13 +106,13 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                         </div>
                     }
                     {index > 0 && index <= 3 ?
-                        <div className={ index == 1 ? "flex items-center justify-between tablet:mt-[0px] mt-[47px] px-[20px]" : "flex items-center justify-between tablet:mt-[34px] mt-[72px] px-[20px]"}>
+                        <div className={index == 1 ? "flex items-center justify-between tablet:mt-[0px] mt-[47px] px-[20px]" : "flex items-center justify-between tablet:mt-[34px] mt-[72px] px-[20px]"}>
                             <button
                                 className={`flex items-center ${styles.backOnboard}`}
                                 onClick={() => {
                                     setIndex(index - 1);
                                 }}>
-                               <BackIcon />
+                                <BackIcon />
                                 <span className="ml-[15px] text-black opacity-40"> Back</span>
                             </button>
                             <button
@@ -140,12 +140,12 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                             <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                             <span className={` mr-[5px] ${styles.bottomBorder}`}></span>
                             <span className={`${styles.bottomBorder}`}></span>
-                        </div> : index >= 2 && index < 4 ?
+                        </div> : index === 2 ?
                             <div className="flex justify-center tablet:pt-[10px]  pt-[6px]">
                                 <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                                 <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
                                 <span className={`${styles.bottomBorder}`}></span>
-                            </div> : index === 4 &&
+                            </div> : index === 3 &&
                             <div className="flex justify-center tablet:pt-[10px]  pt-[6px]">
                                 <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                                 <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
