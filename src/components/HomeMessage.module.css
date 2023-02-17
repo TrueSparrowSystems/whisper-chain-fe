@@ -51,9 +51,19 @@
     width: 16px;
     height: 4px;
 }
+
 .bottomBorder {
     background: #DADADA;
     border-radius: 2px;
     width: 16px;
     height: 4px;
+}
+
+.learnMore {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    color: rgba(0, 0, 0, 0.8);
+    /* border-bottom: 1px solid; */
 }
