@@ -15,7 +15,7 @@
 }
 
 .mobileCardImage {
-    background-image: url('../../public/wcr.gif');
+    background-image: url('https://static.staging.whisperchain.xyz/whisperHomePage/mobile-background.mp4');
     height: 280px;
     background-repeat: no-repeat;
     background-size: 512px;
