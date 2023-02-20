@@ -32,10 +32,14 @@ const HomeMessage = ({ publication }) => {
 
 
   return (
+    <>
+    { onBoarding ?
+     <div>
+       <Onboarding setOnBoarding={setOnBoarding} />
+    </div> :
     <div
       className={`tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] ${styles.MessageBox}`}
     >
-      {onBoarding ? <Onboarding setOnBoarding={setOnBoarding} /> :
         <div>
           <div className="tablet:w-[400px] w-[512px] flex justify-center text-center rounded-[48px]">
             <div className={`${styles.Message}`}>
@@ -152,8 +156,9 @@ const HomeMessage = ({ publication }) => {
             />
           </div>
         </div>
-      }
     </div>
+    }
+    </>
   );
 };
 
