@@ -53,14 +53,14 @@ const Home = () => {
   };
 
   React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (isFirstLoad) {
-        fetchData(paginationParams.current)
-      } else {
-        fetchNextData(paginationParams.current)
-      }
+    // if (typeof window !== "undefined") {
+      
+    // }
+    if (isFirstLoad) {
+      fetchData(paginationParams.current)
+    } else {
+      fetchNextData(paginationParams.current)
     }
-
   }, []);
 
   const fetchNextData = async (paginationParams) => {
