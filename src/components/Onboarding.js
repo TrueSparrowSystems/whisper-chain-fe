@@ -22,7 +22,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Welcome to Whisper Chain",
             subTitle: "A new fun take on age old game some of you might know as Chinese whisper or Telephone. But with a twist of A.I.",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-vid-1.mp4",
             type: "video/mp4"
         },
         {
@@ -30,7 +30,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                 "Built on Lens",
             subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a composable and decentralized social graph. ",
             learn: "Learn more",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-vid-2.mp4",
             type: "video/mp4"
         },
         {
@@ -60,7 +60,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
 
     return (
         <div
-            className={index >= 0 && index < 2 ? `tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] ${styles.MessageBox}` : `tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] ${styles.supportCreativity}`}
+            className={`tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] ${styles.MessageBox}`}
         >
             <div className={`tablet:h-full tablet:w-auto h-[280px] w-[510px] ${styles.videoContainer}`}>
                 {index === 3 ? <img
@@ -74,6 +74,9 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                         <source src={onBoardingDetailsArray[index].src} type={onBoardingDetailsArray[index].type} />
                     </video>
                 }
+
+                <div className={`${styles.cardGradient}`}>
+                </div>
 
             </div>
             <div>
