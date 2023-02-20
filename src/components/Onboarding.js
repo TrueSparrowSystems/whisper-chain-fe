@@ -37,21 +37,21 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Support creativity",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-vid-3.mp4",
             type: "video/mp4"
         },
         {
             title:
                 "Support creators",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/support-creator.png",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/support-creators-img.png",
             type: "video/mp4"
         },
         {
             title:
                 "Join the fun",
             subTitle: "Recreate the last image added to the chain by using the A.I. generation tool on our platform. ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/join-in-the-fun.mp4",
             type: "video/mp4"
         },
     ];
@@ -82,7 +82,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             <div>
                 <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] tablet:pt-[4px] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
                 <p className="text-[16px] tablet:text-[14px] text-[#000000] opacity-80 pt-[4px] px-[20px]">{onBoardingDetailsArray[index].subTitle}</p>
-                <p className={`px-[20px] pt-[4px] ${styles.learnMore}`}><a href="https://www.lens.xyz/" className="cursor-pointer border-b-1">{onBoardingDetailsArray[index].learn}</a></p>
+                <p className={`px-[20px] pt-[4px] ${styles.learnMore}`}><a href="https://www.lens.xyz/" className={`cursor-pointer ${styles.learnMoreLink}`}>{onBoardingDetailsArray[index].learn}</a></p>
                 <div>
                     {index === 0 &&
                         <div className="flex justify-center mt-[72px] tablet:mt-[30px] tablet:px-[20px] w-full">
