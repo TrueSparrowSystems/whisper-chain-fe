@@ -5,6 +5,7 @@ on:
     branches:
       - "rc-*"
       - "main"
+      - "preperformance_change"
 
 jobs:
   deploy:
