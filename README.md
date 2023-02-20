@@ -32,7 +32,7 @@
 ### Lens Protocol
 - Lens protocol is being used in all the 4 flows described under "Flow-wise Implementation Details" section.
 - We have fetched post and comment data using Lens GraphQL APIs from both web frontend and backend.
-- Wallet connect flow
+- Wallet connect flows
     - For *authenticating with Lens*, a challenge text is signed and sent to Lens using the selected wallet. Lens provides an access token, which helps in further API calls.
     - Using the *access token*, we fetch the Lens profile, if exists, OR take the user to the Lens profile creation flow.
 - Generate whisper flow
