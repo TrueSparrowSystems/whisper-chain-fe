@@ -74,5 +74,8 @@
     font-size: 16px;
     line-height: 160%;
     color: rgba(0, 0, 0, 0.8);
-    /* border-bottom: 1px solid; */
+}
+
+.learnMoreLink{
+    border-bottom: 1px solid;
 }
