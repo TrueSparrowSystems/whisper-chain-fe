@@ -60,7 +60,6 @@ const Home = () => {
         fetchNextData(paginationParams.current)
       }
     }
-
   }, []);
 
   const fetchNextData = async (paginationParams) => {
