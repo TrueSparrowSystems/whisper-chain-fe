@@ -44,14 +44,14 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Support creators",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/support-creator.png",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/support-creators-img.png",
             type: "video/mp4"
         },
         {
             title:
                 "Join the fun",
             subTitle: "Recreate the last image added to the chain by using the A.I. generation tool on our platform. ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v5.mp4",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/join-in-the-fun.mp4",
             type: "video/mp4"
         },
     ];
