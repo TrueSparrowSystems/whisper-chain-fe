@@ -2,7 +2,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import React from "react";
 import Image from "next/image";
 import styles from "./Header.module.css";
-import { getProfileImage, resetLocalStorage,logoutApi } from "../../utils/Utils";
+import { getProfileImage, resetLocalStorage, logoutApi } from "../../utils/Utils";
 import Modal from "react-modal";
 import SignOutLogo from "../../assets/SignOutLogo";
 import Router from "next/router";
@@ -14,7 +14,7 @@ const HeaderSignin = ({ handleOpen }) => {
   // console.log("get profile image",getProfileImage());
 
   const [open, setOpen] = React.useState(false);
-  const { isSigned, onSignin} = useSignin();
+  const { isSigned, onSignin } = useSignin();
   const handleModalClose = () => {
     setOpen(false);
   };
@@ -77,42 +77,47 @@ const HeaderSignin = ({ handleOpen }) => {
               if (!connected) {
                 return (
                   <button onClick={handleOpen} className={`flex gap-[8px] w-full h-[36px] py-[7px] px-[24px] rounded-[40px] not-italic font-bold text-[#01501E] ${styles.HeaderSignInbtn}`}>
-                    <LensPurpleIcon/>
+                    <LensPurpleIcon />
                     Sign In with lens
                   </button>
                 );
               }
 
               return isSigned ? (
-                <div className="flex justify-center items-center gap-[8px] z-[111] cursor-pointer">
-                  <div className={` box-border flex justify-center items-center  py-[4px] px-[16px] w-auto h-[36px] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HandleName}`} onClick={handleModalOpen}>
-                    {JSON.parse(window.localStorage.getItem("profile"))?.handle}
-                  </div>
-                  <img
-                    src={getProfileImage() ?? "https://cdn.stamp.fyi/avatar/eth:0x3a72452af2ddc056330bbcb43898134c9adb51cf?s=250"}
-                    alt="profile"
-                    className="rounded-[18px] w-[36px] h-[36px]"
-                    onClick={handleModalOpen}
-                  />
-                  <Modal onRequestClose={handleModalClose} isOpen={open} style={customStyles} ariaHideApp={false}>
-                    <div className="flex flex-row items-center py-[15px] pl-[20px] w-full color-red" onClick={
-                      () => {
-                        callLogoutApi();
-                        onSignin(false);
-                        Router.reload();
-                        handleModalClose();
-                        resetLocalStorage();
-                      }
-                    }
-                    >
-                      <SignOutLogo />
-                      <div className={`pl-[10px] ${styles.LogOutText}`}>Logout</div>
+                <div>
+                  <div className="flex justify-center items-center gap-[8px] z-[111] cursor-pointer">
+                    <div className={` box-border flex justify-center items-center  py-[4px] px-[16px] w-auto h-[36px] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HandleName}`} onClick={handleModalOpen}>
+                      {JSON.parse(window.localStorage.getItem("profile"))?.handle}
                     </div>
-                  </Modal>
+                    <img
+                      src={getProfileImage() ?? "https://cdn.stamp.fyi/avatar/eth:0x3a72452af2ddc056330bbcb43898134c9adb51cf?s=250"}
+                      alt="profile"
+                      className="rounded-[18px] w-[36px] h-[36px]"
+                      onClick={handleModalOpen}
+                    />
+                    <Modal onRequestClose={handleModalClose} isOpen={open} style={customStyles} ariaHideApp={false}>
+                      <div className="flex flex-row items-center py-[15px] pl-[20px] w-full color-red" onClick={
+                        () => {
+                          callLogoutApi();
+                          onSignin(false);
+                          Router.reload();
+                          handleModalClose();
+                          resetLocalStorage();
+                        }
+                      }
+                      >
+                        <SignOutLogo />
+                        <div className={`pl-[10px] ${styles.LogOutText}`}>Logout</div>
+                      </div>
+                    </Modal>
+                  </div>
+                  <div>
+                    <p className="text-[12px] text-black opacity-60">on testnet</p>
+                  </div>
                 </div>
               ) :
                 <button onClick={handleOpen} className={`flex gap-[8px]  w-full h-[36px] py-[7px] px-[24px] bg-[#FFFFFF] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HeaderSignInbtn}`}>
-                  <LensPurpleIcon/>
+                  <LensPurpleIcon />
                   Sign In with lens
                 </button>
             })()}
