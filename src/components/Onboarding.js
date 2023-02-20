@@ -22,32 +22,37 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Welcome to Whisper Chain",
             subTitle: "A new fun take on age old game some of you might know as Chinese whisper or Telephone. But with a twist of A.I.",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/join-in-the-fun.mp4"
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4",
+            type: "video/mp4"
         },
         {
             title:
                 "Built on Lens",
             subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a composable and decentralized social graph. ",
             learn: "Learn more",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4"
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4",
+            type: "video/mp4"
         },
         {
             title:
                 "Support creativity",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4"
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4",
+            type: "video/mp4"
         },
         {
             title:
                 "Support creators",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/support-creator.png"
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/support-creator.png",
+            type: "video/mp4"
         },
         {
             title:
                 "Join the fun",
             subTitle: "Recreate the last image added to the chain by using the A.I. generation tool on our platform. ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4"
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4",
+            type: "video/mp4"
         },
     ];
 
@@ -58,41 +63,18 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             className={index >= 0 && index < 2 ? `tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] ${styles.MessageBox}` : `tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] ${styles.supportCreativity}`}
         >
             <div className={`tablet:h-full tablet:w-auto h-[280px] w-[510px] ${styles.videoContainer}`}>
-                {/* {index === 0 &&
+                {index === 3 ? <img
+                    alt="Stack Image 3"
+                    className="rounded-t-[16px]"
+                    fill
+                    src={onBoardingDetailsArray[index].src}
+                /> :
                     <video autoPlay muted loop className="rounded-t-[16px]"
-                        height={280}>
-                        <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v1.mp4" type={onBoardingDetailsArray[index].type} />
+                        height={280} key={onBoardingDetailsArray[index].src}>
+                        <source src={onBoardingDetailsArray[index].src} type={onBoardingDetailsArray[index].type} />
                     </video>
                 }
-                {index === 1 &&
-                    <video autoPlay muted loop className="rounded-t-[16px]"
-                        height={280}>
-                        <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v2.mp4" type={onBoardingDetailsArray[index].type} />
-                    </video>
-                }
-                {index === 2 &&
-                    <video autoPlay muted loop className="rounded-t-[16px]"
-                        height={280}>
-                        <source src="https://static.staging.whisperchain.xyz/whisperHomePage/Support-Creativity.mp4" type={onBoardingDetailsArray[index].type} />
-                    </video>
-                }
-                {index === 3 &&
-                    <img
-                        alt="Stack Image 3"
-                        className="rounded-t-[16px]"
-                        fill
-                        src="https://static.staging.whisperchain.xyz/whisperHomePage/support-creator.png"
-                    />
-                }
-                {index == 4 &&
-                    <video autoPlay muted loop className="rounded-t-[16px]">
-                        <source src="https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-v5.mp4" type={onBoardingDetailsArray[index].type} />
-                    </video>
-                } */}
-                <video autoPlay muted loop className="rounded-t-[16px]"
-                    height={280}>
-                    <source src={onBoardingDetailsArray[index].src} type={onBoardingDetailsArray[index].type} />
-                </video>
+
             </div>
             <div>
                 <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] tablet:pt-[4px] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
