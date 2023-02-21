@@ -1,5 +1,7 @@
 import React from "react";
 import BackIcon from "../assets/BackIcon";
+import PurpleCollectLogo from "../assets/PurpleCollectLogo";
+import PurpleGenerateLogo from "../assets/PurpleGenerateIcon";
 import styles from "./HomeMessage.module.css";
 
 const Onboarding = ({ publication, setOnBoarding }) => {
@@ -38,21 +40,27 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                 "Support creativity",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
             src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-vid-3.mp4",
-            type: "video/mp4"
+            type: "video/mp4",
+            ctaText: "Collect",
+            svg: <PurpleCollectLogo /> 
         },
         {
             title:
                 "Support creators",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
             src: "https://static.staging.whisperchain.xyz/whisperHomePage/support-creators-img.png",
-            type: "video/mp4"
+            type: "video/mp4",
+            ctaText: "Collect",
+            svg: <PurpleCollectLogo /> 
         },
         {
             title:
                 "Join the fun",
             subTitle: "Recreate the last image added to the chain by using the A.I. generation tool on our platform. ",
             src: "https://static.staging.whisperchain.xyz/whisperHomePage/join-in.mp4",
-            type: "video/mp4"
+            type: "video/mp4",
+            ctaText: "Generate",
+            svg: <PurpleGenerateLogo />
         },
     ];
 
@@ -76,8 +84,15 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                 }
 
                 <div className={`${styles.cardGradient}`}>
+                   { index > 1 &&
+                     <div className={`${styles.videoCtaSection}`}>
+                     <button className={`flex ${styles.videoCta}`}>
+                         <span className="mr-[5px]"> {onBoardingDetailsArray[index].svg}  </span>
+                         <span>{onBoardingDetailsArray[index].ctaText}</span>
+                     </button>
+                 </div>
+                   }
                 </div>
-
             </div>
             <div>
                 <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] tablet:pt-[4px] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
