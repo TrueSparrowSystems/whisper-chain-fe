@@ -30,7 +30,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
         {
             title:
                 "Built on Lens",
-            subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a composable and decentralized social graph. ",
+            subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a  and decentralized social graph. ",
             learn: "Learn more",
             src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-vid-2.mp4",
             type: "video/mp4"
@@ -42,16 +42,16 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-vid-3.mp4",
             type: "video/mp4",
             ctaText: "Collect",
-            svg: <PurpleCollectLogo /> 
+            svg: <PurpleCollectLogo />
         },
         {
             title:
                 "Support creators",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/support-creators-img.png",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/Support.png",
             type: "video/mp4",
             ctaText: "Collect",
-            svg: <PurpleCollectLogo /> 
+            svg: <PurpleCollectLogo />
         },
         {
             title:
@@ -73,7 +73,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             <div className={`tablet:h-full tablet:w-auto h-[280px] w-[510px] ${styles.videoContainer}`}>
                 {index === 3 ? <img
                     alt="Stack Image 3"
-                    className="rounded-t-[16px]"
+                    className="rounded-t-[16px] h-[286.5px] w-[512px]"
                     fill
                     src={onBoardingDetailsArray[index].src}
                 /> :
@@ -82,18 +82,17 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                         <source src={onBoardingDetailsArray[index].src} type={onBoardingDetailsArray[index].type} />
                     </video>
                 }
-
-                { index > 0 &&
+                {index > 0 &&
                     <div className={`${styles.cardGradient}`}>
-                    { index > 1 &&
-                      <div className={`${styles.videoCtaSection}`}>
-                      <button className={`flex ${styles.videoCta}`}>
-                          <span className="mr-[5px]"> {onBoardingDetailsArray[index].svg}  </span>
-                          <span>{onBoardingDetailsArray[index].ctaText}</span>
-                      </button>
-                  </div>
-                    }
-                 </div>
+                        {index > 1 &&
+                            <div className={`${styles.videoCtaSection}`}>
+                                <button className={`flex ${styles.videoCta}`}>
+                                    <span className="mr-[5px]"> {onBoardingDetailsArray[index].svg}  </span>
+                                    <span>{onBoardingDetailsArray[index].ctaText}</span>
+                                </button>
+                            </div>
+                        }
+                    </div>
                 }
             </div>
             <div>
@@ -125,7 +124,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                                 onClick={() => {
                                     setIndex(index + 1);
                                 }}>Next</button>
-                        </div> : <div> </div>
+                        </div> : <div></div>
                     }
                     {index === 4 &&
                         <div className="flex justify-center mt-[72px] px-[20px] tablet:mt-[20px] w-full">
