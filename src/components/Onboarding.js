@@ -99,7 +99,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             <div>
                 <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] tablet:pt-[4px] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
                 <p className="text-[16px] tablet:text-[14px] text-[#000000] opacity-80 pt-[4px] px-[20px]">{onBoardingDetailsArray[index].subTitle}</p>
-                <p className={`px-[20px] pt-[4px] ${styles.learnMore}`}><a href="https://www.lens.xyz/" className={`cursor-pointer ${styles.learnMoreLink}`}>{onBoardingDetailsArray[index].learn}</a></p>
+                <p className={`px-[20px] pt-[4px] ${styles.learnMore}`}><a href="https://www.lens.xyz/" target="_blank" className={`cursor-pointer ${styles.learnMoreLink}`}>{onBoardingDetailsArray[index].learn}</a></p>
                 <div>
                     {index === 0 &&
                         <div className="flex justify-center mt-[72px] tablet:mt-[30px] tablet:px-[20px] w-full">
