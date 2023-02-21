@@ -51,7 +51,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Join the fun",
             subTitle: "Recreate the last image added to the chain by using the A.I. generation tool on our platform. ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/join-in-the-fun.mp4",
+            src: "https://static.staging.whisperchain.xyz/whisperHomePage/join-in.mp4",
             type: "video/mp4"
         },
     ];
