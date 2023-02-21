@@ -102,6 +102,10 @@
     color: rgba(0, 0, 0, 0.8);
 }
 
+.learnMore:hover{
+    color: rgba(0, 0, 0);
+}
+
 .learnMoreLink {
     border-bottom: 1px solid;
 }
