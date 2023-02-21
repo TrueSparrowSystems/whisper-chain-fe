@@ -89,6 +89,7 @@ const HeaderSignin = ({ handleOpen }) => {
                     <div className={` box-border flex justify-center items-center  py-[4px] px-[16px] w-auto h-[36px] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HandleName}`} onClick={handleModalOpen}>
                       {JSON.parse(window.localStorage.getItem("profile"))?.handle}
                     </div>
+
                     <img
                       src={getProfileImage() ?? "https://cdn.stamp.fyi/avatar/eth:0x3a72452af2ddc056330bbcb43898134c9adb51cf?s=250"}
                       alt="profile"
@@ -110,6 +111,10 @@ const HeaderSignin = ({ handleOpen }) => {
                         <div className={`pl-[10px] ${styles.LogOutText}`}>Logout</div>
                       </div>
                     </Modal>
+                  </div>
+                  <div className="text-center mr-[38px]">
+                    <span className="text-[12px] mr-[5px] text-black opacity-60">on</span>
+                    <span className="text-[12px] mr-[5px] text-black opacity-80">testnet</span>
                   </div>
                 </div>
               ) :

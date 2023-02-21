@@ -45,9 +45,8 @@ const SignInModal = ({
   const notify = (notifyText) =>
     toast.custom((t) => (
       <div
-        className={`${
-          t.visible ? "animate-enter" : "animate-leave"
-        } max-w-md bg-white shadow-lg rounded-[16px] pointer-events-auto flex justify-center items-center ring-1 ring-black ring-opacity-5`}
+        className={`${t.visible ? "animate-enter" : "animate-leave"
+          } max-w-md bg-white shadow-lg rounded-[16px] pointer-events-auto flex justify-center items-center ring-1 ring-black ring-opacity-5`}
       >
         <div className="flex-1 p-4">
           <div className="flex items-center">
@@ -124,7 +123,7 @@ const SignInModal = ({
         style={customStyles}
       >
         <div
-          className={`flex flex-col justify-start items-start bg-[#FFFFFF] rounded-[16px] backdrop-blur-3xl gap-[16px] p-[40px] ${styles.ModalContainer}`}
+          className={`flex flex-col justify-start items-start bg-[#FFFFFF] rounded-[16px] backdrop-blur-3xl gap-[3px] p-[40px] ${styles.ModalContainer}`}
         >
           <CustomConnectButton
             onSignInComplete={onSignInComplete}
@@ -132,6 +131,10 @@ const SignInModal = ({
             setOpenClaimHandleModal={setOpenClaimHandleModal}
             onSignFailed={onRequestClose}
           />
+          <div className="m-auto">
+            <span className="text-[12px] mr-[5px] text-black opacity-60">on</span>
+            <span className="text-[12px] mr-[5px] text-black opacity-80">testnet</span>
+          </div>
           <div
             className={`flex justify-start flex-col gap-[12px] not-italic text-[12px] font-medium ${styles.LensInfo}`}
           >
