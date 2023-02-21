@@ -83,16 +83,18 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                     </video>
                 }
 
-                <div className={`${styles.cardGradient}`}>
-                   { index > 1 &&
-                     <div className={`${styles.videoCtaSection}`}>
-                     <button className={`flex ${styles.videoCta}`}>
-                         <span className="mr-[5px]"> {onBoardingDetailsArray[index].svg}  </span>
-                         <span>{onBoardingDetailsArray[index].ctaText}</span>
-                     </button>
+                { index > 0 &&
+                    <div className={`${styles.cardGradient}`}>
+                    { index > 1 &&
+                      <div className={`${styles.videoCtaSection}`}>
+                      <button className={`flex ${styles.videoCta}`}>
+                          <span className="mr-[5px]"> {onBoardingDetailsArray[index].svg}  </span>
+                          <span>{onBoardingDetailsArray[index].ctaText}</span>
+                      </button>
+                  </div>
+                    }
                  </div>
-                   }
-                </div>
+                }
             </div>
             <div>
                 <p className="text-[20px] tablet:text-[16px]  font-bold text-[#000000] tablet:pt-[4px] pt-[16px] px-[20px]">{onBoardingDetailsArray[index].title}</p>
