@@ -132,7 +132,8 @@ const SignInModal = ({
             onSignFailed={onRequestClose}
           />
           <div className="m-auto">
-            <span className="text-[12px]">on testnet</span>
+            <span className="text-[12px] mr-[5px] text-black opacity-60">on</span>
+            <span className="text-[12px] mr-[5px] text-black opacity-80">testnet</span>
           </div>
           <div
             className={`flex justify-start flex-col gap-[12px] not-italic text-[12px] font-medium ${styles.LensInfo}`}
