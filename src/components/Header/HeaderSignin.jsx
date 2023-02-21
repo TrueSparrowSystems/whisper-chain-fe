@@ -32,7 +32,7 @@ const HeaderSignin = ({ handleOpen }) => {
       backdropFilter: "blur(60px)",
       borderRadius: "8px",
       padding: "0px",
-      top: "88px",
+      top: "84px",
       border: "1px solid rgba(0, 0, 0, 0.2)",
       boxShadow: "0px 8px 8px -8px rgba(0, 0, 0, 0.2), 0px 16px 24px rgba(0, 0, 0, 0.16)",
       cursor: "pointer",
@@ -79,7 +79,7 @@ const HeaderSignin = ({ handleOpen }) => {
                   <button onClick={handleOpen} className={`flex gap-[8px] w-full h-[36px] py-[7px] px-[24px] rounded-[40px] not-italic font-bold text-[#01501E] ${styles.HeaderSignInbtn}`}>
                     <LensPurpleIcon />
                     Sign In with lens
-                  </button>
+                  </button> 
                 );
               }
 
