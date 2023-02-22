@@ -44,15 +44,14 @@ jobs:
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
 
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - run: mv secrets/frontend.prod.env .env.local
-    - run: npm install
-    - run: npx next build
-    - run: npx next export
+    - name: Build and generate static page
+      run: |-
+        mv secrets/frontend.prod.env .env.local
+        apt install -y curl
+        curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+        apt install -y nodejs
+        npm install
+        npx next build
         
     - id: 'upload-folder'
       env:	
