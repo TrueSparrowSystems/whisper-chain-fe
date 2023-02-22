@@ -44,16 +44,15 @@ jobs:
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
 
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-node@v3
-          with:
-            node-version: 18
-      run: |-
-        mv secrets/frontend.prod.env .env 
-        npm install
-        npx next build
-        npx next export
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - run: mv secrets/frontend.prod.env .env.local
+    - run: npm install
+    - run: npx next build
+    - run: npx next export
         
     - id: 'upload-folder'
       env:	
