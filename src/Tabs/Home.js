@@ -109,12 +109,14 @@ const Home = () => {
               // followFinger
               direction={"vertical"}
               slidesPerView={1}
+              preventClicks={true}
+              preventClicksPropagation={true}
               spaceBetween={30}
               mousewheel={{
                 eventsTarget: "#home-section",
                 releaseOnEdges: true,
                 sensitivity: 1,
-                thresholdDelta: 10,
+                thresholdDelta: 60,
                 thresholdTime: 600,
               }}
               effect={"creative"}
@@ -154,7 +156,7 @@ const Home = () => {
           <HomeMessage publication={publicationData[currentSlideIndex]} />
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
