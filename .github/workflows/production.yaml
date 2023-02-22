@@ -47,9 +47,9 @@ jobs:
     - name: Build and generate static page
       run: |-
         mv secrets/frontend.prod.env .env.local
-        apt install -y curl
+        sudo apt install -y curl
         curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-        apt install -y nodejs
+        sudo apt install -y nodejs
         npm install
         npx next build
         
