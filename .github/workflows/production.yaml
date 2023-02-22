@@ -55,7 +55,7 @@ jobs:
         npx next build
         npx next export
         
-     - id: 'upload-folder'
+    - id: 'upload-folder'
       env:	
         BUCKET_NAME: "whisperchain-frontend"
       uses: 'google-github-actions/upload-cloud-storage@v1'
