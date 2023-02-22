@@ -52,6 +52,7 @@ jobs:
         sudo apt install -y nodejs
         npm install
         npx next build
+        npx next export
         
     - id: 'upload-folder'
       env:	
