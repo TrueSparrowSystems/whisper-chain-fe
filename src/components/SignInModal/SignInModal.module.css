@@ -23,7 +23,7 @@
 .createInput {
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0px 0px 4px rgba(111, 26, 255, 0.24), 0px 0px 8px rgba(229, 214, 255, 0.8);
-  backdrop-filter: blur(80px);
+  /* backdrop-filter: blur(80px); */
   border-radius: 8px;
   width: 266px;
   height: 48px;
