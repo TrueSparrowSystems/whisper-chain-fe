@@ -18,7 +18,7 @@
   left: calc(50% - 478px/2);
   bottom: 48px;
   background: rgba(255, 255, 255, 0.72);
-  /* backdrop-filter: blur(12px); */
+  backdrop-filter: blur(12px);
   border-radius: 100px;
   z-index: 100;
     font-family: 'Satoshi';
@@ -46,7 +46,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   box-shadow: 0px 8px 32px rgba(111, 26, 255, 0.32);
-  /* backdrop-filter: blur(8px); */
+  backdrop-filter: blur(8px);
   border-radius: 100px;
   width: 478px/3;
   gap: 4px;
@@ -55,7 +55,7 @@
 .notSelectedTab{
     background: rgba(0, 0, 0, 0.04);
     color: rgba(0, 0, 0, 0.6);
-    /* backdrop-filter: blur(8px); */
+    backdrop-filter: blur(8px);
     border-radius: 100px;
     width: 478px/3;
     gap: 4px;

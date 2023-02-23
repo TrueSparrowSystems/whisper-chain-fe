@@ -10,7 +10,7 @@
 
 .bottomBackdrop {
     background: linear-gradient(360deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0) 100%);
-    /* backdrop-filter: blur(2px); */
+    backdrop-filter: blur(2px);
 
 }
 
@@ -105,5 +105,5 @@
 }
 
 .hoverBtn {
-    /* backdrop-filter: blur(2px); */
+    backdrop-filter: blur(2px);
 }
