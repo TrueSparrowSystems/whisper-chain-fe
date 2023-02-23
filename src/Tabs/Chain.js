@@ -87,7 +87,7 @@ const Chain = () => {
     if (buttonRef.current?.scrollTop > 100) {
       increaseOpacity();
     } else {
-      decreaseOpacity();
+      decreaseOpacity(); 
     }
   };
 
