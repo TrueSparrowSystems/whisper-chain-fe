@@ -57,6 +57,7 @@ jobs:
         cd out
         gsutil -h "Cache-Control:public, max-age=0" rsync -r ./ gs://whisperchain.xyz/
         gsutil -h "Cache-Control:public, max-age=0" rsync -r ./ gs://www.whisperchain.xyz/
+        sutil -h "Cache-Control:public, max-age=0" rsync -r ./ gs://app.whisperchain.xyz/
 
     - name: Purge cache
       uses: jakejarvis/cloudflare-purge-action@master
