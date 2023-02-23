@@ -15,7 +15,7 @@ export default function BottomTabSelector() {
   };
   const handleNotionClick = () => {
     const plgURL =
-      "https://plgworks.notion.site/Whisper-Chain-fc95cbdc8f9a4a41b87747a190477a61";
+      "https://www.notion.so/truesparrow/Whisper-Chain-fc95cbdc8f9a4a41b87747a190477a61";
     window.open(plgURL, "_blank");
   };
   const router = useRouter();
