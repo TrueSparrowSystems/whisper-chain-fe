@@ -56,6 +56,7 @@ jobs:
         npx next export
         cd out
         gsutil rsync -r ./ gs://whisperchain.xyz/
+        gsutil rsync -r ./ gs://www.whisperchain.xyz/
 
     - name: Purge cache
       uses: jakejarvis/cloudflare-purge-action@master
