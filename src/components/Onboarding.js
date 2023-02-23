@@ -24,7 +24,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Welcome to Whisper Chain",
             subTitle: "A new fun take on age old game some of you might know as Chinese whisper or Telephone. But with a twist of A.I.",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-vid-1.mp4",
+            src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/onboarding-vid-1.mp4`,
             type: "video/mp4"
         },
         {
@@ -32,14 +32,14 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                 "Built on Lens",
             subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a  and decentralized social graph. ",
             learn: "Learn more",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-vid-2.mp4",
+            src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/onboarding-vid-2.mp4`,
             type: "video/mp4"
         },
         {
             title:
                 "Support creativity",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/onboarding-vid-3.mp4",
+            src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/onboarding-vid-3.mp4`,
             type: "video/mp4",
             ctaText: "Collect",
             svg: <PurpleCollectLogo />
@@ -48,7 +48,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Support creators",
             subTitle: "Collect unique generations that people added to the chain to show your support! ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/Support.png",
+            src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/Support.png`,
             type: "video/mp4",
             ctaText: "Collect",
             svg: <PurpleCollectLogo />
@@ -57,7 +57,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             title:
                 "Join the fun",
             subTitle: "Recreate the last image added to the chain by using the A.I. generation tool on our platform. ",
-            src: "https://static.staging.whisperchain.xyz/whisperHomePage/join-in.mp4",
+            src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/join-in.mp4`,
             type: "video/mp4",
             ctaText: "Generate",
             svg: <PurpleGenerateLogo />
