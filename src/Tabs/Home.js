@@ -6,6 +6,7 @@ import { getChainData } from "../utils/ViewData";
 import SpinningLoader from "../components/SpinningLoader";
 import moment from "moment";
 import { getTimerClock } from "../utils/Utils";
+import Image from "next/image";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -147,6 +148,14 @@ const Home = () => {
                   </SwiperSlide>
                 ))}
             </Swiper>
+            {/* <div className="swiperGif">
+              <Image
+                src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
+                alt="Swiper Gif"
+                width={40}
+                height={40}
+              />
+            </div> */}
           </div>
         </div>
         <div className="w-full flex items-center justify-center	right-[0px] z-[2]">

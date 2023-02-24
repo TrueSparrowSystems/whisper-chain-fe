@@ -100,10 +100,6 @@ const Chain = () => {
     }
   };
 
-  React.useEffect(() => {
-    window.addEventListener("Scroll", onScroll);
-  });
-
   const increaseOpacity = () => {
     let lastImageButton = document.getElementById("lastImage");
     let bottomButton = document.getElementById("gopToTop");
@@ -137,7 +133,7 @@ const Chain = () => {
     <>
 
       <div className="flex justify-between items-center h-[50px] m-auto w-[512px] mt-[50px]">
-        { onBoarding && <OnBoardingModal setOnBoarding={setOnBoarding} /> }
+        {onBoarding && <OnBoardingModal setOnBoarding={setOnBoarding} />}
         <div
           onClick={() => {
             router.push("/");
@@ -291,6 +287,11 @@ const Chain = () => {
                   </div>
                 ) : null;
               })}
+            <div className="text-[16px] pt-[5px] text-center text-black opacity-[60]">
+              You’ve reached the seed image posted!
+            </div>
+
+
           </div>
         </InfiniteScroll>
       </div>
