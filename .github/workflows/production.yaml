@@ -43,29 +43,23 @@ jobs:
     
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
-
+      
     - name: Build and generate static page
       run: |-
-        mv secrets/frontend.prod.env .env.local
+        mv secrets/frontend.prod.env .env
+        cat .env
         sudo apt install -y curl
         curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
         sudo apt install -y nodejs
         npm install
         npx next build
         npx next export
-        
-    - id: 'upload-folder'
-      env:	
-        BUCKET_NAME: "whisperchain-frontend"
-      uses: 'google-github-actions/upload-cloud-storage@v1'
-      with:
-        path: 'out/'
-        destination: $BUCKET_NAME
-        
-    - id: 'upload-file'
-      env:	
-        BUCKET_NAME: "whisperchain-frontend"
-      uses: 'google-github-actions/upload-cloud-storage@v1'
-      with:
-        path: 'out/'
-        destination: $BUCKET_NAME
+        cd out
+        gsutil -h "Cache-Control:public, max-age=0" rsync -r ./ gs://whisperchain.xyz/
+
+    - name: Purge cache
+      uses: jakejarvis/cloudflare-purge-action@master
+      env:
+        # Zone is required by both authentication methods
+        CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
+        CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
