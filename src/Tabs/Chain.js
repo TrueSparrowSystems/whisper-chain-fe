@@ -132,7 +132,7 @@ const Chain = () => {
           onMouseLeave={() => setHoverBackBtn(false)}
         >
           <ArrowLeft hoverBackBtn={hoverBackBtn} />
-          <span className="ml-[6px]">Back</span>
+          <span className="ml-[6px]">Home</span>
         </div>
         <div className="relative left-[20px]">
           <div className="not-italic font-medium text-[16px] leading-[140%] tracking-[-0.03em] text-[#000000] opacity-80">
