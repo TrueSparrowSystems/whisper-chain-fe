@@ -4,7 +4,7 @@ const securityHeaders = require('./headers')
 
 module.exports = {
   images: {
-    unoptimized: false,
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -32,12 +32,26 @@ module.exports = {
       },
       {
         protocol: "https",
+        hostname: "whisperchain-prod-assests.s3.amazonaws.com",
+        pathname: "/stability/**",
+      },
+      {
+        protocol: "https",
         hostname:
           "whisperchain-staging-static-files.s3.us-east-2.amazonaws.com",
       },
       {
         protocol: "https",
+        hostname:
+          "whisperchain-prod-static-files.s3.amazonaws.com",
+      },
+      {
+        protocol: "https",
         hostname: "static.staging.whisperchain.xyz",
+      },
+      {
+        protocol: "https",
+        hostname: "static.whisperchain.xyz",
       },
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
