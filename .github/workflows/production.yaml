@@ -55,7 +55,7 @@ jobs:
         npx next build
         npx next export
         cd out
-        gsutil rsync -r ./ gs://whisperchain.xyz/
+        gsutil -h "Cache-Control:public, max-age=0" rsync -r ./ gs://whisperchain.xyz/
 
     - name: Purge cache
       uses: jakejarvis/cloudflare-purge-action@master
