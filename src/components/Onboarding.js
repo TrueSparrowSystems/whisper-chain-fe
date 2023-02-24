@@ -43,28 +43,8 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             type: "video/mp4",
             ctaText: "Collect",
             svg: <PurpleCollectLogo />
-        },
-        // {
-        //     title:
-        //         "Support creators",
-        //     subTitle: "Collect unique generations that people added to the chain to show your support! ",
-        //     src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/Support.png`,
-        //     type: "video/mp4",
-        //     ctaText: "Collect",
-        //     svg: <PurpleCollectLogo />
-        // },
-        // {
-        //     title:
-        //         "Join the fun",
-        //     subTitle: "Recreate the last image added to the chain by using the A.I. generation tool on our platform. ",
-        //     src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/join-in.mp4`,
-        //     type: "video/mp4",
-        //     ctaText: "Generate",
-        //     svg: <PurpleGenerateLogo />
-        // },
+        }
     ];
-
-    console.log(onBoardingDetailsArray[index].src)
 
     return (
         <div
@@ -125,7 +105,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                                 className={`${styles.nextButton}`}
                                 onClick={() => {
                                     setIndex(index + 1);
-                                    if (index === 4) {
+                                    if (index === 2) {
                                         window.localStorage.setItem("onBoardingKey", false);
                                         setOnBoarding(false);
                                     }

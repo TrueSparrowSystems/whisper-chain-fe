@@ -13,6 +13,7 @@ import { getChainWhispersData } from "../utils/ViewData";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ArrowLeft from "../assets/ArrowLeft";
 import { usePublicationContext } from "../context/PublicationContext";
+import OnBoardingModal from "../components/OnBoardingModal";
 
 const PAGE_LIMIT = 10;
 
@@ -24,6 +25,14 @@ const Chain = () => {
   const [infoContainer, setInfoConatiner] = React.useState(true);
   const [hours, minutes] = timer("2022-12-14");
   const [hoverBackBtn, setHoverBackBtn] = React.useState(false);
+  const [onBoarding, setOnBoarding] = React.useState(true);
+
+  React.useEffect(() => {
+    if (localStorage.getItem("onBoardingKey") === "false") {
+      setOnBoarding(false);
+    }
+  }, []);
+
   const messageBoxData = {
     onChain: {
       text: "This was the last image added to the thread, try to describe this image in your own words as best you can, and add your generation to this thread. ",
@@ -33,6 +42,7 @@ const Chain = () => {
       text: "To keep it interesting, please wait for another user to add to chain before you can add a whisper again.",
     },
   };
+
   const [publication, setPublication] = React.useState();
   const { setPublication: setPublicationContext } = usePublicationContext();
   const routerPath = router.query;
@@ -67,8 +77,6 @@ const Chain = () => {
     setPublicationContext(pubItem);
     setChainData([...chainData, ...commentArray]);
   };
-  console.log("chainData",chainData);
-  console.log("hasMore",hasMore);
 
   React.useEffect(() => {
     if (chainId) {
@@ -83,13 +91,18 @@ const Chain = () => {
   const buttonRef = React.useRef();
   let dContainer = buttonRef.current;
   const onScroll = () => {
-    // console.log(buttonRef.current?.scrollTop)
+    console.log(window.scrollY)
+    console.log(buttonRef.current?.scrollTop)
     if (buttonRef.current?.scrollTop > 100) {
       increaseOpacity();
     } else {
-      decreaseOpacity(); 
+      decreaseOpacity();
     }
   };
+
+  React.useEffect(() => {
+    window.addEventListener("Scroll", onScroll);
+  });
 
   const increaseOpacity = () => {
     let lastImageButton = document.getElementById("lastImage");
@@ -122,7 +135,9 @@ const Chain = () => {
     <SpinningLoader height="80vh" width="100%" />
   ) : (
     <>
+
       <div className="flex justify-between items-center h-[50px] m-auto w-[512px] mt-[50px]">
+        { onBoarding && <OnBoardingModal setOnBoarding={setOnBoarding} /> }
         <div
           onClick={() => {
             router.push("/");
@@ -171,7 +186,6 @@ const Chain = () => {
           dataLength={chainData?.length}
           next={fetchNextData}
           hasMore={hasMore}
-          // loader={<SpinningLoader height="100px" width="100%" />}
           height={"calc(100vh - 190px)"}
           endMessage={<div></div>}
         >
@@ -254,7 +268,7 @@ const Chain = () => {
               </div>
               <div>
                 {isGenerated ? (
-                  <ShareBtn pageIndex={1} height={40} width={432} text="Share" />
+                  <ShareBtn pageIndex={1} height={40} width={432} text="View Whain" />
                 ) : (
                   <AddWhisperBtn
                     pageIndex={1}
