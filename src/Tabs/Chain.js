@@ -13,6 +13,7 @@ import { getChainWhispersData } from "../utils/ViewData";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ArrowLeft from "../assets/ArrowLeft";
 import { usePublicationContext } from "../context/PublicationContext";
+import OnBoardingModal from "../components/OnBoardingModal";
 
 const PAGE_LIMIT = 10;
 
@@ -24,15 +25,24 @@ const Chain = () => {
   const [infoContainer, setInfoConatiner] = React.useState(true);
   const [hours, minutes] = timer("2022-12-14");
   const [hoverBackBtn, setHoverBackBtn] = React.useState(false);
+  const [onBoarding, setOnBoarding] = React.useState(true);
+
+  React.useEffect(() => {
+    if (localStorage.getItem("onBoardingKey") === "false") {
+      setOnBoarding(false);
+    }
+  }, []);
+
   const messageBoxData = {
     onChain: {
       text: "This was the last image added to the thread, try to describe this image in your own words as best you can, and add your generation to this thread. ",
     },
     OnGenerate: {
-      h1: "Your generation has been successfully added to the chain",
-      text: "To keep it interesting, please wait for another user to add to chain before you can add a whisper again.",
+      h1: "Congratulations!",
+      text: "You have successfully submitted your image Checkout more chains by lens frens now!",
     },
   };
+
   const [publication, setPublication] = React.useState();
   const { setPublication: setPublicationContext } = usePublicationContext();
   const routerPath = router.query;
@@ -67,8 +77,6 @@ const Chain = () => {
     setPublicationContext(pubItem);
     setChainData([...chainData, ...commentArray]);
   };
-  console.log("chainData",chainData);
-  console.log("hasMore",hasMore);
 
   React.useEffect(() => {
     if (chainId) {
@@ -83,11 +91,12 @@ const Chain = () => {
   const buttonRef = React.useRef();
   let dContainer = buttonRef.current;
   const onScroll = () => {
-    // console.log(buttonRef.current?.scrollTop)
+    console.log(window.scrollY)
+    console.log(buttonRef.current?.scrollTop)
     if (buttonRef.current?.scrollTop > 100) {
       increaseOpacity();
     } else {
-      decreaseOpacity(); 
+      decreaseOpacity();
     }
   };
 
@@ -122,7 +131,9 @@ const Chain = () => {
     <SpinningLoader height="80vh" width="100%" />
   ) : (
     <>
+
       <div className="flex justify-between items-center h-[50px] m-auto w-[512px] mt-[50px]">
+        {onBoarding && <OnBoardingModal setOnBoarding={setOnBoarding} />}
         <div
           onClick={() => {
             router.push("/");
@@ -132,7 +143,7 @@ const Chain = () => {
           onMouseLeave={() => setHoverBackBtn(false)}
         >
           <ArrowLeft hoverBackBtn={hoverBackBtn} />
-          <span className="ml-[6px]">Back</span>
+          <span className="ml-[6px]">Home</span>
         </div>
         <div className="relative left-[20px]">
           <div className="not-italic font-medium text-[16px] leading-[140%] tracking-[-0.03em] text-[#000000] opacity-80">
@@ -171,7 +182,6 @@ const Chain = () => {
           dataLength={chainData?.length}
           next={fetchNextData}
           hasMore={hasMore}
-          // loader={<SpinningLoader height="100px" width="100%" />}
           height={"calc(100vh - 190px)"}
           endMessage={<div></div>}
         >
@@ -240,12 +250,12 @@ const Chain = () => {
             >
               <div className=" w-full pt-[38px] px-[40px] pb-[24px]">
                 <h1
-                  className={`not-italic text-[16px] leading-[160%] font-bold ${style.messageText}`}
+                  className={`not-italic text-[16px] leading-[160%] pb-[10px] text-center font-bold ${style.messageText}`}
                 >
                   {isGenerated ? messageBoxData.OnGenerate.h1 : ""}
                 </h1>
                 <div
-                  className={`not-italic text-[16px] leading-[160%] font-medium ${style.messageText}`}
+                  className={`not-italic text-[16px] text-black opacity-60  leading-[160%] font-medium ${style.messageText}`}
                 >
                   {isGenerated
                     ? messageBoxData.OnGenerate.text
@@ -254,7 +264,7 @@ const Chain = () => {
               </div>
               <div>
                 {isGenerated ? (
-                  <ShareBtn pageIndex={1} height={40} width={432} text="Share" />
+                  <ShareBtn pageIndex={1} height={40} width={432} text="View other chains" />
                 ) : (
                   <AddWhisperBtn
                     pageIndex={1}
@@ -277,6 +287,11 @@ const Chain = () => {
                   </div>
                 ) : null;
               })}
+            <div className="text-[16px] pt-[5px] text-center text-black opacity-[60]">
+              You’ve reached the seed image posted!
+            </div>
+
+
           </div>
         </InfiniteScroll>
       </div>

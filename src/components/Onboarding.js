@@ -43,45 +43,18 @@ const Onboarding = ({ publication, setOnBoarding }) => {
             type: "video/mp4",
             ctaText: "Collect",
             svg: <PurpleCollectLogo />
-        },
-        {
-            title:
-                "Support creators",
-            subTitle: "Collect unique generations that people added to the chain to show your support! ",
-            src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/Support.png`,
-            type: "video/mp4",
-            ctaText: "Collect",
-            svg: <PurpleCollectLogo />
-        },
-        {
-            title:
-                "Join the fun",
-            subTitle: "Recreate the last image added to the chain by using the A.I. generation tool on our platform. ",
-            src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/join-in.mp4`,
-            type: "video/mp4",
-            ctaText: "Generate",
-            svg: <PurpleGenerateLogo />
-        },
+        }
     ];
-
-    console.log(onBoardingDetailsArray[index].src)
 
     return (
         <div
             className={`tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] ${styles.MessageBox}`}
         >
             <div className={`tablet:h-full tablet:w-auto h-[280px] w-[510px] ${styles.videoContainer}`}>
-                {index === 3 ? <img
-                    alt="Stack Image 3"
-                    className="rounded-t-[16px] h-[286.5px] w-[512px]"
-                    fill
-                    src={onBoardingDetailsArray[index].src}
-                /> :
-                    <video autoPlay muted loop className="rounded-t-[16px]"
-                        height={280} key={onBoardingDetailsArray[index].src}>
-                        <source src={onBoardingDetailsArray[index].src} type={onBoardingDetailsArray[index].type} />
-                    </video>
-                }
+                <video autoPlay muted loop className="rounded-t-[16px]"
+                    height={280} key={onBoardingDetailsArray[index].src}>
+                    <source src={onBoardingDetailsArray[index].src} type={onBoardingDetailsArray[index].type} />
+                </video>
                 {index > 0 &&
                     <div className={`${styles.cardGradient}`}>
                         {index > 1 &&
@@ -109,7 +82,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                                 }}>Next</button>
                         </div>
                     }
-                    {index > 0 && index <= 3 ?
+                    {index > 0 && index <= 1 ?
                         <div className={index == 1 ? "flex items-center justify-between tablet:mt-[0px] mt-[47px] px-[20px]" : "flex items-center justify-between tablet:mt-[34px] mt-[72px] px-[20px]"}>
                             <button
                                 className={`flex items-center ${styles.backOnboard}`}
@@ -126,35 +99,33 @@ const Onboarding = ({ publication, setOnBoarding }) => {
                                 }}>Next</button>
                         </div> : <div></div>
                     }
-                    {index === 4 &&
+                    {index === 2 &&
                         <div className="flex justify-center mt-[72px] px-[20px] tablet:mt-[20px] w-full">
                             <button
                                 className={`${styles.nextButton}`}
                                 onClick={() => {
                                     setIndex(index + 1);
-                                    if (index === 4) {
+                                    if (index === 2) {
                                         window.localStorage.setItem("onBoardingKey", false);
                                         setOnBoarding(false);
                                     }
                                 }}>Get Started</button>
                         </div>
                     }
-                    {index === 1 ?
+                    {index === 1 &&
                         <div className="flex justify-center tablet:pt-[10px] pt-[6px]">
                             <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
                             <span className={` mr-[5px] ${styles.bottomBorder}`}></span>
-                            <span className={`${styles.bottomBorder}`}></span>
-                        </div> : index === 2 ?
-                            <div className="flex justify-center tablet:pt-[10px]  pt-[6px]">
-                                <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
-                                <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
-                                <span className={`${styles.bottomBorder}`}></span>
-                            </div> : index === 3 &&
-                            <div className="flex justify-center tablet:pt-[10px]  pt-[6px]">
-                                <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
-                                <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
-                                <span className={`${styles.bottomBorderBlue}`}></span>
-                            </div>
+                            {/* <span className={`${styles.bottomBorder}`}></span> */}
+                        </div>
+                    }
+                    {
+                        index === 2 &&
+                        <div className="flex justify-center tablet:pt-[10px]  pt-[6px]">
+                            <span className={`mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                            <span className={` mr-[5px] ${styles.bottomBorderBlue}`}></span>
+                            {/* <span className={`${styles.bottomBorder}`}></span> */}
+                        </div>
                     }
                 </div>
             </div>

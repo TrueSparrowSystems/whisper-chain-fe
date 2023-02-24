@@ -41,6 +41,11 @@
     font-size: 16px;
 }
 
+.crossIcon{
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(60px);
+}
+
 .Message {
     width: 100%;
     display: flex;

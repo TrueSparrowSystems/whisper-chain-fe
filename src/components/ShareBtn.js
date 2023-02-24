@@ -22,7 +22,7 @@ const ShareBtn = ({ height, width }) => {
       onClick={copyLink}
     >
       <div className="not-italic -tracking-[0.03em] font-extrabold text-[16px] leading-[100%] text-center text-[#FFFFFF]">
-        {!ulrCopy ? "Share Link" : "Link Copied!"}
+        {!ulrCopy ? "View other chains" : "Link Copied!"}
       </div>
     </a>
   );
