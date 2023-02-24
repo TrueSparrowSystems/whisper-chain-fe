@@ -38,8 +38,8 @@ const Chain = () => {
       text: "This was the last image added to the thread, try to describe this image in your own words as best you can, and add your generation to this thread. ",
     },
     OnGenerate: {
-      h1: "Your generation has been successfully added to the chain",
-      text: "To keep it interesting, please wait for another user to add to chain before you can add a whisper again.",
+      h1: "Congratulations!",
+      text: "You have successfully submitted your image Checkout more chains by lens frens now!",
     },
   };
 
@@ -254,12 +254,12 @@ const Chain = () => {
             >
               <div className=" w-full pt-[38px] px-[40px] pb-[24px]">
                 <h1
-                  className={`not-italic text-[16px] leading-[160%] font-bold ${style.messageText}`}
+                  className={`not-italic text-[16px] leading-[160%] pb-[10px] text-center font-bold ${style.messageText}`}
                 >
                   {isGenerated ? messageBoxData.OnGenerate.h1 : ""}
                 </h1>
                 <div
-                  className={`not-italic text-[16px] leading-[160%] font-medium ${style.messageText}`}
+                  className={`not-italic text-[16px] text-black opacity-60  leading-[160%] font-medium ${style.messageText}`}
                 >
                   {isGenerated
                     ? messageBoxData.OnGenerate.text
@@ -268,7 +268,7 @@ const Chain = () => {
               </div>
               <div>
                 {isGenerated ? (
-                  <ShareBtn pageIndex={1} height={40} width={432} text="View Whain" />
+                  <ShareBtn pageIndex={1} height={40} width={432} text="View other chains" />
                 ) : (
                   <AddWhisperBtn
                     pageIndex={1}
