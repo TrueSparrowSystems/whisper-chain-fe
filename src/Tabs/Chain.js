@@ -91,8 +91,8 @@ const Chain = () => {
   const buttonRef = React.useRef();
   let dContainer = buttonRef.current;
   const onScroll = () => {
-    console.log(window.scrollY)
-    console.log(buttonRef.current?.scrollTop)
+    // console.log(window.scrollY)
+    // console.log(buttonRef.current?.scrollTop)
     if (buttonRef.current?.scrollTop > 100) {
       increaseOpacity();
     } else {

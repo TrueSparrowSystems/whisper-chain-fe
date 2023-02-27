@@ -48,7 +48,7 @@ const OnBoardingModal = ({
         {
             title:
                 "Built on Lens",
-            subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a  and decentralized social graph. ",
+            subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a composable and decentralized social graph. ",
             learn: "Learn more",
             src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/onboarding-vid-2.mp4`,
             type: "video/mp4"
@@ -92,7 +92,7 @@ const OnBoardingModal = ({
                 >
                     <div className={`${styles.crossIcon} cursor-pointer absolute z-10  h-[24px] w-[24px] p-[4px] right-[5px] top-[5px] rounded-[16px]`}
                         onClick={() => {
-                            console.log("clicked")
+                            // console.log("clicked")
                                 window.localStorage.setItem("onBoardingKey", false);
                                 setOnBoarding(false);
                                 handleModalClose();

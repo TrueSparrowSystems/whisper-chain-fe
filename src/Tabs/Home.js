@@ -87,6 +87,10 @@ const Home = () => {
     }
   };
 
+  // const swiperBegining = () => {
+
+  // }
+
   return isLoading ? (
     <SpinningLoader height="80vh" width="100%" />
   ) : (
@@ -148,14 +152,17 @@ const Home = () => {
                   </SwiperSlide>
                 ))}
             </Swiper>
-            {/* <div className="swiperGif">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
-                alt="Swiper Gif"
-                width={40}
-                height={40}
-              />
-            </div> */}
+            { currentSlideIndex === 0 &&
+              <div className="swiperGif absolute top-[90%] left-[22%]" id="swiperGif">
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
+                  alt="Swiper Gif"
+                  width={40}
+                  height={40}
+                />
+                <p className="text-black opacity-40 text-[14px] mr-[40px]">Scroll to view more</p>
+              </div>
+            }
           </div>
         </div>
         <div className="w-full flex items-center justify-center	right-[0px] z-[2]">

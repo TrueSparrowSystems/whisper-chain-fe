@@ -92,8 +92,8 @@ export const getChainData = async (paginationParams) => {
         lensterPostUrl: `https://testnet.lenster.xyz/posts/${whisper.platform_chain_id}`,
         profileId: user?.platform_user_id,
       };
-      console.log("total whispers", chain.total_whispers)
-      console.log("------image --", whisperData.imageUrl);
+      // console.log("total whispers", chain.total_whispers)
+      // console.log("------image --", whisperData.imageUrl);
       commentArray.push(whisperData);
     });
     if (resentWhisperIds.length < 3) {
@@ -112,8 +112,8 @@ export const getChainData = async (paginationParams) => {
           ? convertIntoIpfsUrl(profileImage?.url)
           : "https://cdn.stamp.fyi/avatar/eth:1234?s=250",
       };
-      console.log("------image --", postData.imageUrl);
-      console.log("------image url --", image.url);
+      // console.log("------image --", postData.imageUrl);
+      // console.log("------image url --", image.url);
       commentArray.push(postData);
     }
 
@@ -242,7 +242,7 @@ export const getChainWhispersData = async (chainId, paginationParams) => {
         Collectresponse[whisper.platform_chain_id]?.stats
           ?.totalAmountOfCollects,
     };
-    console.log("-----image urlll",whisperData.imageUrl)
+    // console.log("-----image urlll",whisperData.imageUrl)
     commentArray.push(whisperData);
   });
   if (whisperIds?.length == 0 || whisperIds?.length < paginationParams.limit) {
