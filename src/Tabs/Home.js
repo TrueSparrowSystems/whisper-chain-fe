@@ -160,7 +160,7 @@ const Home = () => {
                   width={40}
                   height={40}
                 />
-                <p className="text-black opacity-40 text-[14px] mr-[40px]">Scroll to view more</p>
+                {/* <p className="text-black opacity-40 text-[14px] mr-[40px]">Scroll to view more</p> */}
               </div>
             }
           </div>

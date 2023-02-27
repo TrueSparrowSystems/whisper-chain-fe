@@ -23,10 +23,12 @@ const HomeMessage = ({ publication }) => {
   });
 
 
-  const [onBoarding, setOnBoarding] = React.useState(true);
+  const [onBoarding, setOnBoarding] = React.useState();
   React.useEffect(() => {
     if (localStorage.getItem("onBoardingKey") === "false") {
       setOnBoarding(false);
+    } else{
+      setOnBoarding(true);
     }
   }, []);
 
