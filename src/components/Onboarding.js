@@ -30,7 +30,7 @@ const Onboarding = ({ publication, setOnBoarding }) => {
         {
             title:
                 "Built on Lens",
-            subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a  and decentralized social graph. ",
+            subTitle: "Own your content. Own your social graph. Own your data. Lens Protocol is a composable and decentralized social graph. ",
             learn: "Learn more",
             src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/onboarding-vid-2.mp4`,
             type: "video/mp4"

@@ -91,8 +91,8 @@ const Chain = () => {
   const buttonRef = React.useRef();
   let dContainer = buttonRef.current;
   const onScroll = () => {
-    console.log(window.scrollY)
-    console.log(buttonRef.current?.scrollTop)
+    // console.log(window.scrollY)
+    // console.log(buttonRef.current?.scrollTop)
     if (buttonRef.current?.scrollTop > 100) {
       increaseOpacity();
     } else {
@@ -287,11 +287,9 @@ const Chain = () => {
                   </div>
                 ) : null;
               })}
-            <div className="text-[16px] pt-[5px] text-center text-black opacity-[60]">
+            {/* <div className="text-[16px] pt-[5px] text-center text-black opacity-[60]">
               You’ve reached the seed image posted!
-            </div>
-
-
+            </div> */}
           </div>
         </InfiniteScroll>
       </div>

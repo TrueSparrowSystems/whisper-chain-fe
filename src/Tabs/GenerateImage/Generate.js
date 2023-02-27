@@ -139,7 +139,7 @@ function Generate({ chainId }) {
   const [btnPosition, setBtnPosition] = React.useState("absolute");
 
   const onScroll = () => {
-    console.log(generateImageContainerRef.current?.scrollTop);
+    // console.log(generateImageContainerRef.current?.scrollTop);
     if (generateImageContainerRef.current?.scrollTop > 0) {
       setBtnPosition("absolute");
     } else {
