@@ -32,6 +32,7 @@ const PAGE_LIMIT = 10;
 const Home = () => {
   const [publicationData, setPublicationData] = React.useState([]);
   const [isLoading, setIsloading] = React.useState(false);
+  const [hovered, setHovered] = React.useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
   const { setPublication } = usePublicationContext();
   const paginationParams = React.useRef({
@@ -152,15 +153,21 @@ const Home = () => {
                   </SwiperSlide>
                 ))}
             </Swiper>
-            { currentSlideIndex === 0 &&
-              <div className="swiperGif absolute top-[90%] left-[22%]" id="swiperGif">
+            {currentSlideIndex === 0 &&
+              <div className="swiperGif cursor-pointer absolute top-[90%] z-10 left-[22%]" id="swiperGif">
                 <Image
                   src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
                   alt="Swiper Gif"
                   width={40}
                   height={40}
                 />
-                {/* <p className="text-black opacity-40 text-[14px] mr-[40px]">Scroll to view more</p> */}
+                {hovered &&
+                  <p className="text-black opacity-40 text-[14px] mr-[40px]"
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                  >Scroll to view more</p>
+                }
+
               </div>
             }
           </div>
