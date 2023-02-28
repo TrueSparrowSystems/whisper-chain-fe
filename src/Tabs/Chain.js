@@ -14,6 +14,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import ArrowLeft from "../assets/ArrowLeft";
 import { usePublicationContext } from "../context/PublicationContext";
 import OnBoardingModal from "../components/OnBoardingModal";
+import SeedImage from "../assets/SeedImage";
 
 const PAGE_LIMIT = 10;
 
@@ -287,9 +288,10 @@ const Chain = () => {
                   </div>
                 ) : null;
               })}
-            {/* <div className="text-[16px] pt-[5px] text-center text-black opacity-[60]">
-              You’ve reached the seed image posted!
-            </div> */}
+            <div className="text-[16px] pt-[5px] text-center text-black opacity-[60]">
+              <SeedImage />
+              This is where it all started!
+            </div>
           </div>
         </InfiniteScroll>
       </div>
