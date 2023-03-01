@@ -61,9 +61,8 @@ function MyApp({ Component, pageProps, ...rest }) {
         />
         <link
           rel="icon"
-          type="image/png"
           sizes="64x64"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-64x64.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-64x64.jpg`}
         />
         <link
           rel="apple-touch-icon"

@@ -162,7 +162,7 @@ const Home = () => {
                           onMouseLeave={() => setHovered(false)}
                         />
                         {hovered &&
-                          <p className="text-black opacity-40 text-[14px]"
+                          <p className="text-black text-[14px]"
                             onmou
                           >Scroll to view more</p>
                         }

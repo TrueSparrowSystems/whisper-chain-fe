@@ -288,7 +288,7 @@ const Chain = () => {
                   </div>
                 ) : null;
               })}
-            <div className="text-[16px] flex flex-col items-center pt-[5px] ">
+            <div className="text-[16px] flex flex-col items-center p-[26px] ">
               <SeedImage />
               <p className="text-center text-black opacity-[0.6]">This is where it all started!</p>
             </div>
