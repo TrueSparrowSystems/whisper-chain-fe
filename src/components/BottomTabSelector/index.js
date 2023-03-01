@@ -10,7 +10,7 @@ export default function BottomTabSelector() {
   const { currentTab, onTabChange } = useBottomTab();
   const { publication } = usePublicationContext();
   const handlePLGClick = () => {
-    const plgURL = "https://plgworks.com/";
+    const plgURL = "https://truesparrow.com/";
     window.open(plgURL, "_blank");
   };
   const handleNotionClick = () => {
