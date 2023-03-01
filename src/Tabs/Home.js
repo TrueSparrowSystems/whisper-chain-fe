@@ -32,6 +32,7 @@ const PAGE_LIMIT = 10;
 const Home = () => {
   const [publicationData, setPublicationData] = React.useState([]);
   const [isLoading, setIsloading] = React.useState(false);
+  const [hovered, setHovered] = React.useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
   const { setPublication } = usePublicationContext();
   const paginationParams = React.useRef({
@@ -149,20 +150,29 @@ const Home = () => {
                         ) : null}
                       </div>
                     </div>
+                    {currentSlideIndex === 0 &&
+                      <div className="swiperGif w-1/2 flex flex-col items-center h-[1px] z-1  opacity-40 relative tablet:top-[0] top-[12%]"
+                        id="swiperGif">
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
+                          alt="Swiper Gif"
+                          width={40}
+                          height={40}
+                          onMouseEnter={() => setHovered(true)}
+                          onMouseLeave={() => setHovered(false)}
+                        />
+                        {hovered &&
+                          <p className="text-black text-[14px]"
+                            onmou
+                          >Scroll to view more</p>
+                        }
+                      </div>
+                    }
                   </SwiperSlide>
                 ))}
+
             </Swiper>
-            { currentSlideIndex === 0 &&
-              <div className="swiperGif absolute top-[90%] left-[22%]" id="swiperGif">
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
-                  alt="Swiper Gif"
-                  width={40}
-                  height={40}
-                />
-                {/* <p className="text-black opacity-40 text-[14px] mr-[40px]">Scroll to view more</p> */}
-              </div>
-            }
+
           </div>
         </div>
         <div className="w-full flex items-center justify-center	right-[0px] z-[2]">
