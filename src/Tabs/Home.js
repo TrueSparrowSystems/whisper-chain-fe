@@ -150,26 +150,29 @@ const Home = () => {
                         ) : null}
                       </div>
                     </div>
+                    {currentSlideIndex === 0 &&
+                      <div className="swiperGif w-1/2 flex flex-col items-center h-[1px] z-1  opacity-40 relative tablet:top-[0] top-[12%]"
+                        id="swiperGif">
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
+                          alt="Swiper Gif"
+                          width={40}
+                          height={40}
+                          onMouseEnter={() => setHovered(true)}
+                          onMouseLeave={() => setHovered(false)}
+                        />
+                        {hovered &&
+                          <p className="text-black opacity-40 text-[14px]"
+                            onmou
+                          >Scroll to view more</p>
+                        }
+                      </div>
+                    }
                   </SwiperSlide>
                 ))}
-            </Swiper>
-            {currentSlideIndex === 0 &&
-              <div className="swiperGif cursor-pointer absolute top-[90%] z-10 left-[22%] opacity-40" id="swiperGif">
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
-                  alt="Swiper Gif"
-                  width={40}
-                  height={40}
-                />
-                {hovered &&
-                  <p className="text-black opacity-40 text-[14px] mr-[40px]"
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
-                  >Scroll to view more</p>
-                }
 
-              </div>
-            }
+            </Swiper>
+
           </div>
         </div>
         <div className="w-full flex items-center justify-center	right-[0px] z-[2]">
