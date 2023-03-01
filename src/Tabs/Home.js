@@ -154,7 +154,7 @@ const Home = () => {
                 ))}
             </Swiper>
             {currentSlideIndex === 0 &&
-              <div className="swiperGif cursor-pointer absolute top-[90%] z-10 left-[22%]" id="swiperGif">
+              <div className="swiperGif cursor-pointer absolute top-[90%] z-10 left-[22%] opacity-40" id="swiperGif">
                 <Image
                   src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
                   alt="Swiper Gif"

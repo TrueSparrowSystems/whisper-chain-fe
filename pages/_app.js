@@ -63,57 +63,57 @@ function MyApp({ Component, pageProps, ...rest }) {
           rel="icon"
           type="image/png"
           sizes="64x64"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-64x64.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-64x64.png`}
         />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-57x57.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-57x57.png`}
         />
         <link
           rel="apple-touch-icon"
           sizes="60x60"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-60x60.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-60x60.png`}
         />
         <link
           rel="apple-touch-icon"
           sizes="72x72"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-72x72.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-72x72.png`}
         />
         <link
           rel="apple-touch-icon"
           sizes="76x76"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-76x76.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-76x76.png`}
         />
         <link
           rel="apple-touch-icon"
           sizes="114x114"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-114x114.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-114x114.png`}
         />
         <link
           rel="apple-touch-icon"
           sizes="120x120"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-120x120.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-120x120.png`}
         />
 
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-32x32.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-32x32.png`}
         />
 
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-16x16.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-16x16.png`}
         />
         <link
           rel="shortcut icon"
           type="image/png"
           sizes="48x48"
-          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/wc-48x48.png`}
+          href={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/favicons/w-48x48.png`}
         />
       </Head>
     <Provider store={store}>

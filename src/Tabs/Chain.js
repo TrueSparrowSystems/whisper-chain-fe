@@ -288,9 +288,9 @@ const Chain = () => {
                   </div>
                 ) : null;
               })}
-            <div className="text-[16px] flex flex-col items-center pt-[5px] text-center text-black opacity-[60]">
+            <div className="text-[16px] flex flex-col items-center pt-[5px] ">
               <SeedImage />
-              This is where it all started!
+              <p className="text-center text-black opacity-[0.6]">This is where it all started!</p>
             </div>
           </div>
         </InfiniteScroll>
