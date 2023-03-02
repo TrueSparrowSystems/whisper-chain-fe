@@ -10,12 +10,12 @@ export default function Main() {
     <div className={styles.pageWrapper} id="home-section">
       <Header />
       <div className={styles.componentWrapper}>
-         <div className={styles.pageWrap}>
+        <div className={styles.pageWrap}>
           <Home />
-         </div>
+        </div>
         <div className={styles.mobileView}>
-        <JoinedFromMobile />
-      </div>
+          <JoinedFromMobile />
+        </div>
       </div>
       <BottomTabSelector />
     </div>

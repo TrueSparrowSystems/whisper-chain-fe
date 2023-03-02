@@ -9,7 +9,7 @@ export default function GeneratePage({ chainId }) {
   let { width } = useWindowSize();
   return (
     <div className={styles.pageWrapper}>
-      {width > 1024 ? (
+      {width > 1024 || !width ?  (
         <>
           <Header />
           <div className={styles.componentWrapper}>
