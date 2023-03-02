@@ -16,7 +16,7 @@ import { usePublicationContext } from "../context/PublicationContext";
 import OnBoardingModal from "../components/OnBoardingModal";
 import SeedImage from "../assets/SeedImage";
 
-const PAGE_LIMIT = 10;
+const PAGE_LIMIT = 50;
 
 const Chain = () => {
   const [chainData, setChainData] = React.useState([]);
@@ -89,12 +89,12 @@ const Chain = () => {
 
   let viewLensUrl = "https://testnet.lenster.xyz/posts";
 
+  let scrollCount = 0;
+
   const buttonRef = React.useRef();
   let dContainer = buttonRef.current;
   const onScroll = () => {
-    // console.log(window.scrollY)
-    // console.log(buttonRef.current?.scrollTop)
-    if (buttonRef.current?.scrollTop > 100) {
+    if (buttonRef.current?.lastScrollTop > 100) {
       increaseOpacity();
     } else {
       decreaseOpacity();
@@ -126,6 +126,10 @@ const Chain = () => {
     };
     fetchData(chainId, paginationParams.current);
   };
+
+  const goToTop = () => {
+    document.getElementsByClassName("infinite-scroll-component")[0].scrollTo(0,0)
+  }
 
 
   return isLoading ? (
@@ -185,19 +189,20 @@ const Chain = () => {
           hasMore={hasMore}
           height={"calc(100vh - 190px)"}
           endMessage={<div></div>}
+          ref={buttonRef}
+          onScroll={ () => {
+            onScroll();
+          }}
+          className="scroll-smooth"
         >
           <div
             id="demmoId"
             className={style.chainContainer}
-            ref={buttonRef}
-            onScroll={onScroll}
+            
           >
-            <div className="flex justify-center sticky top-[5px] z-[1000]">
+            <div className="flex justify-center fixed w-full top-[calc(100vh - 25px))] z-[1000]">
               <a
-                onClick={() => {
-                  // console.log("clicked");
-                  dContainer.scrollTo(0, dContainer.scrollHeight);
-                }}
+                href="#lastEle"
                 id="gopToTop"
                 className={`rounded-[20px] flex z-[10000] items-center justify-center ${style.bottomButton}`}
               >
@@ -221,8 +226,7 @@ const Chain = () => {
               </a>
               <a
                 onClick={() => {
-                  // console.log("clicked");
-                  dContainer.scrollTo(0, 0);
+                  goToTop();
                 }}
                 id="lastImage"
                 className={`rounded-[20px] ml-[20px] flex z-[10000] items-center justify-center ${style.lastImageButton}`}
@@ -288,7 +292,7 @@ const Chain = () => {
                   </div>
                 ) : null;
               })}
-            <div className="text-[16px] flex flex-col items-center p-[26px] ">
+            <div className="text-[16px] flex flex-col items-center p-[26px]" id="lastEle">
               <SeedImage />
               <p className="text-center text-black opacity-[0.6]">This is where it all started!</p>
             </div>

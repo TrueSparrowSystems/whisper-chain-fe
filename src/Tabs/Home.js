@@ -32,7 +32,6 @@ const PAGE_LIMIT = 10;
 const Home = () => {
   const [publicationData, setPublicationData] = React.useState([]);
   const [isLoading, setIsloading] = React.useState(false);
-  const [hovered, setHovered] = React.useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
   const { setPublication } = usePublicationContext();
   const paginationParams = React.useRef({
@@ -146,28 +145,11 @@ const Home = () => {
                     <div className="absolute top-0">
                       <div className="slide w-full flex justify-start relative">
                         {pub?.comments[0] ? (
-                          <ImagesStack imageDetails={pub?.comments} pub={pub} index={index} />
+                          <ImagesStack imageDetails={pub?.comments} pub={pub} index={index} currentSlideIndex={currentSlideIndex} />
                         ) : null}
                       </div>
                     </div>
-                    {currentSlideIndex === 0 &&
-                      <div className="swiperGif w-1/2 flex flex-col items-center h-[1px] z-1  opacity-40 relative tablet:top-[0] top-[12%]"
-                        id="swiperGif">
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
-                          alt="Swiper Gif"
-                          width={40}
-                          height={40}
-                          onMouseEnter={() => setHovered(true)}
-                          onMouseLeave={() => setHovered(false)}
-                        />
-                        {hovered &&
-                          <p className="text-black text-[14px]"
-                            onmou
-                          >Scroll to view more</p>
-                        }
-                      </div>
-                    }
+                   
                   </SwiperSlide>
                 ))}
 
