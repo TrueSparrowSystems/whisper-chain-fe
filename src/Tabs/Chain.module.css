@@ -71,3 +71,7 @@
    backdrop-filter: blur(12px);
    border-radius: 24px;
 }
+
+.infinite-scroll-component {
+   scroll-behavior: smooth !important;
+}
