@@ -57,11 +57,13 @@ export const getIpfsUrl = async (url) => {
   return ipfsUrl;
 };
 
-export const createIpfsObjects = async (url) => {
+export const createIpfsObjects = async (url, chainId) => {
   const resp = await axios.post(
     "/lens/ipfs-objects",
     {
       s3_url: url,
+      title: "",
+      description: `Hello frens! I have generated this mutation with the help of AI. \n Generate your own and add to chain on https://staging.whisperchain.xyz/chain/${chainId}`
     },
     {
       headers: {
@@ -172,10 +174,10 @@ export const getLatestWhisper = async (chainId) => {
   return responseData.data;
 };
 
-export async function getIpfsUrlandUploadPublication(url, pubId, address) {
+export async function getIpfsUrlandUploadPublication(url, chainId, pubId, address) {
   let whisperIpfsObjectId;
   let imageIpfsObjectId;
-  const metadataResponse = await createIpfsObjects(url);
+  const metadataResponse = await createIpfsObjects(url, chainId);
   const ipfsObjectIds = metadataResponse?.ipfs_object_ids;
   const ipfsObjects = metadataResponse?.ipfs_objects;
   let ipfsUrl = "";
