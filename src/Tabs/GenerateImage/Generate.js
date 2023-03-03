@@ -88,7 +88,7 @@ function Generate({ chainId }) {
   const onImageClickHandler = async (url) => {
     setIsloading(true);
     const { txHash, whisperIpfsObjectId, imageIpfsObjectId } =
-      await getIpfsUrlandUploadPublication(url, publication?.chainId, pubsId, address);
+      await getIpfsUrlandUploadPublication(url, chainId, pubsId, address);
     // console.log({ txHash });
     console.log("publication?.chainId",publication?.chainId)
     await postWhisperResponse(

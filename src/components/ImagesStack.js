@@ -131,7 +131,7 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
         </div>
       </div>
       {currentSlideIndex === 0 &&
-        <div className="swiperGif w-1/2 flex flex-col items-center h-[1px] z-1  opacity-40 relative tablet:top-[0] top-[10%]"
+        <div className="swiperGif w-1/2 flex flex-col items-center h-[1px] z-1  opacity-40 relative tablet:top-[45px] top-[10%]"
           id="swiperGif">
           <Image
             src={`${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/swiperGif.gif`}
