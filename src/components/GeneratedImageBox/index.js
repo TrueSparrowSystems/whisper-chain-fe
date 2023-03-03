@@ -85,7 +85,7 @@ export default function GeneratedImageBox({
 
   return (
     <div
-      className="tablet:w-[320px] tablet:h-[320px] w-[404px] h-[404px] relative"
+      className={`tablet:w-[320px] tablet:h-[320px] w-[404px] h-[404px] relative ${styles.generateImage}`}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >

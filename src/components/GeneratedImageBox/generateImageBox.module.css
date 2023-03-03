@@ -59,3 +59,7 @@
   font-feature-settings: 'salt' on;
   color: rgba(0, 0, 0, 0.8);
 }
+
+.generateImage{
+  border: 1px solid;
+}
