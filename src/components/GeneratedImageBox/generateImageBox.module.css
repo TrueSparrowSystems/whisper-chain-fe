@@ -62,5 +62,6 @@
 
 .generateImage{
   border: 1px solid;
+  opacity: 0.4;
   /* background-color: yellow; */
 }
