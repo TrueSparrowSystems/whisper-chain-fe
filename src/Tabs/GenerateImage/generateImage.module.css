@@ -195,7 +195,7 @@
 }
 
 .defaultState {
-  /* background: linear-gradient(0deg, #FFFFFF, #FFFFFF); */
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
   border-radius: 16px;
 }
 
