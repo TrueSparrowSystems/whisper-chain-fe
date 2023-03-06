@@ -130,7 +130,7 @@
 }
 
 .generateButton:hover {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), radial-gradient(107.14% 107.14% at 50% 80.95%, #6F1AFF 0%, #C6A4FF 100%);
+  /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), radial-gradient(107.14% 107.14% at 50% 80.95%, #6F1AFF 0%, #C6A4FF 100%); */
 }
 
 .generateButtonText {
@@ -195,7 +195,7 @@
 }
 
 .defaultState {
-  background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  /* background: linear-gradient(0deg, #FFFFFF, #FFFFFF); */
   border-radius: 16px;
 }
 
