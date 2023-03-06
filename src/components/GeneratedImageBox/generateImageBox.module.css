@@ -61,7 +61,5 @@
 }
 
 .generateImage{
-  border: 1px solid;
-  opacity: 0.4;
-  /* background-color: yellow; */
+  border: 1px solid rgba(0, 0, 0, 0.4);
 }
