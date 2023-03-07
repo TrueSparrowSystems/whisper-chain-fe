@@ -41,8 +41,9 @@ export default function WhisperImage({
           className={`w-fit backdrop-blur-[60px] rounded-[8px]`}
           // style={{ background: "rgba(255, 255, 255, 0.4)" }}
         >
-          <ImageLoader height={height} width={width} />
+          {/* <ImageLoader height={height} width={width} /> */}
         </div>
+        
       ) : (
         <>
           {imgLoadingError ? (
