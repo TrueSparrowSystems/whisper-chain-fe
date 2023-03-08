@@ -44,8 +44,8 @@ export default function WhisperImage({
         // style={{ background: "rgba(255, 255, 255, 0.4)" }}
         >
           {/* <ImageLoader height={height} width={width} /> */}
-          <div className={`flex items-center h-[24px] w-[24px]  justify-center`}>
-            <LoaderSvgIcon />
+          <div className={`flex items-center h-[404pxpx] w-[404px] justify-center`}>
+            <LoaderSvgIcon className="h-[24px] w-[24px]" />
           </div>
         </div>
 
