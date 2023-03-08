@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import ImageLoader from "./ImageLoader";
 import styles from "./WhisperImage.module.css";
+import LoaderSvgIcon from "../../assets/loaderSvgIcon"
+
 
 export default function WhisperImage({
   imgSrcUrl,
@@ -39,11 +41,14 @@ export default function WhisperImage({
       {!imgSrcUrl ? (
         <div
           className={`w-fit rounded-[8px]`}
-          // style={{ background: "rgba(255, 255, 255, 0.4)" }}
+        // style={{ background: "rgba(255, 255, 255, 0.4)" }}
         >
-          <ImageLoader height={height} width={width} />
+          {/* <ImageLoader height={height} width={width} /> */}
+          <div className={`flex items-center h-[24px] w-[24px]  justify-center`}>
+            <LoaderSvgIcon />
+          </div>
         </div>
-        
+
       ) : (
         <>
           {imgLoadingError ? (
