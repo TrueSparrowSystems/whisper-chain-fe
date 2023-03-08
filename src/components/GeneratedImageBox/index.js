@@ -9,6 +9,7 @@ import WalletLogo from "../../assets/addWhisperLogos/WalletLogo";
 import SignInModal from "../SignInModal";
 import { getChainWhispers } from "../../utils/Utils";
 import ImageLoader from "../WhisperImage/ImageLoader";
+import GeneratePageImage from "../GeneratePage/GeneratePAgeIMage";
 
 export default function GeneratedImageBox({
   imgSrcUrl,
@@ -89,7 +90,16 @@ export default function GeneratedImageBox({
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <WhisperImage
+      {/* <WhisperImage
+        imgSrcUrl={imgSrcUrl}
+        alt="Whisper Image"
+        width={404}
+        height={404}
+        onLoadingCompleteHandler={() => setIsImageloaded(true)}
+        classes="absolute rounded-[16px] border-solid border-[1px] border-[#ffffff33]"
+        setErrorOccured={setErrorOccured}
+      /> */}
+      <GeneratePageImage
         imgSrcUrl={imgSrcUrl}
         alt="Whisper Image"
         width={404}
@@ -100,9 +110,8 @@ export default function GeneratedImageBox({
       />
       {isImageLoaded && imgSrcUrl && !errorOccured && (
         <div
-          className={`absolute bottom-0 w-[calc(100%-32px)] left-[16px] flex  ${
-            disableAddToChainbtn ? "cursor-default " : "cursor-pointer"
-          } `}
+          className={`absolute bottom-0 w-[calc(100%-32px)] left-[16px] flex  ${disableAddToChainbtn ? "cursor-default " : "cursor-pointer"
+            } `}
           onClick={handleOpen}
         >
           <motion.div
@@ -167,11 +176,10 @@ export default function GeneratedImageBox({
             }}
           >
             <div
-              className={`${styles.addToChainButton} ${
-                addToChainClicked
+              className={`${styles.addToChainButton} ${addToChainClicked
                   ? "opacity-50 cursor-not-allowed	pointer-events-none"
                   : ""
-              } cursor-pointer`}
+                } cursor-pointer`}
             >
               {addToChainClicked ? (
                 <ImageLoader height={24} width={24} />
