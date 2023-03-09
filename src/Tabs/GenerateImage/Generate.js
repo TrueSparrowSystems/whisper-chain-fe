@@ -19,6 +19,8 @@ import ChevronIcon from "../../assets/ChevronIcon";
 import moment from "moment";
 import { useBottomTab } from "../../context/BottomTabContext";
 import { TabItems } from "../../components/Main/TabItems";
+// import GeneratePageImage from "../../components/GeneratePage/GeneratePageIMage";
+import GeneratePageImage from "../../components/GeneratePage/GeneratePAgeIMage";
 
 function Generate({ chainId }) {
   const { address } = useAccount();
@@ -90,7 +92,7 @@ function Generate({ chainId }) {
     const { txHash, whisperIpfsObjectId, imageIpfsObjectId } =
       await getIpfsUrlandUploadPublication(url, chainId, pubsId, address);
     // console.log({ txHash });
-    console.log("publication?.chainId",publication?.chainId)
+    console.log("publication?.chainId", publication?.chainId)
     await postWhisperResponse(
       url,
       txHash,
@@ -192,6 +194,14 @@ function Generate({ chainId }) {
                   alt="Whisper Image"
                   classes="rounded-[8px]"
                 />
+                {/* <GeneratePageImage
+                  imgSrcUrl={previousImageUrl}
+                  width={256}
+                  height={256}
+                  priority={true}
+                  alt="Whisper Image"
+                  classes="rounded-[8px]"
+                /> */}
               </div>
               {/* Disabled state when User cannot post(if last post by same user) */}
               {disableGeneration && (
@@ -255,8 +265,8 @@ function Generate({ chainId }) {
               <div>
                 <select
                   className={`${styles.selectBoxInput} ${disableGeneration
-                      ? "cursor-not-allowed	pointer-events-none"
-                      : ""
+                    ? "cursor-not-allowed	pointer-events-none"
+                    : ""
                     }`}
                   value={selectedFilter}
                   onChange={(e) => {
@@ -279,8 +289,8 @@ function Generate({ chainId }) {
           {/* Generate Image Button */}
           <div
             className={`w-full bottom-[16px] ${promptText === "" || promtEmpty || limit == 0
-                ? "opacity-50 cursor-not-allowed	pointer-events-none"
-                : ""
+              ? "opacity-50 cursor-not-allowed	pointer-events-none"
+              : ""
               } ${btnPosition}
               ${disableGeneration
                 ? "opacity-25 cursor-not-allowed pointer-events-none"
