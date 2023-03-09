@@ -94,7 +94,7 @@ const CreateAccount = ({ onRequestClose, isOpen }) => {
         <div className="flex justify-center items-center p-[30px]">
           <div>
             <h1 className="text-[16px] font-bold leading-[22px] text-[#000000] pb-[20px]">
-              Create your lenster account
+              Create your Lenster account
             </h1>
             <input
               type="text"
