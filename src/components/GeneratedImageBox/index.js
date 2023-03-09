@@ -9,7 +9,7 @@ import WalletLogo from "../../assets/addWhisperLogos/WalletLogo";
 import SignInModal from "../SignInModal";
 import { getChainWhispers } from "../../utils/Utils";
 import ImageLoader from "../WhisperImage/ImageLoader";
-import GeneratePageImage from "../GeneratePage/GeneratePAgeIMage";
+import GeneratePageImage from "../../components/GeneratePage/GeneratePageImage"
 
 export default function GeneratedImageBox({
   imgSrcUrl,
@@ -177,8 +177,8 @@ export default function GeneratedImageBox({
           >
             <div
               className={`${styles.addToChainButton} ${addToChainClicked
-                  ? "opacity-50 cursor-not-allowed	pointer-events-none"
-                  : ""
+                ? "opacity-50 cursor-not-allowed	pointer-events-none"
+                : ""
                 } cursor-pointer`}
             >
               {addToChainClicked ? (
