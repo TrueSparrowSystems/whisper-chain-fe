@@ -78,7 +78,7 @@ const HeaderSignin = ({ handleOpen }) => {
                 return (
                   <button onClick={handleOpen} className={`flex gap-[8px] w-full h-[36px] py-[7px] px-[24px] rounded-[40px] not-italic font-bold text-[#01501E] ${styles.HeaderSignInbtn}`}>
                     <LensPurpleIcon />
-                    Sign In with lens
+                    Sign In with Lens
                   </button> 
                 );
               }
@@ -120,7 +120,7 @@ const HeaderSignin = ({ handleOpen }) => {
               ) :
                 <button onClick={handleOpen} className={`flex gap-[8px]  w-full h-[36px] py-[7px] px-[24px] bg-[#FFFFFF] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HeaderSignInbtn}`}>
                   <LensPurpleIcon />
-                  Sign In with lens
+                  Sign In with Lens
                 </button>
             })()}
           </div>

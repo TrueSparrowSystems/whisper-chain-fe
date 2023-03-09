@@ -40,7 +40,7 @@ const Chain = () => {
     },
     OnGenerate: {
       h1: "Congratulations!",
-      text: "You have successfully submitted your image Checkout more chains by lens frens now!",
+      text: "You have successfully submitted your image Checkout more chains by Lens frens now!",
     },
   };
 
@@ -176,7 +176,7 @@ const Chain = () => {
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
               >
-                View on lens
+                View on Lens
               </span>
             </a>
           </span>

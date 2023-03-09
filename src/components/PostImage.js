@@ -315,7 +315,7 @@ export const PostImage = ({ imageDetails, chainId }) => {
                 >
                   <WhiteEyeIcon />{" "}
                   <span className="ml-[10px] text-white opacity-[0.6]">
-                    View on lens
+                    View on Lens
                   </span>
                 </button>
               </div>
