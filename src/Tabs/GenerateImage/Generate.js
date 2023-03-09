@@ -19,8 +19,6 @@ import ChevronIcon from "../../assets/ChevronIcon";
 import moment from "moment";
 import { useBottomTab } from "../../context/BottomTabContext";
 import { TabItems } from "../../components/Main/TabItems";
-// import GeneratePageImage from "../../components/GeneratePage/GeneratePageIMage";
-import GeneratePageImage from "../../components/GeneratePage/GeneratePAgeIMage";
 
 function Generate({ chainId }) {
   const { address } = useAccount();
@@ -194,14 +192,6 @@ function Generate({ chainId }) {
                   alt="Whisper Image"
                   classes="rounded-[8px]"
                 />
-                {/* <GeneratePageImage
-                  imgSrcUrl={previousImageUrl}
-                  width={256}
-                  height={256}
-                  priority={true}
-                  alt="Whisper Image"
-                  classes="rounded-[8px]"
-                /> */}
               </div>
               {/* Disabled state when User cannot post(if last post by same user) */}
               {disableGeneration && (

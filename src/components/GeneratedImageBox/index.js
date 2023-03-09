@@ -90,15 +90,6 @@ export default function GeneratedImageBox({
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      {/* <WhisperImage
-        imgSrcUrl={imgSrcUrl}
-        alt="Whisper Image"
-        width={404}
-        height={404}
-        onLoadingCompleteHandler={() => setIsImageloaded(true)}
-        classes="absolute rounded-[16px] border-solid border-[1px] border-[#ffffff33]"
-        setErrorOccured={setErrorOccured}
-      /> */}
       <GeneratePageImage
         imgSrcUrl={imgSrcUrl}
         alt="Whisper Image"
