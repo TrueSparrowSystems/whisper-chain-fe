@@ -244,7 +244,7 @@ const SignInModal = ({
             <p
               className={`not-italic text-[12px] font-medium w-[200px] leading-[160% pb-[16px] text-start ${styles.claimText}`}
             >
-              You do not have a lens account. Claim your handle on lens to log
+              You do not have a Lens account. Claim your handle on Lens to log
               into WhisperChain.
             </p>
             <div
