@@ -311,7 +311,7 @@ export const PostImage = ({ imageDetails, chainId }) => {
                   onClick={() => {
                     window.open(imageDetails.lensterPostUrl, "_blank");
                   }}
-                  className={`flex items-center relative bottom-[10px] p-[10px] justify-center `}
+                  className={`flex items-center relative bottom-[10px] p-[10px] justify-center hover:opacity-60`}
                 >
                   <WhiteEyeIcon />{" "}
                   <span className="ml-[10px] text-white opacity-[0.6]">
