@@ -148,7 +148,7 @@ export default function GeneratedImageBox({
               <CollectLogo />
               <span className={`flex ${styles.MessageText}`}>
                 {" "}
-                People can collect your comment on Whisperchain and Lens
+                People can collect your comment on WhisperChain and Lens
               </span>
             </div>
             <div className="flex flex-col gap-[11px]">
