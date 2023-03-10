@@ -6,6 +6,10 @@ import styles from "./BottomTabSelector.module.css";
 import React from "react";
 import { usePublicationContext } from "../../context/PublicationContext";
 import Typewriter from "typewriter-effect";
+import { TwitterShareButton } from "react-share";
+import QuestionMarkIcon from "../../assets/QuestionMarkIcon";
+import TwitterIcon from "../../assets/TwitterIcon";
+import GitHubIcon from "../../assets/GitHubIcon";
 
 export default function BottomTabSelector() {
   const { currentTab, onTabChange } = useBottomTab();
@@ -28,21 +32,67 @@ export default function BottomTabSelector() {
     }
   }, []);
 
+  const handleHowItWorks = () => {
+    const plgURL =
+      "https://www.notion.so/truesparrow/NFT-or-Not-61e944ba261f49a2805c73468c92a43a";
+    window.open(plgURL, "_blank");
+  };
+
+  const handleGithub = () => {
+    const gitHubUrl = "https://github.com/NFTorNOT ";
+    window.open(gitHubUrl, "_blank");
+  };
+  
   return (
     <div
       className={`flex w-full justify-between items-center ${styles.mainContainer}`}
     >
       <div
-        className={`flex relative not-italic font-medium text-[16px] ${styles.infoTab}`}
-      >
-        <button
-          onClick={handleNotionClick}
-          className={`flex justify-center gap-[8.5px] items-center hover:text-[#000000]`}
+          className={`${styles.leftBar} flex items-center mt-[12px] md:mt-0 justify-items-start`}
         >
-          {" "}
-          <InfoLogo /> How it works
-        </button>
-      </div>
+          <button
+            className={`${styles.howItWorks} flex items-center justify-start cursor-pointer relative`}
+            onClick={handleHowItWorks}
+          >
+            <QuestionMarkIcon />
+            <div
+              className={`${styles.hiwText} text-[#ffffff] font-medium absolute w-[100px] left-[25px] top-0`}
+            >
+              How it works
+            </div>
+            <div className={styles.hiwSpace}></div>
+          </button>
+
+          <TwitterShareButton
+            className={`${styles.twitterShare} cursor-pointer ml-[15px] flex`}
+            url={"https://nftornot.com/"}
+            title={"I've found this 🔥 game, check it out now!"}
+          >
+            <span className="z-10 pl-[5px]">
+              <TwitterIcon />
+            </span>
+            <span
+              className={`${styles.hiwText} pl-[15px] text-[#ffffff] font-medium absolute ml-[20px]`}
+            >
+              Share on Twitter
+            </span>
+            <div className={styles.twitterTextSpace}></div>
+          </TwitterShareButton>
+
+          <button
+            className={`${styles.githubShare} cursor-pointer ml-[15px] flex`}
+            onClick={handleGithub}
+          >
+            <span className="z-10 pl-[5px]">
+              <GitHubIcon />
+            </span>
+            <div
+              className={`${styles.githubText} pl-[5px] text-[#ffffff] font-medium`}
+            >
+              Github
+            </div>
+          </button>
+        </div>
 
       <div className={styles.container}>
         {TabItems.map((tab, index) => {
