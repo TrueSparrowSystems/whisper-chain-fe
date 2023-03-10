@@ -48,15 +48,15 @@ export default function GeneratePageImage({
     }
   }, [isImageLoaded])
 
+  console.log("isImageLoaded",isImageLoaded)
+
   return (
     <>
       {!imgSrcUrl ? (
         <div
           className={`w-fit rounded-[8px]`}
-        // style={{ background: "rgba(255, 255, 255, 0.4)" }}
-        >
-          {/* <ImageLoader height={height} width={width} /> */}
-          <div className={`flex items-center h-[404px] w-[404px] justify-center`}>
+        >    
+          <div className="flex items-center tablet:h-[320px] tablet:w-[320px] h-[404px] w-[404px] justify-center z-10">
             <LoaderSvgIcon className="h-[24px] w-[24px]" />
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function GeneratePageImage({
             <div>
               {
                 !isImageLoaded &&
-                <div className={`flex items-center h-[404px] w-[404px] justify-center z-10`}>
+                <div className={`flex items-center tablet:h-[320px] tablet:w-[320px]  h-[404px] w-[404px] justify-center z-10`}>
                   <LoaderSvgIcon className="h-[24px] w-[24px]" />
                 </div>
               }

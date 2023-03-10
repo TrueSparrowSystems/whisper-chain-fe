@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <div
-      className= {`px-[50px] flex-row flex justify-between items-center w-full z-[10000] relative pt-[40px] ${styles.headerWrapper} `}
+      className= {`px-[32px] flex-row flex justify-between items-center w-full z-[10000] relative pt-[40px] ${styles.headerWrapper} `}
         id="Header"
     >
       <Logo />

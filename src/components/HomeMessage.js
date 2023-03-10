@@ -45,7 +45,7 @@ const HomeMessage = ({ publication }) => {
           <div className="tablet:w-[400px] w-[512px] flex justify-center text-center rounded-[48px]">
             <div className={`${styles.Message}`}>
               <div className="text-black font-bold text-[16px] leading-[160%] ">
-                Welcome to Whisper chain
+                Welcome to WhisperChain
               </div>
               <div className="text-black text-[16px] leading-[160%] w-full px-[24px] tablet:text-[14px]">
                 A new fun take on age old game some of you might know as Chinese

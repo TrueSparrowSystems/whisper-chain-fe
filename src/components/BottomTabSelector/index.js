@@ -5,6 +5,7 @@ import { TabItems } from "../Main/TabItems";
 import styles from "./BottomTabSelector.module.css";
 import React from "react";
 import { usePublicationContext } from "../../context/PublicationContext";
+import Typewriter from "typewriter-effect";
 
 export default function BottomTabSelector() {
   const { currentTab, onTabChange } = useBottomTab();
@@ -73,7 +74,58 @@ export default function BottomTabSelector() {
         className={`flex relative not-italic justify-end font-medium text-[16px] ${styles.infoTab}`}
       >
         <div className="hover:text-[#000000]">
-          <button onClick={handlePLGClick}>Made with 🧡 by True Sparrow</button>
+          <button onClick={handlePLGClick}>
+          <Typewriter
+              options={{
+                loop: true,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter"
+                    )[0].style.display = "flex";
+                    document.getElementsByClassName(
+                      "Typewriter"
+                    )[0].style.width = "228px";
+                  })
+                  .typeString("Made with 🧡 by True Sparrow")
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter__cursor"
+                    )[0].innerHTML = "";
+                  })
+                  .pauseFor(5000)
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter__cursor"
+                    )[0].innerHTML = "|";
+                  })
+                  .deleteAll()
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter"
+                    )[0].style.display = "flex";
+                    document.getElementsByClassName(
+                      "Typewriter"
+                    )[0].style.width = "211px";
+                  })
+                  .typeString("Need help building on Lens?")
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter__cursor"
+                    )[0].innerHTML = "";
+                  })
+                  .pauseFor(60000)
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter__cursor"
+                    )[0].innerHTML = "|";
+                  })
+                  .start();
+              }}
+            />
+          </button>
         </div>
       </div>
     </div>

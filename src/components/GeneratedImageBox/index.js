@@ -141,14 +141,14 @@ export default function GeneratedImageBox({
               <MessageLogo />
               <span className={`flex  ${styles.MessageText}`}>
                 When you add a whisper to the chain, a comment is created on our
-                lens thread
+                Lens thread
               </span>
             </div>
             <div className="flex flex-col gap-[11px]">
               <CollectLogo />
               <span className={`flex ${styles.MessageText}`}>
                 {" "}
-                People can collect your comment on Whisperchain and lens
+                People can collect your comment on WhisperChain and Lens
               </span>
             </div>
             <div className="flex flex-col gap-[11px]">

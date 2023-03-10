@@ -311,11 +311,11 @@ export const PostImage = ({ imageDetails, chainId }) => {
                   onClick={() => {
                     window.open(imageDetails.lensterPostUrl, "_blank");
                   }}
-                  className={`flex items-center relative bottom-[10px] p-[10px] justify-center `}
+                  className={`flex items-center relative bottom-[10px] p-[10px] justify-center opacity-[0.6] hover:opacity-[1]`}
                 >
                   <WhiteEyeIcon />{" "}
                   <span className="ml-[10px] text-white opacity-[0.6]">
-                    View on lens
+                    View on Lens
                   </span>
                 </button>
               </div>

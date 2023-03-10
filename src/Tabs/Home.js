@@ -105,7 +105,7 @@ const Home = () => {
                 {publicationData[currentSlideIndex]?.createdAt
                   ? moment
                     .unix(publicationData[currentSlideIndex]?.createdAt)
-                    .format("Do MMMM YYYY")
+                    .format("MMMM DD YYYY")
                   : null}
               </div>
             </div>
