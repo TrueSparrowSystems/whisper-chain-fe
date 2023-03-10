@@ -40,7 +40,7 @@ const OnBoardingModal = ({
     const onBoardingDetailsArray = [
         {
             title:
-                "Welcome to Whisper Chain",
+                "Welcome to WhisperChain",
             subTitle: "A new fun take on age old game some of you might know as Chinese whisper or Telephone. But with a twist of A.I.",
             src: `${process.env.NEXT_PUBLIC_AWS_CDN_URL}/whisperHomePage/onboarding-vid-1.mp4`,
             type: "video/mp4"
