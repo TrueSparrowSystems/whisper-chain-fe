@@ -172,7 +172,7 @@ const Chain = () => {
                 <ViewLensIcon />
               </span>
               <span
-                className={`ml-[10px] w-[95px] text-[#00501E]`}
+                className={`ml-[10px] w-[100px] text-[#00501E]`}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
               >
