@@ -40,7 +40,7 @@ const Chain = () => {
     },
     OnGenerate: {
       h1: "Congratulations!",
-      text: "You have successfully submitted your image Checkout more chains by Lens Frens now!",
+      text: "You have successfully submitted your image. Check out more chains by Lens Frens now!",
     },
   };
 
@@ -153,7 +153,7 @@ const Chain = () => {
         <div className="relative left-[20px]">
           <div className="not-italic font-medium text-[16px] leading-[140%] tracking-[-0.03em] text-[#000000] opacity-80">
             {firstCreatedAt
-              ? moment.unix(firstCreatedAt).format("Do MMMM YYYY")
+              ? moment.unix(firstCreatedAt).format("MMMM DD YYYY")
               : null}
           </div>
         </div>
