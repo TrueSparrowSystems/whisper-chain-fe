@@ -26,9 +26,11 @@ import { getChainWhispers } from "../utils/Utils";
 import ImageLoader from "./WhisperImage/ImageLoader";
 import WhiteEyeIcon from "../assets/WhiteEyeIcon";
 import toast from "react-hot-toast";
+import GreenEyeIcon from "../assets/GreenEyeIcon";
 
 export const PostImage = ({ imageDetails, chainId }) => {
   const [hovered, setHovered] = React.useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
   const { data: signer } = useSigner();
   const [typedData, setTypedData] = React.useState({});
   const transactionId = React.useRef({});
@@ -284,7 +286,7 @@ export const PostImage = ({ imageDetails, chainId }) => {
                   <button
                     className={`flex items-center relative bottom-[10px] p-[10px] w-[432px] h-[40px] justify-center rounded-[4px] backdrop-blur-[60px] cursor-auto ${styles.collectedBtn}`}
                   >
-                    Collected 
+                    Collected
                   </button>
                 ) : (
                   <button
@@ -308,13 +310,20 @@ export const PostImage = ({ imageDetails, chainId }) => {
                   </button>
                 )}
                 <button
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
                   onClick={() => {
                     window.open(imageDetails.lensterPostUrl, "_blank");
                   }}
-                  className={`flex items-center relative bottom-[10px] p-[10px] justify-center opacity-[0.6] hover:opacity-[1]`}
+                  className={`flex items-center relative bottom-[10px] p-[10px] justify-center text-white hover:text-[#7DFA00] opacity-[0.8] hover:opacity-100`}
                 >
-                  <WhiteEyeIcon />{" "}
-                  <span className="ml-[10px] text-white opacity-[0.6]">
+                  {
+                    isHovered ?
+                      <GreenEyeIcon /> :
+                      <WhiteEyeIcon />
+                  }
+
+                  <span className="ml-[10px]">
                     View on Lens
                   </span>
                 </button>
