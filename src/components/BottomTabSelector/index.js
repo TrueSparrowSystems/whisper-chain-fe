@@ -18,11 +18,6 @@ export default function BottomTabSelector() {
     const plgURL = "https://truesparrow.com/";
     window.open(plgURL, "_blank");
   };
-  const handleNotionClick = () => {
-    const plgURL =
-      "https://www.notion.so/truesparrow/Whisper-Chain-fc95cbdc8f9a4a41b87747a190477a61";
-    window.open(plgURL, "_blank");
-  };
   const router = useRouter();
   React.useEffect(() => {
     if (router.route.includes(`/generate`)) {
@@ -34,15 +29,15 @@ export default function BottomTabSelector() {
 
   const handleHowItWorks = () => {
     const plgURL =
-      "https://www.notion.so/truesparrow/NFT-or-Not-61e944ba261f49a2805c73468c92a43a";
+      "https://www.notion.so/truesparrow/Whisper-Chain-fc95cbdc8f9a4a41b87747a190477a61";
     window.open(plgURL, "_blank");
   };
 
   const handleGithub = () => {
-    const gitHubUrl = "https://github.com/NFTorNOT ";
+    const gitHubUrl = "https://github.com/WhisperChain";
     window.open(gitHubUrl, "_blank");
   };
-  
+
   return (
     <div
       className={`flex w-full justify-between items-center ${styles.mainContainer}`}
@@ -56,7 +51,7 @@ export default function BottomTabSelector() {
           >
             <QuestionMarkIcon />
             <div
-              className={`${styles.hiwText} text-[#ffffff] font-medium absolute w-[100px] left-[25px] top-0`}
+              className={`${styles.hiwText} text-[#000000]  font-medium absolute w-[100px] left-[25px] top-0`}
             >
               How it works
             </div>
@@ -72,7 +67,7 @@ export default function BottomTabSelector() {
               <TwitterIcon />
             </span>
             <span
-              className={`${styles.hiwText} pl-[15px] text-[#ffffff] font-medium absolute ml-[20px]`}
+              className={`${styles.twitterText} pl-[15px] text-[#000000] opacity-60 font-medium absolute ml-[20px]`}
             >
               Share on Twitter
             </span>
@@ -87,7 +82,7 @@ export default function BottomTabSelector() {
               <GitHubIcon />
             </span>
             <div
-              className={`${styles.githubText} pl-[5px] text-[#ffffff] font-medium`}
+              className={`${styles.githubText} pl-[5px] text-[#000000] opacity-60 font-medium`}
             >
               Github
             </div>

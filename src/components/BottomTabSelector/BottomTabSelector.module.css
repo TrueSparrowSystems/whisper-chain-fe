@@ -97,7 +97,7 @@
 }
 
 .howItWorks:hover .hiwText {
-  opacity: 1;
+  opacity: 0.6;
   transition: opacity 1s;
 }
 
@@ -110,8 +110,12 @@
   width: 0px;
 }
 
+.twitterText{
+  opacity: 0;
+}
+
 .twitterShare:hover .twitterText {
-  opacity: 1;
+  opacity: 0.6;
   transition: opacity 1s;
 }
 
@@ -128,7 +132,7 @@
 }
 
 .githubShare:hover .githubText {
-  opacity: 1;
+  opacity: 0.6;
   transition: opacity 1s;
 }
 
