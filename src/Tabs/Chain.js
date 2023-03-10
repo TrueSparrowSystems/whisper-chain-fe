@@ -40,7 +40,7 @@ const Chain = () => {
     },
     OnGenerate: {
       h1: "Congratulations!",
-      text: "You have successfully submitted your image Checkout more chains by Lens frens now!",
+      text: "You have successfully submitted your image Checkout more chains by Lens Frens now!",
     },
   };
 

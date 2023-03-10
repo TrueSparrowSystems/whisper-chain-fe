@@ -140,7 +140,7 @@ const SignInModal = ({
           >
             <div className="flex gap-[8px] justify-start items-center">
               <CheckedCircle />
-              Play with Lens frens
+              Play with Lens Frens
             </div>
             <div className="flex gap-[8px] justify-start items-center">
               <CheckedCircle />
