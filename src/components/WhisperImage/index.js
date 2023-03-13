@@ -41,9 +41,7 @@ export default function WhisperImage({
       {!imgSrcUrl ? (
         <div
           className={`w-fit rounded-[8px]`}
-        // style={{ background: "rgba(255, 255, 255, 0.4)" }}
         >
-          {/* <ImageLoader height={height} width={width} /> */}
           <div className={`flex items-center h-[404pxpx] w-[404px] justify-center`}>
             <LoaderSvgIcon className="h-[24px] w-[24px]" />
           </div>
@@ -77,19 +75,6 @@ export default function WhisperImage({
                 setErrorOccured(true);
               }}
             />
-            // <img src={imgSrcUrl}
-            //   priority={priority}
-            //   className={`${classes} object-contain`}
-            //   alt={alt}
-            //   fill
-            //   sizes="(max-width: 768px) 100vw,
-            //         (max-width: 1200px) 50vw,
-            //         33vw"
-            //   onloadingComplete={onLoadingCompleteHandler}
-            //   onError={() => {
-            //     setImgLoadingError(true);
-            //     setErrorOccured(true);
-            //   }} />
           )}
         </>
       )}
