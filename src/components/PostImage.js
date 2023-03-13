@@ -139,15 +139,16 @@ export const PostImage = ({ imageDetails, chainId }) => {
 
   return (
     <>
-      <div className="flex flex-col items-center relative overflow-hidden">
+      <div className={`flex flex-col items-center relative overflow-hidden`}>
         <div>
           {
             !isImageLoaded &&
-            <div className={`flex items-center tablet:h-[320px] tablet:w-[320px]  h-[512px] w-[512px] justify-center z-10`}>
+            <div className={`flex items-center tablet:h-[320px] tablet:w-[320px]  h-[512px] w-[512px] justify-center z-10 ${styles.loader_container}`}>
               <LoaderSvgIcon className="h-[24px] w-[24px]" />
             </div>
           }
           <Image
+            style={{ opacity: isImageLoaded ? 1 : 0 }}
             src={imageDetails.imageUrl}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
