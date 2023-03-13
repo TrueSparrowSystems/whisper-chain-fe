@@ -60,7 +60,7 @@ export default function BottomTabSelector() {
 
           <TwitterShareButton
             className={`${styles.twitterShare} cursor-pointer ml-[15px] flex`}
-            url={"https://nftornot.com/"}
+            url={"https://whisperchain.xyz/"}
             title={"I've found this 🔥 game, check it out now!"}
           >
             <span className="z-10 pl-[5px]">
