@@ -76,10 +76,16 @@ const HeaderSignin = ({ handleOpen }) => {
             {(() => {
               if (!connected) {
                 return (
+                <div className="flex flex-col justify-center items-center">
                   <button onClick={handleOpen} className={`flex gap-[8px] w-full h-[36px] py-[7px] px-[24px] rounded-[40px] not-italic font-bold text-[#01501E] ${styles.HeaderSignInbtn}`}>
                     <LensPurpleIcon />
                     Sign In with Lens
                   </button> 
+                  <div>
+                    <span className="text-[12px] mr-[5px] text-black opacity-60">on</span>
+                    <span className="text-[12px] mr-[5px] text-black opacity-80">testnet</span>
+                  </div>
+                </div>
                 );
               }
 
@@ -118,10 +124,16 @@ const HeaderSignin = ({ handleOpen }) => {
                   </div>
                 </div>
               ) :
+              <div className="flex flex-col justify-center items-center">
                 <button onClick={handleOpen} className={`flex gap-[8px]  w-full h-[36px] py-[7px] px-[24px] bg-[#FFFFFF] rounded-[40px] not-italic font-bold text-[#6F1AFF] ${styles.HeaderSignInbtn}`}>
                   <LensPurpleIcon />
                   Sign In with Lens
                 </button>
+                <div>
+                    <span className="text-[12px] mr-[5px] text-black opacity-60">on</span>
+                    <span className="text-[12px] mr-[5px] text-black opacity-80">testnet</span>
+                  </div>
+                  </div>
             })()}
           </div>
         );
