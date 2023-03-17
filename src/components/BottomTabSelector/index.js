@@ -57,14 +57,8 @@ export default function BottomTabSelector() {
           onMouseEnter={() => setIsQueHovered(true)}
           onMouseLeave={() => setIsQueHovered(false)}
         >
-
-          <span className="flex items-center" >
-            {
-              isQueHovered ?
-                <QuestionMarkIconBlack /> :
-                <QuestionMarkIcon />
-            }
-
+          <span className="flex items-center">
+            {isQueHovered ? <QuestionMarkIconBlack /> : <QuestionMarkIcon />}
           </span>
           <div
             className={`${styles.hiwText} text-[#000000] bottom-[0px] flex items-center font-medium absolute w-[100px] left-[25px] top-0`}
@@ -79,15 +73,12 @@ export default function BottomTabSelector() {
           url={"https://whisperchain.xyz/"}
           title={"I've found this 🔥 game, check it out now!"}
         >
-          <span className="z-10 pl-[5px]"
+          <span
+            className="z-10 pl-[5px]"
             onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}>
-
-            {
-              isHovered ?
-                <TwitterIconBlue /> :
-                <TwitterIcon />
-            }
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {isHovered ? <TwitterIconBlue /> : <TwitterIcon />}
           </span>
           <span
             className={`${styles.twitterText} pl-[15px] flex items-center bottom-[10px] text-[#000000] opacity-60 font-medium absolute ml-[20px]`}
@@ -101,15 +92,10 @@ export default function BottomTabSelector() {
           className={`${styles.githubShare} justify-center items-center cursor-pointer ml-[15px] flex`}
           onClick={handleGithub}
           onMouseEnter={() => setIsGitHovered(true)}
-            onMouseLeave={() => setIsGitHovered(false)}
+          onMouseLeave={() => setIsGitHovered(false)}
         >
-          <span className="z-10 pl-[5px]" >
-            {
-              isGitHovered ?
-                <GitHubIconWhite /> :
-                <GitHubIcon />
-            }
-
+          <span className="z-10 pl-[5px]">
+            {isGitHovered ? <GitHubIconWhite /> : <GitHubIcon />}
           </span>
           <div
             className={`${styles.githubText} flex items-center pl-[5px] text-[#000000] opacity-60 font-medium`}
@@ -134,8 +120,9 @@ export default function BottomTabSelector() {
                 onTabChange(tab);
               }}
               id={tab.id}
-              className={`${styles.tabContainer} ${isSelected ? styles.selectedTab : styles.notSelectedTab
-                }`}
+              className={`${styles.tabContainer} ${
+                isSelected ? styles.selectedTab : styles.notSelectedTab
+              }`}
             >
               {tab.Image()}
               <div>{tab.tabName}</div>
@@ -182,7 +169,7 @@ export default function BottomTabSelector() {
                     )[0].style.display = "flex";
                     document.getElementsByClassName(
                       "Typewriter"
-                    )[0].style.width = "211px";
+                    )[0].style.width = "213px";
                   })
                   .typeString("Need help building on Lens?")
                   .callFunction(() => {

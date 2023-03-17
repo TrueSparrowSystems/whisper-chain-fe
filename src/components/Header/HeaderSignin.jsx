@@ -81,9 +81,9 @@ const HeaderSignin = ({ handleOpen }) => {
                     <LensPurpleIcon />
                     Sign In with Lens
                   </button> 
-                  <div>
+                  <div className="flex">
                     <span className="text-[12px] mr-[5px] text-black opacity-60">on</span>
-                    <span className="text-[12px] mr-[5px] text-black opacity-80">testnet</span>
+                    <span className="text-[12px] text-black opacity-80">testnet</span>
                   </div>
                 </div>
                 );
@@ -118,7 +118,7 @@ const HeaderSignin = ({ handleOpen }) => {
                       </div>
                     </Modal>
                   </div>
-                  <div className="text-center mr-[38px]">
+                  <div className="flex justify-center text-center mr-[38px]">
                     <span className="text-[12px] mr-[5px] text-black opacity-60">on</span>
                     <span className="text-[12px] mr-[5px] text-black opacity-80">testnet</span>
                   </div>
@@ -129,11 +129,11 @@ const HeaderSignin = ({ handleOpen }) => {
                   <LensPurpleIcon />
                   Sign In with Lens
                 </button>
-                <div>
+                <div className="flex">
                     <span className="text-[12px] mr-[5px] text-black opacity-60">on</span>
-                    <span className="text-[12px] mr-[5px] text-black opacity-80">testnet</span>
+                    <span className="text-[12px] text-black opacity-80">testnet</span>
                   </div>
-                  </div>
+                </div>
             })()}
           </div>
         );
