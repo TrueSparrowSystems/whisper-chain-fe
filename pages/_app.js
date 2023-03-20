@@ -3,9 +3,14 @@ import "symbol-observable";
 
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
-import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import {   connectorsForWallets,getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { useRef } from "react";
 import Head from "next/head";
+import {
+  injectedWallet,
+  metaMaskWallet,
+  coinbaseWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 import {
   configureChains,
   createClient,
@@ -37,12 +42,22 @@ function MyApp({ Component, pageProps, ...rest }) {
     )
   ).current;
 
-  const { connectors } = useRef(
-    getDefaultWallets({
-      appName: "Whisper.Lens",
-      chains,
-    })
-  ).current;
+  // const { connectors } = useRef(
+  //   getDefaultWallets({
+  //     appName: "Whisper.Lens",
+  //     chains,
+  //   })
+  // ).current;
+
+  const connectors = connectorsForWallets([
+    {
+      groupName: "Whisper.Lens",
+      wallets: [
+        metaMaskWallet({ chains }),
+        coinbaseWallet({ chains }),
+      ],
+    },
+  ]);
 
   const wagmiClient = useRef(
     createClient({
