@@ -1,6 +1,7 @@
 .mainContainer {
   padding: 0 32px;
   gap: 8px;
+  padding-top: 12px;
   position: sticky;
   /* height: 56px; */
   left: calc(50% - 478px/2);
@@ -15,7 +16,7 @@
   gap: 8px;
   position: sticky;
   height: 56px;
-  left: calc(50% - 478px/2);
+  left: calc(50% - 478px/3);
   bottom: 48px;
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(12px);
