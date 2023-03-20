@@ -200,7 +200,7 @@ const Chain = () => {
             className={style.chainContainer}
             
           >
-            <div className="flex justify-center fixed w-full top-[calc(100vh - 25px))] z-[1000]">
+            <div className="flex justify-center fixed w-full top-[calc(100vh - 25px))] z-[1000] pt-[10px] pr-[25px]">
               <a
                 href="#lastEle"
                 id="gopToTop"
