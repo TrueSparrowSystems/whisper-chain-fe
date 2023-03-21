@@ -34,7 +34,7 @@ function Generate({ chainId }) {
   const [pubsId, setPubsId] = React.useState();
   const [isLoading, setIsloading] = React.useState(false);
   const [selectedFilter, setSelectedFilter] = React.useState(
-    FILTER_OPTIONS[0].value
+    FILTER_OPTIONS[1].value
   );
   const [emptyState, setEmptyState] = React.useState(true);
   const [disableGeneration, setDisableGeneration] = React.useState(false);

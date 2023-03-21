@@ -1,5 +1,8 @@
 export const FILTER_OPTIONS = [
   {
+    label: "None",
+  },
+  {
     label: "Cinematic",
     value:
       "perfect composition, beautiful detailed intricate insanely detailed octane render trending on artstation, 8 k artistic photography, photorealistic concept art, soft natural volumetric cinematic perfect light, chiaroscuro, award - winning photograph, masterpiece, oil on canvas, raphael, caravaggio, greg rutkowski, beeple, beksinski, giger",
