@@ -72,7 +72,7 @@ export const getChainData = async (paginationParams) => {
   chainIds.map((chainId) => {
     const chain = data?.chains[chainId];
     const commentArray = [];
-    const resentWhisperIds = chain?.recent_whisper_ids;
+    const resentWhisperIds = chain?.initial_whisper_ids;
     resentWhisperIds?.map((whisperId) => {
       const seedImageId = chain?.image_id;  
       const seedImages = data?.images[seedImageId];
