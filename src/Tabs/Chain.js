@@ -16,7 +16,7 @@ import { usePublicationContext } from "../context/PublicationContext";
 import OnBoardingModal from "../components/OnBoardingModal";
 import SeedImage from "../assets/SeedImage";
 
-const PAGE_LIMIT = 50;
+const PAGE_LIMIT = 15;
 
 const Chain = () => {
   const [chainData, setChainData] = React.useState([]);
