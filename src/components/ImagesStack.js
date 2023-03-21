@@ -15,20 +15,18 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
   const { setPublication } = usePublicationContext();
   const firstImageDetails = imageDetails[0];
   const router = useRouter();
-  // console.log("image details", firstImageDetails);
-  // console.log("image detail array", imageDetails);
-  console.log(firstImageDetails);
+
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col items-center relative">
-        {firstImageDetails?.imageUrl && (
+        {firstImageDetails?.seedImageUrl && (
           <div
             className="tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] relative"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
             <Image
-              src={firstImageDetails.imageUrl}
+              src={firstImageDetails.seedImageUrl}
               alt="Stack Image"
               fill
               priority
@@ -49,17 +47,17 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
               className={`flex relative p-[40px] rounded-tr-[48px] rounded-tl-[48px]  backdrop-blur-[2px] ${styles.backdrop} `}
             >
               <div className={`flex w-[360px]`}>
-                <ProfileLogo profileImageUrl={firstImageDetails?.profileImageUrl} />
+                <ProfileLogo profileImageUrl={firstImageDetails?.seedImageProfileUrl} />
                 <div className="ml-[5px] flex flex-col justify-center items-start gap-[4px]">
                   <div
                     className={`not-italic leading-[100%] text-[#FFFFFF] font-bold text-[14px] ${styles.name}`}
                   >
-                    {firstImageDetails?.name || "Lewis"}
+                    {firstImageDetails?.seedImageDisplayName || "Lewis"}
                   </div>
                   <div
                     className={`not-italic font-normal text-[14px] leading-[100%] text-[#FFFFFF] ${styles.Handle}`}
                   >
-                    {"@" + firstImageDetails?.profileHandle || "Lewis.xyz"}
+                    {"@" + firstImageDetails?.seedImageUserName || "Lewis.xyz"}
                   </div>
                 </div>
               </div>
