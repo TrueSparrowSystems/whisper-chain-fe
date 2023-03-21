@@ -10,7 +10,7 @@ const BlackEyeIcon = () => {
       <path
         d="M10.5 4.375C4.25 4.375 1.75 10 1.75 10C1.75 10 4.25 15.625 10.5 15.625C16.75 15.625 19.25 10 19.25 10C19.25 10 16.75 4.375 10.5 4.375Z"
         stroke="black"
-        stroke-opacity="0.8"
+        strokeOpacity="0.8"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -18,7 +18,7 @@ const BlackEyeIcon = () => {
       <path
         d="M10.5 13.125C12.2259 13.125 13.625 11.7259 13.625 10C13.625 8.27411 12.2259 6.875 10.5 6.875C8.77411 6.875 7.375 8.27411 7.375 10C7.375 11.7259 8.77411 13.125 10.5 13.125Z"
         stroke="black"
-        stroke-opacity="0.8"
+        strokeOpacity="0.8"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

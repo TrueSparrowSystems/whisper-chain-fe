@@ -15,7 +15,7 @@ const WhisperChainShortLogo = () => {
           height="72"
           rx="18"
           fill="white"
-          fill-opacity="0.4"
+          fillOpacity="0.4"
           shape-rendering="crispEdges"
         />
         <path
@@ -29,7 +29,7 @@ const WhisperChainShortLogo = () => {
           height="71"
           rx="17.5"
           stroke="url(#paint0_linear_2354_8904)"
-          stroke-opacity="0.2"
+          strokeOpacity="0.2"
           shape-rendering="crispEdges"
         />
       </g>
