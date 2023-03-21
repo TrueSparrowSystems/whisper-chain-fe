@@ -72,7 +72,7 @@ export const getChainData = async (paginationParams) => {
   chainIds.map((chainId) => {
     const chain = data?.chains[chainId];
     const commentArray = [];
-    const resentWhisperIds = chain?.initial_whisper_ids;
+    const resentWhisperIds = chain?.recent_whisper_ids;
     resentWhisperIds?.map((whisperId) => {
       const seedImageId = chain?.image_id;  
       const seedImages = data?.images[seedImageId];
@@ -87,7 +87,7 @@ export const getChainData = async (paginationParams) => {
         seedImageUrl : convertIntoIpfsUrl(seedImages.url),
         seedImageDisplayName: seedImageDetails.platform_display_name,
         seedImageUserName: seedImageDetails.platform_username,
-        seedImageProfileUrl: convertIntoIpfsUrl(seedImageProfile.url),
+        seedImageProfileUrl: convertIntoIpfsUrl(seedImageProfile  .url),
         profileHandle: user?.platform_username,
         name: user?.platform_display_name,
         totalWhispers: chain.total_whispers,
