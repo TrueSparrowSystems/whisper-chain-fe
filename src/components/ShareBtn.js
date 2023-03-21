@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import styles from "./AddWhisperBtn.module.css";
+import { useRouter } from "next/router";
+import { useBottomTab } from "../context/BottomTabContext";
 
 const ShareBtn = ({ height, width }) => {
+  const pageIndex = 0;
+  const { onTabChange } = useBottomTab();
+  const router = useRouter();
   const goToHome = () => {
         router.push("/");
+        onTabChange(TabItems[pageIndex]);
   };
   return (
     <a
