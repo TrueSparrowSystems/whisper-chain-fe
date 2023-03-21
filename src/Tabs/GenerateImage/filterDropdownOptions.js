@@ -1,6 +1,7 @@
 export const FILTER_OPTIONS = [
   {
     label: "None",
+    value: "None",
   },
   {
     label: "Cinematic",
