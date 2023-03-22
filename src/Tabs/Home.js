@@ -9,16 +9,12 @@ import { getTimerClock } from "../utils/Utils";
 import Image from "next/image";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/effect-creative";
 
 // import required modules
-import { Mousewheel, EffectCreative } from "swiper";
 import styles from "./Home.module.css";
 
 // import Swiper core and required modules
@@ -32,7 +28,7 @@ const PAGE_LIMIT = 10;
 
 const Home = () => {
   const [publicationData, setPublicationData] = React.useState([]);
-  const [isLoading, setIsloading] = React.useState(false);
+  const [isLoading, setIsloading] = React.useState(true);
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
   const { setPublication } = usePublicationContext();
   const paginationParams = React.useRef({
@@ -43,7 +39,6 @@ const Home = () => {
   const [hasMore, setHasMore] = React.useState(false);
 
   const fetchData = async (paginationParams) => {
-    setIsloading(true);
     const data = await getChainData(paginationParams);
     const hasMoreFlag = data?.length >= PAGE_LIMIT;
     setHasMore(hasMoreFlag);
@@ -60,37 +55,20 @@ const Home = () => {
         fetchData(paginationParams.current)
       } else {
         fetchNextData(paginationParams.current)
+        setIsloading(false);
       }
     }
   }, []);
 
-  const fetchNextData = async (paginationParams) => {
-    const data = await getChainData(paginationParams);
-    const hasMoreFlag = data?.length >= PAGE_LIMIT;
-    setHasMore(hasMoreFlag);
-    if (publicationData.length == 0) {
-      setPublication(data[0]);
-    }
-    setPublicationData([...publicationData, ...data]);
-  };
-
-  const onReachEndHandler = async () => {
-    if (isFirstLoad.current) {
-      isFirstLoad.current = false;
-    } else {
+  const fetchNextData = async () => {
       if (hasMore) {
         paginationParams.current = {
           page: paginationParams.current.page + 1,
           limit: PAGE_LIMIT,
         };
-        await fetchNextData(paginationParams.current);
+        await fetchData(paginationParams.current);
       }
-    }
   };
-
-  // const swiperBegining = () => {
-
-  // }
 
   return isLoading ? (
     <SpinningLoader height="80vh" width="100%" />

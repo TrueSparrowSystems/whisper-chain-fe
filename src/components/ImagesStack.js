@@ -18,10 +18,10 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col items-center relative">
+      <div className="flex flex-col items-center relative overflow-hidden rounded-[48px]">
         {firstImageDetails?.seedImageUrl && (
           <div
-            className="tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] relative"
+            className="tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] overflow-hidden rounded-[48px] relative"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
@@ -41,10 +41,10 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
           <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className={`tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] absolute z-[10] rounded-[48px] `}
+            className={`tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] absolute z-[10] overflow-hidden `}
           >
             <div
-              className={`flex relative p-[40px] rounded-tr-[48px] rounded-tl-[48px]  backdrop-blur-[2px] ${styles.backdrop} `}
+              className={`flex relative p-[40px] overflow-hidden rounded-tr-[48px] rounded-tl-[48px]  backdrop-blur-[2px] ${styles.backdrop} `}
             >
               <div className={`flex w-[360px]`}>
                 <ProfileLogo profileImageUrl={firstImageDetails?.seedImageProfileUrl} />
@@ -61,13 +61,6 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
                   </div>
                 </div>
               </div>
-              {/* <div
-              className={`not-italic text-[16px] leading-[100%] text-[#FFFFFF] font-medium ${styles.createdAt}`}
-            >
-              {firstImageDetails?.createdAt || "2:32 pm"}
-            </div> */}
-
-              {/* <FollowButton data={firstImageDetails} /> */}
             </div>
             <div className={`flex flex-col justify-center items-center absolute top-[82%] left-[50%] text-center gap-[8px] w-full -translate-x-[50%] rounded-br-[48px] rounded-bl-[48px] ${styles.bottomBackdrop}`}>
               <div
@@ -128,7 +121,7 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
           </div>
         </div>
       </div>
-      {currentSlideIndex === 0 &&
+      {/* {currentSlideIndex === 0 &&
         <div className="swiperGif w-1/2 flex flex-col items-center h-[1px] z-1  opacity-40 relative tablet:top-[45px] top-[10%]"
           id="swiperGif">
           <Image
@@ -145,7 +138,7 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
             >Scroll to view more </p>
           }
         </div>
-      }
+      } */}
     </div>
   );
 };
