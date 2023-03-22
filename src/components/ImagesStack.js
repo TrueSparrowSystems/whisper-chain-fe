@@ -142,7 +142,7 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
           {swipeHovered &&
             <p className="text-black text-[14px]"
               onmou
-            >Scroll to view more</p>
+            >Scroll to view more </p>
           }
         </div>
       }

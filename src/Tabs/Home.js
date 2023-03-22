@@ -7,6 +7,7 @@ import SpinningLoader from "../components/SpinningLoader";
 import moment from "moment";
 import { getTimerClock } from "../utils/Utils";
 import Image from "next/image";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -95,6 +96,7 @@ const Home = () => {
     <SpinningLoader height="80vh" width="100%" />
   ) : (
     <div className={`w-full ${styles.homeWrapper}`}>
+
       <div className="flex h-[780px] relative w-fit gap-[40px] m-auto tablet:h-[650px] tablet:gap-0">
         <div className="flex w-full	flex-col items-center justify-center">
           <div className="w-[512px] h-fit mt-[calc(100vh-512px)] tablet:mt-[calc(100vh-404px)]">
@@ -109,52 +111,35 @@ const Home = () => {
                   : null}
               </div>
             </div>
-            <Swiper
-              // freeMode
-              // followFinger
-              direction={"vertical"}
-              slidesPerView={1}
-              preventClicks={true}
-              preventClicksPropagation={true}
-              spaceBetween={30}
-              mousewheel={{
-                eventsTarget: "#home-section",
-                releaseOnEdges: true,
-                sensitivity: 1,
-                thresholdDelta: 60,
-                thresholdTime: 600,
-              }}
-              effect={"creative"}
-              creativeEffect={{
-                prev: {
-                  translate: [0, "-100%", 0],
-                },
-                next: {
-                  translate: [0, "100%", 0],
-                },
-              }}
-              modules={[Mousewheel, EffectCreative]}
-              onSlideChange={(swiper) =>
-                setCurrentSlideIndex(swiper.activeIndex)
-              }
-              onReachEnd={onReachEndHandler}
-            >
-              {publicationData &&
-                publicationData.map((pub, index) => (
-                  <SwiperSlide key={pub?.pubId + index}>
-                    <div className="absolute top-0">
-                      <div className="slide w-full flex justify-start relative">
-                        {pub?.comments[0] ? (
-                          <ImagesStack imageDetails={pub?.comments} pub={pub} index={index} currentSlideIndex={currentSlideIndex} />
-                        ) : null}
+
+            <div className="relative bottom-[85px]">
+              <InfiniteScroll
+                dataLength={publicationData?.length}
+                next={fetchNextData}
+                hasMore={hasMore}
+                height={"calc(100vh - 190px)"}
+                endMessage={<div></div>}
+                className="scroll-smooth"
+              >
+                <div
+                  id="demmoId"
+                  className={styles.chainContainer}
+                >
+                  {publicationData &&
+                    publicationData.map((pub, index) => (
+                      <div key={pub?.pubId + index}>
+                        <div className="mb-[125px]">
+                          <div className="slide w-full flex justify-start relative">
+                            {pub?.comments[0] ? (
+                              <ImagesStack imageDetails={pub?.comments} pub={pub} index={index} currentSlideIndex={currentSlideIndex} />
+                            ) : null}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                   
-                  </SwiperSlide>
-                ))}
-
-            </Swiper>
-
+                    ))}
+                </div>
+              </InfiniteScroll>
+            </div>
           </div>
         </div>
         <div className="w-full flex items-center justify-center	right-[0px] z-[2]">
