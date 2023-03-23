@@ -8,7 +8,7 @@ import BlackEyeIcon from "../assets/BlackEyeIcon";
 import ChainIcon from "../assets/ChainIcon";
 import LoaderSvgIcon from "../assets/loaderSvgIcon";
 
-const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
+const ImagesStack = ({ imageDetails, pub, index, evdate, currentSlideIndex, callback }) => {
   const [hovered, setHovered] = React.useState(false);
   const [swipeHovered, setSwipeHovered] = React.useState(false);
   const { setPublication } = usePublicationContext();
@@ -22,20 +22,41 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
   };
 
 
+  const listRef = React.useRef();
+  const lastElementRef = React.useCallback(
+    (node) => {
+      if (listRef.current) listRef.current.disconnect();
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.4,
+      };
+      listRef.current = new IntersectionObserver((entries) => {
+        if (
+          entries[0].isIntersecting
+
+        ) {
+          console.log("visible evdate", evdate)
+          callback(evdate);
+        }
+      }, options);
+      if (node) listRef.current.observe(node);
+    },
+    []
+  );
+
   return (
-
-
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col tablet:h-[400px] tablet:w-[400px] items-center" ref={lastElementRef}>
       {
         !isImageLoaded &&
-        <div className={`flex items-center tablet:h-[320px] tablet:w-[320px]  h-[512px] w-[512px] justify-center z-10 ${styles.loader_container}`}>
+        <div className={`flex items-center tablet:h-[400px] tablet:w-[400px] h-[512px] w-[512px] justify-center z-10 ${styles.loader_container}`}>
           <LoaderSvgIcon className="h-[24px] w-[24px]" />
         </div>
       }
-      <div className="flex flex-col items-center relative">
+      <div className="flex flex-col items-center overflow-hidden rounded-[48px] relative">
         {firstImageDetails?.seedImageUrl && (
           <div
-            className="tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] relative"
+            className="tablet:w-[400px] tablet:h-[400px] overflow-hidden rounded-[48px] w-[512px] h-[512px] relative group"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
@@ -53,11 +74,12 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
             />
           </div>
         )}
-        {hovered && (
+          {hovered && (
           <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className={`tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] absolute z-[10]`}
+            className={`tablet:w-[400px] tablet:h-[400px] w-[512px] rounded-[48px] h-[512px] absolute z-[10]`}
+            style={{borderRadius: '48px'}}
           >
             <div
               className={`flex relative p-[40px] overflow-hidden rounded-tr-[48px] rounded-tl-[48px]  backdrop-blur-[2px] ${styles.backdrop} `}
@@ -105,10 +127,11 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
         <div className="absolute bottom-[-26px] z-[2]">
           <div className="tablet:w-[350px] tablet:h-[400px] w-[452px] h-[512px] relative">
             <Image
-             style={{ opacity: isImageLoaded ? 1 : 0 }}
+              style={{ opacity: isImageLoaded ? 1 : 0 }}
               alt="Stack Image 2"
               className="rounded-[48px]"
               fill
+              priority
               src={
                 imageDetails[1]?.imageUrl
                   ? imageDetails[1].imageUrl
@@ -123,10 +146,11 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
         <div className="absolute bottom-[-44px] z-[1]">
           <div className="tablet:w-[300px] tablet:h-[400px] w-[404px] h-[512px] relative">
             <Image
-             style={{ opacity: isImageLoaded ? 1 : 0 }}
+              style={{ opacity: isImageLoaded ? 1 : 0 }}
               alt="Stack Image 3"
               className="rounded-[48px]"
               fill
+              priority
               src={
                 imageDetails[2]?.imageUrl
                   ? imageDetails[2].imageUrl

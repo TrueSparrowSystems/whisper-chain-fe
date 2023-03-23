@@ -110,8 +110,6 @@
 
 .loader_container {
    margin: 0 auto;
-    height: 512px;
-    width: 512px;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 32px;
 }

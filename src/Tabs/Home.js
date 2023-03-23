@@ -20,6 +20,7 @@ import styles from "./Home.module.css";
 // import Swiper core and required modules
 import SwiperCore, { Manipulation } from "swiper";
 import { usePublicationContext } from "../context/PublicationContext";
+import SeedImage from "../assets/SeedImage";
 
 // install Swiper modules
 SwiperCore.use([Manipulation]);
@@ -30,6 +31,7 @@ const Home = () => {
   const [publicationData, setPublicationData] = React.useState([]);
   const [isLoading, setIsloading] = React.useState(true);
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
+  console.log("currentSlideIndex",currentSlideIndex)
   const { setPublication } = usePublicationContext();
   const paginationParams = React.useRef({
     page: 1,
@@ -37,6 +39,8 @@ const Home = () => {
   });
   const isFirstLoad = React.useRef(true);
   const [hasMore, setHasMore] = React.useState(false);
+
+  const whisperRef = React.useRef();
 
   const fetchData = async (paginationParams) => {
     const data = await getChainData(paginationParams);
@@ -61,14 +65,18 @@ const Home = () => {
   }, []);
 
   const fetchNextData = async () => {
-      if (hasMore) {
-        paginationParams.current = {
-          page: paginationParams.current.page + 1,
-          limit: PAGE_LIMIT,
-        };
-        await fetchData(paginationParams.current);
-      }
+    if (hasMore) {
+      paginationParams.current = {
+        page: paginationParams.current.page + 1,
+        limit: PAGE_LIMIT,
+      };
+      await fetchData(paginationParams.current);
+    }
   };
+
+  const [publicationDate, setPublicationDate] = React.useState();
+
+
 
   return isLoading ? (
     <SpinningLoader height="80vh" width="100%" />
@@ -82,11 +90,7 @@ const Home = () => {
               <div
                 className={`h-[22px] text-[16px] not-italic font-medium leading-[140%] ${styles.Date}`}
               >
-                {publicationData[currentSlideIndex]?.createdAt
-                  ? moment
-                    .unix(publicationData[currentSlideIndex]?.createdAt)
-                    .format("MMMM DD YYYY")
-                  : null}
+                {publicationDate}
               </div>
             </div>
 
@@ -106,15 +110,24 @@ const Home = () => {
                   {publicationData &&
                     publicationData.map((pub, index) => (
                       <div key={pub?.pubId + index}>
-                        <div className="mb-[125px]">
+                        <div className={`mb-[125px]`}>
                           <div className="slide w-full flex justify-start relative">
                             {pub?.comments[0] ? (
-                              <ImagesStack imageDetails={pub?.comments} pub={pub} index={index} currentSlideIndex={currentSlideIndex} />
+                              <ImagesStack imageDetails={pub?.comments}
+                               evdate = {moment
+                                .unix(publicationData[index]?.createdAt)
+                                .format("MMMM DD YYYY")}
+                               callback={ ( date ) => {setPublicationDate(date)}} pub={pub} index={index} currentSlideIndex={currentSlideIndex} />
                             ) : null}
                           </div>
                         </div>
                       </div>
                     ))}
+                  <div className="text-[16px] flex flex-col items-center relative top-[-100px]" id="lastEle">
+                    <SeedImage />
+                    <p className="text-black opacity-[0.6]">You're all caught up</p>
+                    <p className="text-center font-medium text-[14px] text-black opacity-[0.4]">You've seen all the chains till date.</p>
+                  </div>
                 </div>
               </InfiniteScroll>
             </div>
