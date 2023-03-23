@@ -5,9 +5,8 @@ import Image from "next/image";
 import styles from "./ImageStack.module.css";
 import { useRouter } from "next/router";
 import BlackEyeIcon from "../assets/BlackEyeIcon";
-// import FollowButton from "./FollowButton";
-import { convertIntoIpfsUrl } from "../utils/Utils.js"
 import ChainIcon from "../assets/ChainIcon";
+import LoaderSvgIcon from "../assets/loaderSvgIcon";
 
 const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
   const [hovered, setHovered] = React.useState(false);
@@ -16,20 +15,37 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
   const firstImageDetails = imageDetails[0];
   const router = useRouter();
 
+  const [isImageLoaded, setIsImageloaded] = React.useState(false);
+
+  const onLoadCompleteHandler = () => {
+    setIsImageloaded(true);
+  };
+
+
   return (
+
+
     <div className="flex flex-col items-center">
-      <div className="flex flex-col items-center relative overflow-hidden rounded-[48px]">
+      {
+        !isImageLoaded &&
+        <div className={`flex items-center tablet:h-[320px] tablet:w-[320px]  h-[512px] w-[512px] justify-center z-10 ${styles.loader_container}`}>
+          <LoaderSvgIcon className="h-[24px] w-[24px]" />
+        </div>
+      }
+      <div className="flex flex-col items-center relative">
         {firstImageDetails?.seedImageUrl && (
           <div
-            className="tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] overflow-hidden rounded-[48px] relative"
+            className="tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] relative"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
             <Image
+              style={{ opacity: isImageLoaded ? 1 : 0 }}
               src={firstImageDetails.seedImageUrl}
               alt="Stack Image"
               fill
               priority
+              onLoadingComplete={onLoadCompleteHandler}
               className="relative flex z-[3] rounded-[48px]"
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
@@ -41,7 +57,7 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
           <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className={`tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] absolute z-[10] overflow-hidden `}
+            className={`tablet:w-[400px] tablet:h-[400px] w-[512px] h-[512px] absolute z-[10]`}
           >
             <div
               className={`flex relative p-[40px] overflow-hidden rounded-tr-[48px] rounded-tl-[48px]  backdrop-blur-[2px] ${styles.backdrop} `}
@@ -89,6 +105,7 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
         <div className="absolute bottom-[-26px] z-[2]">
           <div className="tablet:w-[350px] tablet:h-[400px] w-[452px] h-[512px] relative">
             <Image
+             style={{ opacity: isImageLoaded ? 1 : 0 }}
               alt="Stack Image 2"
               className="rounded-[48px]"
               fill
@@ -106,6 +123,7 @@ const ImagesStack = ({ imageDetails, pub, index, currentSlideIndex }) => {
         <div className="absolute bottom-[-44px] z-[1]">
           <div className="tablet:w-[300px] tablet:h-[400px] w-[404px] h-[512px] relative">
             <Image
+             style={{ opacity: isImageLoaded ? 1 : 0 }}
               alt="Stack Image 3"
               className="rounded-[48px]"
               fill
