@@ -68,7 +68,6 @@ export const getChainData = async (paginationParams) => {
   const dataObject = [];
   const data = await getChains(paginationParams);
   const chainIds = data?.chain_ids;
-
   chainIds.map((chainId) => {
     const chain = data?.chains[chainId];
     const commentArray = [];
