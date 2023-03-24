@@ -110,7 +110,7 @@ const Home = () => {
                   {publicationData &&
                     publicationData.map((pub, index) => (
                       <div key={pub?.pubId + index}>
-                        <div className={`mb-[125px]`}>
+                        <div className={`mb-[125px] tablet:mb-[180px]`}>
                           <div className="slide w-full flex justify-start relative">
                             {pub?.comments[0] ? (
                               <ImagesStack imageDetails={pub?.comments}
@@ -123,7 +123,7 @@ const Home = () => {
                         </div>
                       </div>
                     ))}
-                  <div className="text-[16px] flex flex-col items-center relative top-[-100px]" id="lastEle">
+                  <div className="text-[16px] flex flex-col items-center relative top-[-100px] tablet:top-[-160px]" id="lastEle">
                     <SeedImage />
                     <p className="text-black opacity-[0.6]">You're all caught up</p>
                     <p className="text-center font-medium text-[14px] text-black opacity-[0.4]">You've seen all the chains till date.</p>
