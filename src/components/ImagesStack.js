@@ -29,7 +29,7 @@ const ImagesStack = ({ imageDetails, pub, index, evdate, currentSlideIndex, call
       const options = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.4,
+        threshold: 0.8,
       };
       listRef.current = new IntersectionObserver((entries) => {
         if (

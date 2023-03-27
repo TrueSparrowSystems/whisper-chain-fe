@@ -31,7 +31,7 @@ const Home = () => {
   const [publicationData, setPublicationData] = React.useState([]);
   const [isLoading, setIsloading] = React.useState(true);
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
-  console.log("currentSlideIndex",currentSlideIndex)
+  console.log("currentSlideIndex", currentSlideIndex)
   const { setPublication } = usePublicationContext();
   const paginationParams = React.useRef({
     page: 1,
@@ -39,8 +39,6 @@ const Home = () => {
   });
   const isFirstLoad = React.useRef(true);
   const [hasMore, setHasMore] = React.useState(false);
-
-  const whisperRef = React.useRef();
 
   const fetchData = async (paginationParams) => {
     const data = await getChainData(paginationParams);
@@ -76,13 +74,10 @@ const Home = () => {
 
   const [publicationDate, setPublicationDate] = React.useState();
 
-
-
   return isLoading ? (
     <SpinningLoader height="80vh" width="100%" />
   ) : (
     <div className={`w-full ${styles.homeWrapper}`}>
-
       <div className="flex h-[780px] relative w-fit gap-[40px] m-auto tablet:h-[650px] tablet:gap-0">
         <div className="flex w-full	flex-col items-center justify-center">
           <div className="w-[512px] h-fit mt-[calc(100vh-512px)] tablet:mt-[calc(100vh-404px)]">
@@ -94,30 +89,30 @@ const Home = () => {
               </div>
             </div>
 
-            <div className={`relative ${ hasMore === false ? "bottom-[85px]" : "bottom-[85px]" }`}>
+            <div className={`relative bottom-[93px] z-0 `}>
               <InfiniteScroll
                 dataLength={publicationData?.length}
                 next={fetchNextData}
                 hasMore={hasMore}
                 height={"calc(100vh - 190px)"}
                 endMessage={<div></div>}
-                className="scroll-smooth"
+                className="scroll-smooth snap-y snap-mandatory"
               >
                 <div
                   id="demmoId"
-                  className={styles.chainContainer}
+                  className={` ${styles.chainContainer}`}
                 >
                   {publicationData &&
                     publicationData.map((pub, index) => (
-                      <div key={pub?.pubId + index} className="pb-[125px]">
+                      <div key={pub?.pubId + index} className="pb-[134px] snap-start">
                         <div className={` ${styles.whisperImageCont}`}>
                           <div className="slide w-full flex justify-start relative">
                             {pub?.comments[0] ? (
                               <ImagesStack imageDetails={pub?.comments}
-                               evdate = {moment
-                                .unix(publicationData[index]?.createdAt)
-                                .format("MMMM DD YYYY")}
-                               callback={ ( date ) => {setPublicationDate(date)}} pub={pub} index={index} currentSlideIndex={currentSlideIndex} />
+                                evdate={moment
+                                  .unix(publicationData[index]?.createdAt)
+                                  .format("MMMM DD YYYY")}
+                                callback={(date) => { setPublicationDate(date) }} pub={pub} index={index} currentSlideIndex={currentSlideIndex} />
                             ) : null}
                           </div>
                         </div>
