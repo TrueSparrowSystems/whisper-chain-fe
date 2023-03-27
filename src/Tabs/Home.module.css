@@ -11,14 +11,7 @@
     }    
   }
 
-/* .status{
-    letter-spacing: -0.03em;
-    color: rgba(0, 0, 0, 0.8);
-} */
 
-
-@media  (min-width: 1792px)and (min-height: 1010px) {
-  .lastMesssage{
-    margin-bottom: 105px;
-  }
+@media  (max-width: 1792px)and (max-height: 1010px) {
+  
 }
