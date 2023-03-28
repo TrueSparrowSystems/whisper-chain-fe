@@ -53,7 +53,7 @@ const ImagesStack = ({ imageDetails, pub, index, evdate, currentSlideIndex, call
           <LoaderSvgIcon className="h-[24px] w-[24px]" />
         </div>
       }
-      <div className="flex flex-col items-center overflow-hidden rounded-[48px] relative">
+      <div className="flex flex-col items-center relative">
         {firstImageDetails?.seedImageUrl && (
           <div
             className="tablet:w-[400px] tablet:h-[400px] overflow-hidden rounded-[48px] w-[512px] h-[512px] relative group"
