@@ -1,23 +1,23 @@
 import React from "react";
 import styles from "./JoinedFromMobile.module.css";
-import InfoLogo from "../assets/InfoLogo";
 import Logo from "../assets/Logo";
-import WhisperChainShortLogo from "../assets/WhisperChainShortLogo";
-import MobileNotSupported from "../assets/MoblieNotSupported";
-import GenerateLogo from "../assets/tabLogos/GenerateLogo";
-import CollectIcon from "../assets/CollectIcon";
-import PlusIcon from "../assets/PlusIcon";
+import Typewriter from "typewriter-effect";
+import QuestionMarkIcon from "../assets/QuestionMarkIcon";
+import QuestionMarkIconBlack from "../assets/QuestionMarkIconBlack";
 
 export default function JoinedFromMobile() {
   const handlePLGClick = () => {
     const plgURL = "https://plgworks.com/";
     window.open(plgURL, "_blank");
   };
-  const handleNotionClick = () => {
+
+  const handleHowItWorks = () => {
     const plgURL =
-      "https://plgworks.notion.site/Whisper-Chain-fc95cbdc8f9a4a41b87747a190477a61";
+      "https://www.notion.so/truesparrow/Whisper-Chain-fc95cbdc8f9a4a41b87747a190477a61";
     window.open(plgURL, "_blank");
   };
+
+  const [isQueHovered, setIsQueHovered] = React.useState(false);
 
   return (
     <>
@@ -26,8 +26,6 @@ export default function JoinedFromMobile() {
       </div>
       <div className={`m-[20px] ${styles.mobileCardSection}`}>
         <div className={`${styles.mobileCardWrapper}`}>
-          {/* <div className={`${styles.mobileCardImage}`}>
-          </div> */}
           <video autoPlay muted loop>
             <source src="https://static.staging.whisperchain.xyz/whisperHomePage/mobile-background.mp4" type="video/mp4" />
           </video>
@@ -43,6 +41,80 @@ export default function JoinedFromMobile() {
               </svg>
             </div>
           </div>
+        </div>
+      </div>
+      <div>
+        <div className={`relative bottom-[80px]`}>
+          <button
+            className={`${styles.howItWorks} cursor-pointer relative left-[18%]`}
+            onClick={handleHowItWorks}
+            onMouseEnter={() => setIsQueHovered(true)}
+            onMouseLeave={() => setIsQueHovered(false)}
+          >
+            <span className="flex items-center">
+              {isQueHovered ? <QuestionMarkIconBlack /> : <QuestionMarkIcon />}
+            </span>
+            <div
+              className={`${styles.hiwText} text-[#000000] bottom-[0px] flex items-center font-medium absolute w-[100px] left-[25px] top-0`}
+            >
+              How it works
+            </div>
+            <div className={styles.hiwSpace}></div>
+          </button>
+        </div>
+        <div className={`relative bottom-[30px]`}>
+          <button onClick={handlePLGClick}>
+            <Typewriter
+              options={{
+                loop: true,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter"
+                    )[0].style.display = "flex";
+                    document.getElementsByClassName(
+                      "Typewriter"
+                    )[0].style.width = "228px";
+                  })
+                  .typeString("Made with 🧡 by True Sparrow")
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter__cursor"
+                    )[0].innerHTML = "";
+                  })
+                  .pauseFor(5000)
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter__cursor"
+                    )[0].innerHTML = "|";
+                  })
+                  .deleteAll()
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter"
+                    )[0].style.display = "flex";
+                    document.getElementsByClassName(
+                      "Typewriter"
+                    )[0].style.width = "213px";
+                  })
+                  .typeString("Need help building on Lens?")
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter__cursor"
+                    )[0].innerHTML = "";
+                  })
+                  .pauseFor(60000)
+                  .callFunction(() => {
+                    document.getElementsByClassName(
+                      "Typewriter__cursor"
+                    )[0].innerHTML = "|";
+                  })
+                  .start();
+              }}
+            />
+          </button>
         </div>
       </div>
     </>

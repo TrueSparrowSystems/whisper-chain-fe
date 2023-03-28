@@ -96,7 +96,7 @@ const Home = () => {
                 hasMore={hasMore}
                 height={"calc(100vh - 190px)"}
                 endMessage={<div></div>}
-                className="scroll-smooth snap-y snap-mandatory"
+                className="snap-y snap-mandatory"
               >
                 <div
                   id="demmoId"
@@ -104,7 +104,7 @@ const Home = () => {
                 >
                   {publicationData &&
                     publicationData.map((pub, index) => (
-                      <div key={pub?.pubId + index} className="pb-[134px] snap-start">
+                      <div key={pub?.pubId + index} className="pb-[134px] snap-start snap-always">
                         <div className={` ${styles.whisperImageCont}`}>
                           <div className="slide w-full flex justify-start relative">
                             {pub?.comments[0] ? (

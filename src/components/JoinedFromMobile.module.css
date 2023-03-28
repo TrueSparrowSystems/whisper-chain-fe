@@ -1,9 +1,10 @@
-.mobileCardSection{
+.mobileCardSection {
     display: flex;
     justify-content: center;
     align-items: center;
     height: calc(100vh - 230px);
 }
+
 .mobileCardWrapper {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, #FFFFFF 100%);
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -24,12 +25,13 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .mobileCardSection{
+    .mobileCardSection {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(100vh - 175px);
+        height: calc(100vh - 185px);
     }
+
     .mobileCardWrapper {
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, #FFFFFF 100%);
         border: 1px solid rgba(0, 0, 0, 0.2);
@@ -39,6 +41,7 @@
         width: 100%;
         margin: 10px;
         border-radius: 16px;
+        height: 480px;
     }
 
     .mobileCardImage {
@@ -48,6 +51,7 @@
         border-top-left-radius: 20px;
     }
 }
+
 @media only screen and (max-width: 500px) {
     .mobileCardImage {
         height: 32%;
