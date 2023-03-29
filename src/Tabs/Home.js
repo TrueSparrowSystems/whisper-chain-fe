@@ -118,7 +118,7 @@ const Home = () => {
                         </div>
                       </div>
                     ))}
-                  <div className={`text-[16px] flex flex-col items-center relative top-[-100px] tablet:top-[-160px] mb-[105px]  ${styles.lastMesssage}`} id="lastEle">
+                  <div className={`text-[16px] flex flex-col items-center relative top-[-80px] tablet:top-[-75px] tablet:left-[-60px] tablet:mb-[205px] mb-[105px]  ${styles.lastMesssage}`} id="lastEle">
                     <SeedImage />
                     <p className="text-black opacity-[0.6]">You're all caught up</p>
                     <p className="text-center font-medium text-[14px] text-black opacity-[0.4]">You've seen all the chains till date.</p>
