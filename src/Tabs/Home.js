@@ -104,7 +104,7 @@ const Home = () => {
                 >
                   {publicationData &&
                     publicationData.map((pub, index) => (
-                      <div key={pub?.pubId + index} className="pb-[134px] snap-start snap-always">
+                      <div key={pub?.pubId + index} className="pb-[134px] snap-start">
                         <div className={` ${styles.whisperImageCont}`}>
                           <div className="slide w-full flex justify-start relative">
                             {pub?.comments[0] ? (
