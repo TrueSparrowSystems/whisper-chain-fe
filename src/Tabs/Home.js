@@ -96,7 +96,7 @@ const Home = () => {
                 hasMore={hasMore}
                 height={"calc(100vh - 190px)"}
                 endMessage={<div></div>}
-                className="snap-y snap-mandatory"
+                // className="snap-y snap-mandatory"
               >
                 <div
                   id="demmoId"
