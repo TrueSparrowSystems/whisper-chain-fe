@@ -46,7 +46,7 @@ jobs:
       
     - name: Build and generate static page
       run: |-
-        mv secrets/frontend.staging.env .env
+        mv secrets/whisper-chain-fe/frontend.staging.env .env
         cat .env
         sudo apt install -y curl
         curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
