@@ -62,7 +62,7 @@ export const createIpfsObjects = async (url, chainId) => {
     {
       s3_url: url,
       title: "",
-      description: `Hello frens! I have generated this mutation with the help of AI. \n Generate your own and add to chain on https://staging.whisperchain.xyz/chain/${chainId}`
+      description: `Hello frens! I have generated this mutation with the help of AI. \n Generate your own and add to chain on  ${process.env.BASE_URL}/chain/${chainId}`,
     },
     {
       headers: {
