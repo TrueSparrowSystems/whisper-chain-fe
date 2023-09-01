@@ -18,8 +18,10 @@ export const resetLocalStorage = () => {
 };
 
 export const getImagesFromPrompt = async (prompt, filter = "") => {
-  const resp = await axios.get(`/images?prompt=${prompt}&art_style=${filter}`, {
-  });
+  const resp = await axios.get(
+    `/images?prompt=${prompt}&art_style=${filter}`,
+    {}
+  );
   const responseData = resp?.data;
   return responseData.data;
 };
@@ -57,6 +59,7 @@ export const getIpfsUrl = async (url) => {
 };
 
 export const createIpfsObjects = async (url, chainId) => {
+  console.log("Base domain: ", process.env.BASE_URL);
   const resp = await axios.post(
     "/lens/ipfs-objects",
     {
@@ -173,7 +176,12 @@ export const getLatestWhisper = async (chainId) => {
   return responseData.data;
 };
 
-export async function getIpfsUrlandUploadPublication(url, chainId, pubId, address) {
+export async function getIpfsUrlandUploadPublication(
+  url,
+  chainId,
+  pubId,
+  address
+) {
   let whisperIpfsObjectId;
   let imageIpfsObjectId;
   const metadataResponse = await createIpfsObjects(url, chainId);
