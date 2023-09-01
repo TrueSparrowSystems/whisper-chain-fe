@@ -60,12 +60,13 @@ export const getIpfsUrl = async (url) => {
 
 export const createIpfsObjects = async (url, chainId) => {
   console.log("Base domain: ", process.env.BASE_URL);
+  // Todo @shahhardik4599 and @GopalJasani09 Remove hardcoding from url
   const resp = await axios.post(
     "/lens/ipfs-objects",
     {
       s3_url: url,
       title: "",
-      description: `Hello frens! I have generated this mutation with the help of AI. \n Generate your own and add to chain on  ${process.env.BASE_URL}/chain/${chainId}`,
+      description: `Hello frens! I have generated this mutation with the help of AI. \n Generate your own and add to chain on  https://whisperchain.xyz/chain/${chainId}`,
     },
     {
       headers: {
