@@ -4,9 +4,9 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url(https://static.staging.whisperchain.xyz/fonts/Satoshi-Variable.woff2) format('woff2'),
-       url(https://static.staging.whisperchain.xyz/fonts/Satoshi-Variable.woff) format('woff'),
-       url(https://static.staging.whisperchain.xyz/fonts/Satoshi-Variable.ttf) format('truetype');
+  src: url(https://static.whisperchain.xyz/fonts/Satoshi-Variable.woff2) format('woff2'),
+       url(https://static.whisperchain.xyz/fonts/Satoshi-Variable.woff) format('woff'),
+       url(https://static.whisperchain.xyz/fonts/Satoshi-Variable.ttf) format('truetype');
   font-weight: 300 900;
   font-display: swap;
   font-style: normal;
@@ -18,7 +18,7 @@ body {
   margin: 0;
   font-family: 'Satoshi';
   font-weight: 500;
-  background-image: url('https://static.staging.whisperchain.xyz/whisperHomePage/WC_background_image.png');
+  background-image: url('https://static.whisperchain.xyz/whisperHomePage/WC_background_image.png');
   background-size: cover;
   scroll-behavior: smooth;
 }
